@@ -1,0 +1,31 @@
+---
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DevlogCard from "../components/DevlogCard.astro";
+
+const pageTitle = "DevLog";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+---
+<BaseLayout>
+    <h1 class=" text-5xl"> {pageTitle} </h1>
+    <br>
+    <p>All Entries</p>
+    <br>
+
+    <div class=" flex flex-wrap space-x-4 ">
+        {allPosts.map((post) => 
+            <DevlogCard
+                url={post.url} 
+                title={post.frontmatter.title} 
+                thumbnail={post.frontmatter.thumbnail}
+                endResultGif={post.frontmatter.endResultGif}
+                description={post.frontmatter.description}
+                pubDate={post.frontmatter.pubDate}
+                entryIndex={post.frontmatter.entryIndex}
+                tags={post.frontmatter.tags}
+            />
+        )}
+    </div>
+    
+
+</BaseLayout>

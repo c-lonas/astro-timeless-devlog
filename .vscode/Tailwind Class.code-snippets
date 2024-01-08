@@ -1,0 +1,7 @@
+{
+	"Tailwind Class": {
+		"prefix": "twc",
+		"body": "class=\" $1 \"",
+		"description": "Quick add Tailwind class"
+	}
+}

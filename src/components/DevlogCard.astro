@@ -1,0 +1,25 @@
+---
+
+const { url } = Astro.props;
+const { title } = Astro.props;
+const { thumbnail } = Astro.props;
+const { endResultGif } = Astro.props;
+const { description } = Astro.props;
+const { pubDate } = Astro.props;
+const { entryIndex } = Astro.props;
+const { tags } = Astro.props;
+
+const playGif = false;
+
+---
+
+<a href={url} class="block  hover:bg-gray-900 size-80 border-2 border-slate-800 rounded-lg p-2 ">
+    <img src={playGif ? endResultGif : thumbnail} alt="Post Thumbnail" class="rounded-lg" />
+    <div>
+        <h3 class=" text-xl text-white "> {title} </h3>
+        <p class=" text-gray-400 "> {description} </p>
+        <p class=" text-gray-500 text-sm "> {pubDate} </p>
+        <p class=" text-gray-500 text-sm "> Entry: {entryIndex} </p>
+        <p class=" text-gray-500 text-sm "> Tags: { tags } </p> 
+    </div>
+</a>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Home Page"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+	<h1 class=" text-5xl"> {pageTitle} </h1>
+	<h1>My homepage</h1>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<br>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	</p>
+
+	<br>
+
+	<div class=" w-full size-80 border-2  border-slate-800 ">
+		<p> Trello Board </p>
+	</div>
+
+	<br>
+
+	<div class=" w-full size-80 border-2  border-slate-800 ">
+		<p> Featured Posts </p>
+	</div>
+
+</BaseLayout>
