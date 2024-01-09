@@ -78,7 +78,7 @@ For now we're going to select the vertex to which we want to move through a seri
 
 I created a `String` variable called `SelectedVertexNumber`, and then set that variable with the `Key` return value from a series of key events. So individually we get this.
 
-![IndividualHotkey](/src/assets/images/6-initial-vertex-movement-static/InitialVertexBasedMovement.gif)
+![IndividualHotkey](/src/assets/images/6-initial-vertex-movement-static/IndividualHotkey.png)
 
 And all together they look like this. Note that after setting the `SelectedVertexNumber` to whatever the value of the respective key input is, it then calls the custom event `TriggerSweepToVertex`
 
@@ -182,7 +182,6 @@ I suppose there is a similar effect with the `VertexWorldLocation` parameter on 
 Today I discovered the 'Collapsed Graph' option when I tried to make a function containing the `Timeline` for the lerp, and discovered that you can't put `Timeline` nodes inside functions. This seems like a handy option, but I'll need to spend some time considering when I should use functions and when I should use a Collapsed Graph. 
 
 I mean the obvious answer is that functions are about creating modular code snippets that can be re-used in other contexts to improve maintainability and scalability, whereas Collapsed Graphs are more like 'folding' the code to improve readability. But since I've been using functions for both purposes when visual scripting, it will take a little time to process both of these options and understand how to use them idiomatically in the context of game development.
-
 
 *ALSO*
 

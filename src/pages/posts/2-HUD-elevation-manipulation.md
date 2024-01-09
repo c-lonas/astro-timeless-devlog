@@ -159,3 +159,5 @@ In the Event Graph for the Tile Manager, we use our handy dandy `GetLevelEditorH
 ![CallElevationManipulationFunctions](/src/assets/images/2-editor-hud-elevation-manipulation-static/CallElevationManipulationFunctions.png)
 
 I again hook it up to a `Key Event`, and [voila](#end-result)!
+
+<br>

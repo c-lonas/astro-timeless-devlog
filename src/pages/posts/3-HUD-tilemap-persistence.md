@@ -79,3 +79,5 @@ The key error I was making was attempting to save the tiles as instantiated acto
 I originally planned on having different 'Save Slots' and then you would choose what slot you wanted to load from, but the level building requirements are going to remain somewhat ambiguous until I test the main movement mechanics, so I'm not going to spend time on superfluous features until I'm sure what's needed.
 
 The main thing we need right now is the ability to have a level that's ready to go for basic testing purposes, so you can load in and test other features without needing to do tile generation everytime. We could cut out an additional step by having it auto-load the previously saved TileMap whenever you press play, but for the time being I like the flexbility of being able to decide at runtime if I want a fresh slate or not. And, as demonstrated in the 'End Result' gif, mission accomplished! Thanks again Erades!
+
+<br>

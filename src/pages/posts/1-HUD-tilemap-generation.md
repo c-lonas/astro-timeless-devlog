@@ -104,3 +104,4 @@ Then it's a simple matter of copying and pasting the hex codes in to create repr
 
 I used this color palette (the 'Stylized, Earthy' one) in the demo gif above, which you can get a good overall sense for when paired with the 'Random' tile type as shown.
 
+<br>
