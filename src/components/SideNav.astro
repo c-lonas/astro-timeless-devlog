@@ -7,7 +7,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 <div class=" fixed left-0 h-screen w-64 border-r border-slate-800 ">
     <ul class=" p-4 ">
-        {allPosts.map((post) => 
+        {allPosts.reverse().map((post) => 
             <DevlogListItem 
                 url={post.url} 
                 title={post.frontmatter.title} 

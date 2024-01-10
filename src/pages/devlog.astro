@@ -13,7 +13,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
     <br>
 
     <div class=" flex flex-wrap space-x-4 ">
-        {allPosts.map((post) => 
+        {allPosts.reverse().map((post) => 
             <DevlogCard
                 url={post.url} 
                 title={post.frontmatter.title} 
