@@ -1,0 +1,58 @@
+---
+// const TRELLO_API_KEY = import.meta.env.TRELLO_API_KEY;
+// const TRELLO_TOKEN = import.meta.env.TRELLO_API_TOKEN;
+
+
+---
+
+<div id="trello-board-container" class="w-full size-80 border-2 border-slate-800">
+    <!-- Trello board will be displayed here -->
+  </div>
+  
+<script type="module">
+async function fetchTrelloBoard() {
+    const BOARD_ID = '5FljPsFO';
+    const TRELLO_API_KEY = import.meta.env.TRELLO_KEY;
+    const TRELLO_TOKEN = import.meta.env.TRELLO_TOKEN;
+
+    const url = `https://api.trello.com/1/boards/${BOARD_ID}?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}`;
+    try {
+    const response = await fetch(url);
+    const boardData = await response.json();
+
+    const listsUrl = `https://api.trello.com/1/boards/${BOARD_ID}/lists?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}`;
+    const listsResponse = await fetch(listsUrl);
+    const listsData = await listsResponse.json();
+
+    for (const list of listsData) {
+        const cardsUrl = `https://api.trello.com/1/lists/${list.id}/cards?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}`;
+        const cardsResponse = await fetch(cardsUrl);
+        list.cards = await cardsResponse.json();
+    }
+
+    displayBoard(boardData, listsData);
+    } catch (error) {
+    console.error('Error fetching Trello board:', error);
+    }
+}
+
+function displayBoard(boardData, listsData) {
+    const container = document.getElementById('trello-board-container');
+    if (container) {
+    let html = `<h2>${boardData.name}</h2><p>${boardData.desc}</p>`;
+
+    for (const list of listsData) {
+        html += `<div><h3>${list.name}</h3><ul>`;
+        for (const card of list.cards) {
+        html += `<li>${card.name}</li>`;
+        }
+        html += `</ul></div>`;
+    }
+
+    container.innerHTML = html;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', fetchTrelloBoard);
+</script>
+
