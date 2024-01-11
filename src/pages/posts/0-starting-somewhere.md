@@ -22,7 +22,7 @@ The game draws inspiration from a few disparate sources
 <br>
 ⬡ Open world, Sandbox
 
-<div class="left-text-right-media">
+<div>
     <div>
         Add Description Here
     </div>
@@ -33,7 +33,7 @@ The game draws inspiration from a few disparate sources
 
 <br>
 ⬡ Narrative driven progression
-<div class="left-text-right-media">
+<div class="">
     <div>
         Add Description Here
     </div>
@@ -45,7 +45,7 @@ The game draws inspiration from a few disparate sources
 
 <br>
 ⬡ Time theme
-<div class="left-text-right-media">
+<div class="">
     <div>
         The concept of using time as not only a resource but as a currency of sorts is directly inspired from the 2011 sci-film film <a href="https://en.wikipedia.org/wiki/In_Time" target="_blank"> In Time </a>
     </div>
@@ -56,13 +56,25 @@ The game draws inspiration from a few disparate sources
 
 <br>
 ⬡ Platform Fighters 
-<div class="left-text-right-media">
-    <div class="left-text">
+<div class="">
+    <div class="">
         Specifically Super Smash Brothers Melee.
         Fun and intuitive to use as a beginner and/or a casual player, but a nearly limitless skill ceiling that enables fast and rewarding movement and gameplay options.
     </div>
     <div>
         <img src="/src/assets/images/0-starting-somewhere-static/melee-fox-oscar.gif" alt="MeleeMovement"> 
+    </div>
+</div>
+
+<br>
+⬡ Reset Game
+<div class="">
+    <div class="">
+        games like slither.io
+        even osrs
+    </div>
+    <div>
+        <img src="/src/assets/images/0-starting-somewhere-static/" alt="needed" /> 
     </div>
 </div>
 

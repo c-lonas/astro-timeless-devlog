@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* .bg-label-red { background-color: var(--color-red); }
+.bg-label-green { background-color: var(--color-green); } */

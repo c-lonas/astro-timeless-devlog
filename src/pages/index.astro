@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import TrelloWidget from "../components/TrelloWidget.astro";
+import TrelloSuggestion from "../components/TrelloSuggestion.astro";
 const pageTitle = "Home Page"
 ---
 
@@ -23,15 +24,19 @@ const pageTitle = "Home Page"
 
 	<br>
 
+	<div class=" w-full h-80 border-2  border-slate-800 mb-4">
+		<p> Have a suggestion? </p>
+		<TrelloSuggestion />
+	</div>
 
-	<div class=" mx-auto w-3/5 h-1/2 ">
-		<TrelloWidget />
+	<div class=" mx-auto w-full border-2 border-slate-800 mb-4">
+		<!-- <TrelloWidget /> -->
+		<iframe src="https://trello.com/b/5FljPsFO.html" frameborder="0" width="100%" height="600"></iframe>
 	</div>
 
 	<br>
 
-	<div class=" w-full size-80 border-2  border-slate-800 ">
+	<div class=" w-full border-2  border-slate-800 ">
 		<p> Featured Posts </p>
 	</div>
-	<script is:inline src="https://p.trellocdn.com/embed.min.js"></script>
 </BaseLayout>
