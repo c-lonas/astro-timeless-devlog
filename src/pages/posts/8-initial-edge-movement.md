@@ -101,12 +101,32 @@ The other is when it sometimes sends me back to the same vertex multiple times e
 
 2) Sometimes it moves me to the center of the hex. I'm guessing that I have some faulty control flow logic going on, and sometimes when there should be no current vertex or edge, they get unset correctly, but then the lerping acttion is still getting called, so it sends me to `0, 0, 0` of the current hex.
 
-
 To better understand which of these are occuring and track down what changes need to be made, I added some debugging print statements to identify which edge collider the game thinks the character is on, and I also set the edge and vertex colliders to be visible.
 
 ![DebugColliders](/src/assets/images/8-initial-edge-movement-static/DebugColliders.png)
 
+
+After some experimentation, I implemented the following changes
+
+1) Fixed some faulty control flow, where it was attempting to sweep the character to a location regardless of the outcome of the specific function. This was easily fixed by calling a separate custom event instead of calling the sweep after the function, regardless of the outcome or status of the function.
+2) Moved and resized the collider geometries representing the edges, and ultimately I replaced the box colliders with capsula colliders.
+
+I was surprised by how much better the functionality worked after swapping out the box colliders for capsules, I don't know exactly the overlap events are calculated, but with the box colliders I often had to jump around the area for a bit while pressing the keybind before it would trigger successfully, even after playing around with different sizes and positions. With the capsule colliders, it has worked consistently 100% of the time.
+
+Here's what the tile looks like in the viewport with `Capsule Colliders` instead of `Box Colliders`.
+
+![CapsuleColliders](/src/assets/images/8-initial-edge-movement-static/CapsuleCollidersReplacesBoxes.png)
+
+
+Also somewhere around this time I discovered that the extra component colliders sometimes interfere with the raytrace setting the active hex. After an embarrassing amount of trial and error, I eventually discovered the fix is simply toggling this `Trace Complex` boolean on the `Line Trace By Channel` function. I'd seen this bug previously (around the vertices mostly), but it got much worse after adding the edge colliders, which was the clue.
+
+![ToggleTraceComplexBool](/src/assets/images/8-initial-edge-movement-static/TraceComplexBool.png)
+
 ## Moving From With Hex To Nearest Edge
+
+I made a simple function, `GetAllActiveHexEdgeLocations` using essentially the same nodes as its cousin `GetAllActiveHexVertexLocations`. 
+
+From there I grabbed the `X` and `Y` fields of the vector structure and made an array of these to loop through.
 
 ### Finding Nearest Edge
 
