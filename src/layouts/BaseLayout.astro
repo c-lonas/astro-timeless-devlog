@@ -1,6 +1,4 @@
 ---
-// import '/public/styles.css';
-
 import Header from "../components/Header.astro";
 import SideNav from "../components/SideNav.astro";
 
@@ -18,7 +16,7 @@ const { pageTitle } = Astro.props;
 		<title> {pageTitle} </title>
 	</head>
 	
-	<body class=" h-screen w-full dark:bg-slate-900 text-slate-300 ">
+	<body class=" h-screen w-full dark:bg-hero bg-fixed font-mono text-slate-300 ">
 		<div>
 			<Header />
 			<SideNav />
@@ -26,10 +24,5 @@ const { pageTitle } = Astro.props;
 				<slot />
 			</div>
 		</div>
-
-	
 	</body>
-
-
 </html>
-

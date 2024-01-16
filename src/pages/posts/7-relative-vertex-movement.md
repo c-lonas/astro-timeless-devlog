@@ -38,7 +38,7 @@ This gif demonstrates using relative vertex movement options to navigate within 
 
 We're going to build off the progress in the [previous entry-broken](broken).
 
-Starting with the `TriggerSweepToVertex` custom event we set up, we're going to add a condition which for now will just be hardcode here in the blueprint- later this might be a different set of hotkeys, or a toggle, or something else.
+Starting with the `TriggerSweepToVertex` custom event we set up, we're going to add a condition which for now will just be hardcoded here in the blueprint- later this might be a different set of hotkeys, or a toggle, or something else.
 
 Off that toggle, we're eventually going to need some very similar logic to what we implemented before with `GetVertexWorldLocation` (which I'll now re-name `GetAbsoluteVertexWorldLocation` to distinguish between what we'll make here in this entry) and `SweepCharacterToVertex`, but before we do that we'll need to write some code to get the character's current vertex, and based on that vertex and the input key event, determine what vertex's location needs to be retrieved for the `lerp` end point.
 

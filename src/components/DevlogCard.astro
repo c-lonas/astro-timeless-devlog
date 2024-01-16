@@ -10,16 +10,40 @@ const { entryIndex } = Astro.props;
 const { tags } = Astro.props;
 
 const playGif = false;
-
 ---
 
-<a href={url} class="block  hover:bg-gray-900 size-80 border-2 border-slate-800 rounded-lg p-2 ">
-    <img src={playGif ? endResultGif : thumbnail} alt="Post Thumbnail" class="rounded-lg" />
+<script>
+    function changeBackgroundImage(hover: boolean) {
+        const imageDiv = document.getElementById('imageDiv');
+        if (imageDiv) {
+            const thumbnail = "${thumbnail}"; // Ensure this is the correct thumbnail URL
+            const endResultGif = "${endResultGif}"; // Ensure this is the correct GIF URL
+            const imageUrl = hover ? endResultGif : thumbnail;
+            imageDiv.style.backgroundImage = `url("${imageUrl}")`;
+        }
+    }
+</script>
+
+<a href={url} class="block size-80 border-2 border-slate-800 rounded-lg p-2 transition duration-200 ease-out hover:ease-in hover:bg-gray-900 hover:scale-105">
+    <div
+        id="imageDiv"
+        data-thumbnail={thumbnail}
+        data-endresultgif={endResultGif} 
+        style={{
+            backgroundImage: `url("${thumbnail}")`, // Set initial background image
+            backgroundSize: 'cover',
+            width: '300px',
+            height: '192px',
+        }}
+        onmouseover="this.style.backgroundImage = `url('${this.getAttribute('data-endresultgif')}')`"
+        onmouseout="this.style.backgroundImage = `url('${this.getAttribute('data-thumbnail')}')`"
+    >
+    </div>
     <div>
-        <h3 class=" text-xl text-white "> {title} </h3>
-        <p class=" text-gray-400 "> {description} </p>
-        <p class=" text-gray-500 text-sm "> {pubDate} </p>
-        <p class=" text-gray-500 text-sm "> Entry: {entryIndex} </p>
-        <p class=" text-gray-500 text-sm "> Tags: { tags } </p> 
+        <h3 class="text-xl text-white"> {title} </h3>
+        <p class="text-gray-400"> {description} </p>
+        <p class="text-gray-500 text-sm"> {pubDate} </p>
+        <p class="text-gray-500 text-sm"> Entry: {entryIndex} </p>
+        <p class="text-gray-500 text-sm"> Tags: { tags } </p> 
     </div>
 </a>

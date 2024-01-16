@@ -1438,6 +1438,10 @@ video {
   height: 100vh;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -1458,6 +1462,10 @@ video {
   width: 100%;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .max-w-none {
   max-width: none;
 }
@@ -1476,6 +1484,22 @@ video {
 
 .justify-end {
   justify-content: flex-end;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -1575,6 +1599,67 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100\/\[\.10\] {
+  background-color: rgb(241 245 249 / .10);
+}
+
+.bg-slate-100\/\[\.25\] {
+  background-color: rgb(241 245 249 / .25);
+}
+
+.bg-\[url\(\'thumbnail\'\)\] {
+  background-image: url('thumbnail');
+}
+
+.bg-\[url\(\{thumbnail\}\)\] {
+  background-image: url({thumbnail});
+}
+
+.bg-\[url\(\'\{thumbnail\}\'\)\] {
+  background-image: url('{thumbnail}');
+}
+
+.bg-\[url\(\'\{bground\}\'\)\] {
+  background-image: url('{bground}');
+}
+
+.bg-\[url\(\"\$\{thumbnail\}\"\)\] {
+  background-image: url("${thumbnail}");
+}
+
+.bg-\[url\(\$\{thumbnail\}\)\] {
+  background-image: url(${thumbnail});
+}
+
+.bg-\[url\(\$\{\"thumbnail\"\}\)\] {
+  background-image: url(${"thumbnail"});
+}
+
+.bg-\[url\(\'\$\{thumbnail\}\'\)\] {
+  background-image: url('${thumbnail}');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1607,6 +1692,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .text-3xl {
@@ -1681,6 +1770,22 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
 /* .bg-label-red { background-color: var(--color-red); }
 .bg-label-green { background-color: var(--color-green); } */
 
@@ -1707,6 +1812,24 @@ video {
   }
 }
 
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:bg-blue-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
@@ -1725,6 +1848,27 @@ video {
 .hover\:bg-slate-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[url\(\{endResultGif\}\)\]:hover {
+  background-image: url({endResultGif});
+}
+
+.hover\:bg-\[url\(\"\$\{endResultGif\}\"\)\]:hover {
+  background-image: url("${endResultGif}");
+}
+
+.hover\:bg-\[url\(\'\/src\/assets\/images\/0-starting-somewhere-static\/firsttree\.webp\'\)\]:hover {
+  background-image: url('/src/assets/images/0-starting-somewhere-static/firsttree.webp');
+}
+
+.hover\:ease-in:hover {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .group:hover .group-hover\:block {
@@ -1765,8 +1909,7 @@ video {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dark\:bg-slate-900 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+  .dark\:bg-hero {
+    background-image: url('/src/assets/images/common/3.png');
   }
 }
