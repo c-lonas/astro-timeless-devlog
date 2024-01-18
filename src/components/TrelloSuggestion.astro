@@ -1,7 +1,7 @@
 ---
 ---
 
-<button id="toggle-suggestion" class="absolute -left-16 h-12 w-12 rounded-full bg-green-500 text-white text-6xl flex items-center justify-center">
+<button id="toggle-suggestion" class="absolute -left-16 h-12 w-12 rounded-full bg-green-700 text-white text-6xl flex items-center justify-center transition ">
   <p> + </p>
 </button>
 
@@ -26,11 +26,11 @@
     isSuggestionOpen = !isSuggestionOpen;
     if (isSuggestionOpen) {
       suggestionContainer.classList.remove('hidden');
-      toggleButton.classList.replace('bg-green-500', 'bg-red-500');
+      toggleButton.classList.replace('bg-green-700', 'bg-red-700');
       toggleButton.textContent = '-';
     } else {
       suggestionContainer.classList.add('hidden');
-      toggleButton.classList.replace('bg-red-500', 'bg-green-500');
+      toggleButton.classList.replace('bg-red-700', 'bg-green-700');
       toggleButton.textContent = '+';
     }
   });

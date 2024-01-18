@@ -16,21 +16,21 @@ const playGif = false;
     function changeBackgroundImage(hover: boolean) {
         const imageDiv = document.getElementById('imageDiv');
         if (imageDiv) {
-            const thumbnail = "${thumbnail}"; // Ensure this is the correct thumbnail URL
-            const endResultGif = "${endResultGif}"; // Ensure this is the correct GIF URL
+            const thumbnail = "${thumbnail}";
+            const endResultGif = "${endResultGif}";
             const imageUrl = hover ? endResultGif : thumbnail;
             imageDiv.style.backgroundImage = `url("${imageUrl}")`;
         }
     }
 </script>
 
-<a href={url} class="block size-80 border-2 border-slate-800 rounded-lg p-2 transition duration-200 ease-out hover:ease-in hover:bg-gray-900 hover:scale-105">
+<a href={url} class="block size-80 border-2 border-midnight-800 rounded-lg p-2 transition duration-200 ease-out hover:ease-in hover:bg-gray-900 hover:scale-105">
     <div
         id="imageDiv"
         data-thumbnail={thumbnail}
         data-endresultgif={endResultGif} 
         style={{
-            backgroundImage: `url("${thumbnail}")`, // Set initial background image
+            backgroundImage: `url("${thumbnail}")`,
             backgroundSize: 'cover',
             width: '300px',
             height: '192px',
