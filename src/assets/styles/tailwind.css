@@ -12,3 +12,6 @@
     }    
 }
 
+.gold-link {
+    @apply text-gold-600 text-glow hover:text-gold-800 transition ease-in-out duration-300;
+}

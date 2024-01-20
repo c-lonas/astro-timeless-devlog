@@ -6,7 +6,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 <div class=" flex justify-between py-2">
     <p> Featured Posts </p>
-    <a href="/devlog/"> All Posts </a>
+    <a class=" gold-link" href="/devlog/"> All Posts </a>
 </div>
 <div class=" flex justify-around ">
     {allPosts.reverse().filter(post => post.frontmatter.featured === "true").map((post) => 
