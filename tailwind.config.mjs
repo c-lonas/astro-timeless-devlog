@@ -110,7 +110,8 @@ export default {
 		extend: {
 			backgroundImage: {
 				'hero': "url('/src/assets/images/common/backgrounds/3.png')"
-			}
+			},
+			
 		},
 	},
 	plugins: [

@@ -11,17 +11,17 @@ const pageTitle = "Home"
 <BaseLayout pageTitle={pageTitle}>
 	<br>
 	<p>
-		Welcome to my devlog for my game development side project! 
+		Welcome to my devlog for my game development side project! I'm not a game developer, but I
 	</p>
 	<br>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-		Ut enim ad minim veniam.
+		Ut enim ad minim veniam. Check out the code for this site on <a class=" text-gold-600 text-glow hover:text-gold-800 transition ease-in-out duration-300" href="https://github.com/c-lonas/astro-timeless-devlog" target="_blank">GitHub</a>!
 	</p>
 
 	<br>
 
-	<div class=" relative mx-auto w-full border-2 border-midnight-800 mb-4 p-4">
+	<div class=" relative mx-auto w-full border-2 transition ease-in-out duration-1000 border-midnight-800 hover:border-gold-600 mb-4 p-4">
 		<TrelloSuggestion />
 		<TrelloWidget />
 		<!-- <iframe src="https://trello.com/b/5FljPsFO.html" frameborder="0" width="100%" height="600"></iframe> -->
@@ -29,7 +29,7 @@ const pageTitle = "Home"
 
 	<br>
 
-	<div class=" w-full border-2 border-midnight-800 mb-4 p-4">
+	<div class=" w-full border-2 border-midnight-800 transition ease-in-out duration-1000 hover:border-gold-600 mb-4 p-4">
 		<FeaturedPostsWidget />
 	</div>
 </BaseLayout>
