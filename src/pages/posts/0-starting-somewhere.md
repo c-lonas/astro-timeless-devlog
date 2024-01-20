@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/0-starting-somewhere-static/TimelessLogo.png'
 endResultGif: '/src/assets/images/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
 tags: ["context",]
+featured: 'false'
 ---
 
 

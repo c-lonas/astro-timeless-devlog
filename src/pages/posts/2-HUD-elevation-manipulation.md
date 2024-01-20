@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/2-editor-hud-elevation-manipulation-static/Editor
 endResultGif: '/src/assets/images/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'false'
 ---
 
 ## Overview 

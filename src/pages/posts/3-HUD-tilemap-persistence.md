@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/3-editor-hud-tilemap-persistence-static/TileMapPe
 endResultGif: '/src/assets/images/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'false'
 ---
 
 

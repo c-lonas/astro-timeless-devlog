@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/8-initial-edge-movement-static/InitialEdgeMovemen
 endResultGif: '/src/assets/images/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'false'
 ---
 
 ## Overview 

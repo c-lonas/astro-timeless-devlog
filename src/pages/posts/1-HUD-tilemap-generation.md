@@ -9,11 +9,10 @@ thumbnail: '/src/assets/images/1-editor-hud-tilemap-generation-static/HUDTilemap
 endResultGif: '/src/assets/images/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif'
 author: 'Battery'
 tags: ["HUD", "Level Building", "UI"]
+featured: 'true'
 ---
 
-
 ## Overview 
-
 
 In this step I create an Editor Mode HUD in order to create tile maps while adjusting input parameters from the UI. Prior to this step, generating tile maps required going into the blueprints, manually making changes, recompiling, and then running to see the result.
 

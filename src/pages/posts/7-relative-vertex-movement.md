@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/7-relative-vertex-movement-static/RelativeVertexM
 endResultGif: '/src/assets/images/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'true'
 ---
 
 ## Overview 

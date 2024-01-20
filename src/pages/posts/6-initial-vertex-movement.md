@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/6-initial-vertex-movement-static/InitialVertexBas
 endResultGif: '/src/assets/images/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'false'
 ---
 ## Overview 
 

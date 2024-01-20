@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/5-current-hex-static/CurrentHex_EndResult_Thumbna
 endResultGif: '/src/assets/images/5-current-hex-static/CurrentHex_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'true'
 ---
 
 ## Overview 

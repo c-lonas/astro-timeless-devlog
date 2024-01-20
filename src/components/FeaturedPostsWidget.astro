@@ -1,0 +1,25 @@
+---
+import DevlogCard from "../components/DevlogCard.astro";
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
+---
+
+<div class=" flex justify-between py-2">
+    <p> Featured Posts </p>
+    <a href="/devlog/"> All Posts </a>
+</div>
+<div class=" flex flex-wrap gap-9 ">
+    {allPosts.reverse().filter(post => post.frontmatter.featured === "true").map((post) => 
+        <DevlogCard
+            url={post.url} 
+            title={post.frontmatter.title} 
+            thumbnail={post.frontmatter.thumbnail}
+            endResultGif={post.frontmatter.endResultGif}
+            description={post.frontmatter.description}
+            pubDate={post.frontmatter.pubDate}
+            entryIndex={post.frontmatter.entryIndex}
+            tags={post.frontmatter.tags}
+            featured={post.frontmatter.featured}
+        />
+    )}
+</div>

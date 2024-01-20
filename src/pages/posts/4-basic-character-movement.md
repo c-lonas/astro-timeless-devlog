@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/4-basic-character-movement-static/BasicCharacterM
 endResultGif: '/src/assets/images/4-basic-character-movement-static/BasicCharacterMovement_EndResult.gif'
 author: 'Battery'
 tags: ["", "", "",]
+featured: 'false'
 ---
 
 ## Overview 
