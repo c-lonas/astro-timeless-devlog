@@ -8,7 +8,7 @@ pubDate: ''
 thumbnail: '/src/assets/images/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
+tags: ["Blueprints", "Tilemap", "",]
 featured: 'false'
 ---
 

@@ -8,7 +8,7 @@ pubDate: ''
 thumbnail: '/src/assets/images/4-basic-character-movement-static/BasicCharacterMovement_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/4-basic-character-movement-static/BasicCharacterMovement_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
+tags: ["Core Movement", "", "",]
 featured: 'false'
 ---
 

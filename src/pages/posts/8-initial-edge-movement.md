@@ -8,7 +8,7 @@ pubDate: ''
 thumbnail: '/src/assets/images/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png'
 endResultGif: '/src/assets/images/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
+tags: ["Blueprints", "Hex Movement", "",]
 featured: 'false'
 ---
 

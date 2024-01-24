@@ -8,7 +8,7 @@ pubDate: ''
 thumbnail: '/src/assets/images/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
+tags: ["Blueprints", "Tilemap", "",]
 featured: 'false'
 ---
 

@@ -8,8 +8,8 @@ pubDate: ''
 thumbnail: '/src/assets/images/9-character-movement-II-static/SchmooveCMCSprint_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
-featured: 'false'
+tags: ["C++", "Core Movement", "",]
+featured: 'true'
 ---
 
 ## Overview 
@@ -24,6 +24,9 @@ While figuring out the setup here I'm going to be working in a fresh project, st
 
 
 ### Learning Goals
+
+- Understand the fundamentals of working with C++ in Unreal Engine 5
+- Understand the fundamentals of working with and extending the Character Movement Component
 
 ## End Result
 
@@ -40,6 +43,10 @@ First two videos in the playlist are conceptual overviews and theory, third vide
 I'm going to call this unreal project Schmoove, and to get the Character Movement Component up and running, I just followed along with the video linked above for the first 20 minutes to get the structure correct. Here's the link to <a href="https://github.com/c-lonas/SchmooveCMC" target="_blank">my github repo</a> if you're curious, but at this point there are no innovations- I'm just following with the guide.
 
 <br>
+
+## Implementing Sprint Functions
+
+I'm going to skip 
 
 
 ## Hooking Up Sprint Blueprint 

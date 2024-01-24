@@ -8,7 +8,7 @@ pubDate: ''
 thumbnail: '/src/assets/images/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/5-current-hex-static/CurrentHex_EndResult.gif'
 author: 'Battery'
-tags: ["", "", "",]
+tags: ["Blueprints", "Hex Movement", "",]
 featured: 'true'
 ---
 

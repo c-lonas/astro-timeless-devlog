@@ -8,8 +8,8 @@ pubDate: '01/07/2024'
 thumbnail: '/src/assets/images/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif'
 author: 'Battery'
-tags: ["HUD", "Level Building", "UI"]
-featured: 'true'
+tags: ["HUD", "Level Building", "UI", "Tilemap", "Blueprints"]
+featured: 'false'
 ---
 
 ## Overview 
