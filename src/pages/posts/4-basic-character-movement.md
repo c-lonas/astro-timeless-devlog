@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 4
-title: 'Basic Character Movement'
+title: 'Character Movement I - Basic Blueprint'
 description: ''
 pubDate: ''
 thumbnail: '/src/assets/images/4-basic-character-movement-static/BasicCharacterMovement_EndResult_Thumbnail.png'
