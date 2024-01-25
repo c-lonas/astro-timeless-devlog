@@ -9,7 +9,7 @@ thumbnail: '/src/assets/images/10-character-movement-III-static/SchmooveCMCCrouc
 endResultGif: '/src/assets/images/10-character-movement-III-static/SchmooveCMCCrouch_EndResult.gif'
 author: 'Battery'
 tags: ["C++", "Core Movement", "",]
-featured: 'true'
+featured: 'false'
 ---
 
 ## Overview 
