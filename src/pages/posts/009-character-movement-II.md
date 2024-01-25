@@ -74,7 +74,7 @@ void USchmooveCharacterMovementComponent::SprintReleased()
 ```
 
 
-Speaking of that `bool`, in the header file wewe declare that variable plus a variable for `Sprint_MaxWalkSpeed` and `Walk_MaxWalkSpeed`. The latter two we want to be able to adjust from the `details` panel in Unreal so we can tweak the values without needing to mess with the source code, so those will use the `UPROPERTY` macro. This macro allows Unreal's reflection system to recognize and interact with these variables for a variety of purposes (serialization, networking, general integration) but again, the thing we specifically want here is the Editor integration.
+Speaking of that `bool`, in the header file we declare that variable plus a variable for `Sprint_MaxWalkSpeed` and `Walk_MaxWalkSpeed`. The latter two we want to be able to adjust from the `details` panel in Unreal so we can tweak the values without needing to mess with the source code, so those will use the `UPROPERTY` macro. This macro allows Unreal's reflection system to recognize and interact with these variables for a variety of purposes (serialization, networking, general integration) but again, the thing we specifically want here is the Editor integration.
 
 
 ```cpp
