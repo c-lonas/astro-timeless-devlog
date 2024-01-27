@@ -8,7 +8,7 @@
 .bg-label-green { background-color: var(--color-green); } */
 @layer utilities {
     .text-glow {
-        text-shadow: 0 0 12px rgba(255, 189, 67, 0.89);
+        text-shadow: 0 0 8px rgba(255, 189, 67, 0.89);
     }    
 }
 
