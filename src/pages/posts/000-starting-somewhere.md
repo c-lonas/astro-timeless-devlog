@@ -5,8 +5,8 @@ entryIndex: 0
 title: 'Starting Somewhere'
 description: 'Discuss Inspiration and Context'
 pubDate: '01/07/2024'
-thumbnail: '/src/assets/images/0-starting-somewhere-static/TimelessLogo.png'
-endResultGif: '/src/assets/images/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
+thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
+endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
 tags: ["context",]
 featured: 'false'
@@ -28,7 +28,7 @@ The game draws inspiration from a few disparate sources
         Add Description Here
     </div>
     <div>
-        <img src="/src/assets/images/0-starting-somewhere-static/zelda-breath-of-the-wild.gif" alt="BreathOfTheWild-OpenAdventureGif"> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif" alt="BreathOfTheWild-OpenAdventureGif"> 
     </div>
 </div>
 
@@ -39,7 +39,7 @@ The game draws inspiration from a few disparate sources
         Add Description Here
     </div>
     <div>
-        <img src="/src/assets/images/0-starting-somewhere-static/firsttree.webp" alt="TheFirstTree"> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/firsttree.webp" alt="TheFirstTree"> 
     </div>
 </div>
 <!-- - Survival stuff -->
@@ -51,7 +51,7 @@ The game draws inspiration from a few disparate sources
         The concept of using time as not only a resource but as a currency of sorts is directly inspired from the 2011 sci-film film <a href="https://en.wikipedia.org/wiki/In_Time" target="_blank"> In Time </a>
     </div>
     <div>
-        <img src="/src/assets/images/0-starting-somewhere-static/intime-arm-timer.gif" alt="InTimeArmTimer"> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/intime-arm-timer.gif" alt="InTimeArmTimer"> 
     </div>
 </div>
 
@@ -63,7 +63,7 @@ The game draws inspiration from a few disparate sources
         Fun and intuitive to use as a beginner and/or a casual player, but a nearly limitless skill ceiling that enables fast and rewarding movement and gameplay options.
     </div>
     <div>
-        <img src="/src/assets/images/0-starting-somewhere-static/melee-fox-oscar.gif" alt="MeleeMovement"> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/melee-fox-oscar.gif" alt="MeleeMovement"> 
     </div>
 </div>
 
@@ -75,7 +75,7 @@ The game draws inspiration from a few disparate sources
         even osrs
     </div>
     <div>
-        <img src="/src/assets/images/0-starting-somewhere-static/" alt="needed" /> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/" alt="ResetGame" /> 
     </div>
 </div>
 

@@ -1,11 +1,13 @@
 ---
 import DevlogListItem from "./DevlogListItem.astro";
+import SideNavFilter from "./SideNavFilter.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 
 ---
 
 
-<div class=" hidden xl:block fixed left-0 h-screen w-64 border-r border-midnight-800 ">
+<div class=" hidden xl:block fixed left-0 h-screen w-64 border-r border-neutral-600 ">
+    <SideNavFilter/>
     <ul class=" p-4 ">
         {allPosts.reverse().map((post) => 
             <DevlogListItem 

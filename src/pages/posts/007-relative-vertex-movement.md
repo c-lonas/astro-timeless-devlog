@@ -5,8 +5,8 @@ entryIndex: 7
 title: 'Relative Vertex Movement'
 description: ''
 pubDate: ''
-thumbnail: '/src/assets/images/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif'
+thumbnail: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult_Thumbnail.png'
+endResultGif: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif'
 author: 'Battery'
 tags: ["Blueprints", "Hex Movement", "",]
 featured: 'true'
@@ -31,7 +31,7 @@ This will pave the way for some of the core combat mechanics, as well as more co
 
 This gif demonstrates using relative vertex movement options to navigate within a hex, and also to supplement movement across hexes. This is MUCH more intuitive, at least in this context.
 
-![RelativeVertexMovementEndResultGif](/src/assets/images/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif)
+![RelativeVertexMovementEndResultGif](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif)
 
 <br>
 
@@ -45,22 +45,22 @@ Off that toggle, we're eventually going to need some very similar logic to what 
 
 Something like this.
 
-![StartingOff](/src/assets/images/7-relative-vertex-movement-static/StartingOff.png)
+![StartingOff](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/StartingOff.png)
 
 ## First Implementation
 
 After experimenting for awhile with Unreal's built in functions for finding overlapping components.
 
-![UnrealBuiltInIsOverlapFunctions](/src/assets/images/7-relative-vertex-movement-static/UnrealIsOverlapping.png)
+![UnrealBuiltInIsOverlapFunctions](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/UnrealIsOverlapping.png)
 
 I discovered none of these ones work due to type mismatches, along the lines of this (incompatible with both `PrimitiveComponentObjectReference` as seen in the screenshot and  also with `ActorObjectReference`, depending on which function I attempt to feed the vertex reference into).
 
-![IncompatibleReferenceTypes](/src/assets/images/7-relative-vertex-movement-static/ActorComponentObjectReferenceIncompatible.png)
+![IncompatibleReferenceTypes](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/ActorComponentObjectReferenceIncompatible.png)
 
 
 I would assume there is a correct function, or a type-casting option I'm not aware of or something, but instead my initial implementation looked like this.
 
-![NestedForLoopImplementation](/src/assets/images/7-relative-vertex-movement-static/NestedForLoopImplementation.png)
+![NestedForLoopImplementation](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/NestedForLoopImplementation.png)
 
 We get all the components of the `ActiveHex` that have the `HexVertex` tag and then loop through them. Then we have a nested `for loop`, in which we iterate through all of the overlapping components with the player character. If the element of the inner loop matches the element of the outer loop, then we print the name of the element (which in this case should be the vertex). 
 
@@ -76,13 +76,13 @@ I added two additional components to the `BP_Tile` blueprint class, a `CurrentVe
 
 Then I just set up an `OnComponentBeginOverlap` event and an `OnComponentEndOverlap` event for each vertex that does a quick check to see if the overlapping actor is indeed the Player Character, and if so, set the associated variables. Note that we also 'unset' the `CurrentVertex` when ending overlap.
 
-![CollisionEventSetup](/src/assets/images/7-relative-vertex-movement-static/CollisionEventSetup.png)
+![CollisionEventSetup](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/CollisionEventSetup.png)
 
 Replicated this logic for each of the vertices, and we're ready to try to access this from the player blueprint again.
 
 Ran a quick test to print either the name of the vertex that was found, or `No Vertex` if `CurrentVertex` was 'unset', which verified that this approach works, and is much more elegant than the first implementation.
 
-![DebugPrintCurrentVertex](/src/assets/images/7-relative-vertex-movement-static/DebugPrintCurrentVertex.png)
+![DebugPrintCurrentVertex](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/DebugPrintCurrentVertex.png)
 
 <br>
 
@@ -92,12 +92,12 @@ This step shares a lot of overlap with how we got the absolute vertex world loca
 
 Converting that to an int, we can then compare it to the input key press (also converted to an int). We take the sum modulo 6 (representing the total number of vertices), and pass that result as the selection to our `switch` statement. This is necessary to handle the 'wraparound'. That is, if you are currently on `vertex4` and input `3`, you need to end up on `vertex1` if you continue traveling clockwise.
 
-![GetRelativeVertexSelectionViaModulo](/src/assets/images/7-relative-vertex-movement-static/GetRelativeVertexSelectionViaModulo.png)
+![GetRelativeVertexSelectionViaModulo](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/GetRelativeVertexSelectionViaModulo.png)
 
 
 And the rest of this graph looks the same as the graph in the previous entry (just more spread out because I didn't sub-collapse the additional steps)!
 
-![TotalGetRelativeVertexGraph](/src/assets/images/7-relative-vertex-movement-static/TotalGetRelativeVertexGraph.png)
+![TotalGetRelativeVertexGraph](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/TotalGetRelativeVertexGraph.png)
 
 <br>
 
@@ -107,7 +107,7 @@ Putting it together looks the same as in the [previous entry-broken](broken), so
 
 This entry next to the previous entry looks like this!
 
-![RelativeMovementAndAbsoluteMovement](/src/assets/images/7-relative-vertex-movement-static/RelativeMovementAndAbsoluteMovement.png)
+![RelativeMovementAndAbsoluteMovement](/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeMovementAndAbsoluteMovement.png)
 
 ## Other Thoughts
 

@@ -5,8 +5,8 @@ entryIndex: 9
 title: 'Character Movement II - C++ Setup and Sprint State'
 description: ''
 pubDate: ''
-thumbnail: '/src/assets/images/9-character-movement-II-static/SchmooveCMCSprint_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif'
+thumbnail: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult_Thumbnail.png'
+endResultGif: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif'
 author: 'Battery'
 tags: ["C++", "Core Movement", "",]
 featured: 'true'
@@ -31,7 +31,7 @@ While figuring out the setup here I'm going to be working in a fresh Unreal proj
 ## End Result
 
 This End Result gif shows that the framework for the custom movement component- well, the extension of Unreal's character movement component really- is up and running (haha), demonstrated with a simple Sprint movement. Yes, sprinting is easy to implement with just blueprints and the default character movement component, but it's the proof of concept that's relevant here.
-![BasicCharacterMovementEndResult.gif](/src/assets/images/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif)
+![BasicCharacterMovementEndResult.gif](/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif)
 
 <br>
 
@@ -92,11 +92,11 @@ With these exposed, we can access these variables and functions in Unreal via th
 
 Here's what it looks like to grab the the Sprint Pressed and Sprint Released functions we set up in C++ in the first step here in blueprints
 
-![CallSprintPressedAndReleasedFromBlueprints](/src/assets/images/9-character-movement-II-static/CallSprintPressedAndReleasedFromBlueprints.png)
+![CallSprintPressedAndReleasedFromBlueprints](/src/assets/images/gamedev/timeless/9-character-movement-II-static/CallSprintPressedAndReleasedFromBlueprints.png)
 
 
 Here you can see the variables we set up for the custom movement component here in the unreal editor, here set to `1000` and `500` (note- in the End Result Gif I'm going to set the sprint value higher and the walk value lower just to make it more distinctive at a glance)
-![WalkAndSprintSpeeds](/src/assets/images/9-character-movement-II-static/WalkAndSprintSpeeds.png)
+![WalkAndSprintSpeeds](/src/assets/images/gamedev/timeless/9-character-movement-II-static/WalkAndSprintSpeeds.png)
 
 <br>
 

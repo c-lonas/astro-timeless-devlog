@@ -15,17 +15,17 @@ const pageTitle = "Home"
 	</p>
 	<p>
 		I put together this site using the 
-		<a class=" gold-link" href="https://astro.build/" target="_blank">Astro.js</a> 
+		<a class="accent-link" href="https://astro.build/" target="_blank">Astro.js</a> 
 		framework and styled it with
-		<a class=" gold-link" href="https://tailwindcss.com/" target="_blank">Tailwind</a>. 
+		<a class="accent-link" href="https://tailwindcss.com/" target="_blank">Tailwind</a>. 
 		Check out the code on 
-		<a class=" gold-link" href="https://github.com/c-lonas/astro-timeless-devlog" target="_blank"> GitHub</a> 
+		<a class="accent-link" href="https://github.com/c-lonas/astro-timeless-devlog" target="_blank"> GitHub</a> 
 		to see how it comes together!
 	</p>
 
 	<br>
 	<p>
-		This is a read-only view of a trello board I created to track progress on the project, displayed here using the Trello API.
+		This is a read-only view of a trello board I created to track progress on the project, displayed here via the Trello API.
 	</p>
 	<p>
 		You can use the green button below to add a card to the board in the suggestion column.
@@ -33,14 +33,14 @@ const pageTitle = "Home"
 
 	<br>
 
-	<div class=" relative mx-auto w-full border-2 transition ease-in-out duration-1000 border-midnight-800 hover:border-gold-600 mb-4 p-4">
+	<div class=" relative mx-auto w-full border-2 border-neutral-700 transition ease-in-out duration-1000  hover:border-teal-800 mb-4 p-4">
 		<TrelloSuggestion />
 		<TrelloWidget />
 		<!-- <iframe src="https://trello.com/b/5FljPsFO.html" frameborder="0" width="100%" height="600"></iframe> -->
 	</div>
 
 	<br>
-	<div class=" w-full border-2 border-midnight-800 transition ease-in-out duration-1000 hover:border-gold-600 mb-4 p-4">
+	<div class=" w-full border-2 border-neutral-700 transition ease-in-out duration-1000 hover:border-teal-800 mb-4 p-4">
 		<FeaturedPostsWidget />
 	</div>
 </BaseLayout>

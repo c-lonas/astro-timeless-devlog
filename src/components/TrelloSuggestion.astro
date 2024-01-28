@@ -2,16 +2,18 @@
 ---
 
 
-<button id="toggle-suggestion" class="absolute -left-16 top-28 h-12 w-12 rounded-full hover:animate-pulse bg-green-700 text-white text-6xl flex items-center justify-center transition ease-in-out duration-300 ">
-  <img src="/src/assets/images/common/plus-sign.png"/>
+<button id="toggle-suggestion" class="absolute -left-16 top-28 h-12 w-12 rounded-full hover:animate-pulse bg-emerald-500 flex items-center justify-center transition ease-in-out duration-300 ">
+  <img src="/src/assets/images/common/symbols/plus-sign.png"/>
 </button>
 
 
-<div id="trello-suggestion-container" class=" fixed z-50 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-2/3 mx-auto w-1/3 p-4 bg-midnight-900 rounded-lg shadow-2xl hidden ">
+<div id="trello-suggestion-container" class=" fixed z-50 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-2/3 mx-auto w-1/3 p-4 text-neutral-100 bg-neutral-500 rounded-lg shadow-2xl hidden ">
   <div class="mb-6">
-    <input id="card-title" type="text" placeholder="Enter Card Title" class="w-full p-2 mb-4 bg-midnight-500 text-midnight-100 border border-gray-300 rounded-md" />
-    <textarea id="card-description" placeholder="Enter Card Description" class="w-full p-2 border bg-midnight-500 text-midnight-100 border-gray-300 rounded-md" rows="4"></textarea>
-    <button id="add-card" class="mt-4 p-2 bg-sky-500 text-white rounded-md hover:bg-sky-600">Add Card</button>
+    <p>Card Title</p>
+    <input id="card-title" type="text" placeholder="Enter Card Title" class="w-full p-2 mb-4 bg-neutral-400 border border-gray-300 rounded-md" />
+    <p>Description</p>
+    <textarea id="card-description" placeholder="Enter Card Description" class="w-full p-2 border bg-neutral-400 border-gray-300 rounded-md" rows="4"></textarea>
+    <button id="add-card" class="mt-4 p-2 bg-teal-600 text-neutral-100 rounded-md hover:bg-teal-700">Add Card</button>
   </div>
 </div>
 
@@ -28,11 +30,11 @@
     isSuggestionOpen = !isSuggestionOpen;
     if (isSuggestionOpen) {
       suggestionContainer.classList.remove('hidden');
-      toggleButton.classList.replace('bg-green-700', 'bg-red-700');
+      toggleButton.classList.replace('bg-emerald-500', 'bg-red-500');
       toggleButton.classList.add('rotate-45');
     } else {
       suggestionContainer.classList.add('hidden');
-      toggleButton.classList.replace('bg-red-700', 'bg-green-700');
+      toggleButton.classList.replace('bg-red-500', 'bg-emerald-500');
       toggleButton.classList.remove('rotate-45');
     }
   });
