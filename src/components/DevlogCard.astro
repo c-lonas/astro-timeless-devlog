@@ -9,10 +9,10 @@ const { pubDate } = Astro.props;
 const { entryIndex } = Astro.props;
 const { tags } = Astro.props;
 
-const playGif = false;
+// const playGif = false;
 ---
 
-<script>
+<!-- <script>
     function changeBackgroundImage(hover: boolean) {
         const imageDiv = document.getElementById('imageDiv');
         if (imageDiv) {
@@ -22,27 +22,32 @@ const playGif = false;
             imageDiv.style.backgroundImage = `url("${imageUrl}")`;
         }
     }
-</script>
+</script> -->
 
-<a href={url} class="block size-80 border-2 border-midnight-800 rounded-lg p-2 transition duration-300 ease-out hover:ease-in hover:bg-gray-900 hover:scale-105">
+<div class=" relative group ">
     <div
-        id="imageDiv"
-        data-thumbnail={thumbnail}
-        data-endresultgif={endResultGif} 
-        style={{
-            backgroundImage: `url("${thumbnail}")`,
-            backgroundSize: 'cover',
-            width: '300px',
-            height: '192px',
-        }}
-        onmouseover="this.style.backgroundImage = `url('${this.getAttribute('data-endresultgif')}')`"
-        onmouseout="this.style.backgroundImage = `url('${this.getAttribute('data-thumbnail')}')`"
-    >
+        class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-orange-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300 group-hover:duration-300">
     </div>
-    <div>
-        <h3 class="text-xl text-white"> {title} </h3>
-        <p class="text-gray-400"> {description} </p>
-        <p class="text-gray-500 text-sm"> Entry: {entryIndex} </p>
-        <p class="text-gray-500 text-sm"> Tags: { tags } </p> 
-    </div>
-</a>
+    <a href={url} class="relative block w-full bg-neutral-900 border-2 rounded-2xl p-2 transition duration-300 ease-out hover:ease-in ">
+        <div class=" mx-auto rounded-md "
+            id="imageDiv"
+            data-thumbnail={thumbnail}
+            data-endresultgif={endResultGif} 
+            style={{
+                backgroundImage: `url("${thumbnail}")`,
+                backgroundSize: 'cover',
+                width: '300px',
+                height: '192px',
+            }}
+            onmouseover="this.style.backgroundImage = `url('${this.getAttribute('data-endresultgif')}')`"
+            onmouseout="this.style.backgroundImage = `url('${this.getAttribute('data-thumbnail')}')`"
+        >
+        </div>
+        <div>
+            <h3 class="text-xl text-neutral-200"> {title} </h3>
+            <p class="text-neutral-400"> {description} </p>
+            <p class="text-neutral-500 text-sm"> Entry: {entryIndex} </p>
+            <p class="text-neutral-500 text-sm"> Tags: { tags } </p> 
+        </div>
+    </a>
+</div>

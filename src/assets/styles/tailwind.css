@@ -5,13 +5,13 @@
 
 @layer utilities {
     .text-glow-sm {
-        text-shadow: 0 0 2px rgba(20, 200, 215, 0.75);
+        text-shadow: 0 0 2px rgba(0, 115, 200, 0.9);
     }    
     .text-glow-md {
-        text-shadow: 0 0 4px rgba(20, 200, 215, 0.75);
+        text-shadow: 0 0 4px rgba(0, 115, 200, 0.9);
     }    
 }
 
 .accent-link {
-    @apply text-teal-600 text-glow-sm hover:text-teal-700 hover:text-glow-md transition ease-in-out duration-300;
+    @apply text-cyan-600 text-glow-sm hover:text-cyan-700 hover:text-glow-md transition ease-in-out duration-300;
 }
