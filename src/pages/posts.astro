@@ -1,20 +1,27 @@
 ---
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import DevlogCard from "../components/DevlogCard.astro";
+import PostCard from "../components/PostCard.astro";
+import Filter from "../components/Filter.astro";
 
-const pageTitle = "DevLog";
+const pageTitle = "Posts";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 <BaseLayout>
-    <h1 class=" text-5xl"> {pageTitle} </h1>
-    <br>
-    <p>All Entries</p>
+    <div class=" w-full flex justify-stretch ">
+        <div>
+            <h1 class=" text-5xl"> {pageTitle} </h1>
+        </div>
+        <!-- <Filter /> --> <!-- This component currently is both nonfunctional and also breaks the sidenav filter when placed here -->
+
+    </div>
+    
+   
     <br>
 
     <div class=" flex flex-col gap-9">
         {allPosts.reverse().map((post) => 
-            <DevlogCard
+            <PostCard
                 url={post.url} 
                 title={post.frontmatter.title} 
                 thumbnail={post.frontmatter.thumbnail}
@@ -27,5 +34,5 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
         )}
     </div>
     
-
+    <br>
 </BaseLayout>

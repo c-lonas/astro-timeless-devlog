@@ -1,0 +1,53 @@
+---
+
+const { url } = Astro.props;
+const { title } = Astro.props;
+const { thumbnail } = Astro.props;
+const { endResultGif } = Astro.props;
+const { description } = Astro.props;
+const { pubDate } = Astro.props;
+const { entryIndex } = Astro.props;
+const { tags } = Astro.props;
+
+---
+
+<div class=" relative group ">
+    
+    <div
+        class="absolute mx-auto w-2/3 -inset-1 bg-gradient-to-r from-cyan-600 to-orange-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300 group-hover:duration-300">
+    </div>
+    
+    <a href={url} class="relative block mx-auto w-2/3 bg-neutral-900 border border-neutral-500 rounded-2xl p-2 transition duration-300 ease-out hover:ease-in ">
+        <div>
+            <h3 class="text-neutral-200 text-xl text-center mb-4"> {title} </h3>
+        </div>
+        <div class=" flex justify-around items-center gap-x-8">
+            <div class=" w-1/2 ml-4">
+                <p class="text-neutral-400"> {description} </p>
+                
+            </div>
+            <div class=" mr-4 rounded-md "
+                id="imageDiv"
+                data-thumbnail={thumbnail}
+                data-endresultgif={endResultGif} 
+                style={{
+                    backgroundImage: `url("${thumbnail}")`,
+                    backgroundSize: 'cover',
+                    width: '300px',
+                    height: '192px',
+                }}
+                onmouseover="this.style.backgroundImage = `url('${this.getAttribute('data-endresultgif')}')`"
+                onmouseout="this.style.backgroundImage = `url('${this.getAttribute('data-thumbnail')}')`"
+            >
+            </div>
+        </div>
+        <div>
+            
+            <div>
+                <p class="text-neutral-500 text-sm"> Tags: {tags.join(', ')} </p>
+
+                <p class="text-neutral-500 text-sm text-right px-2"> #{entryIndex} </p>
+            </div>
+        </div>
+    </a>
+</div>

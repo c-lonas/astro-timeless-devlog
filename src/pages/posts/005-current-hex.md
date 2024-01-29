@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 5
-title: 'Current Hex'
-description: ''
+title: 'GameDevlog 5: Current Hex'
+description: 'Use raycasting to find the hextile on which the player is currently standing, and spawn a decal to highlight the hex to make it visually apparent'
 pubDate: ''
 thumbnail: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif'
 author: 'Battery'
-tags: ["Blueprints", "Hex Movement", "",]
+tags: ["UE5", "Blueprints", "Hex Movement"]
 category: "gamedev"
 featured: 'true'
 ---

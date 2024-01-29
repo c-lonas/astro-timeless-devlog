@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 8
-title: 'Initial Edge Movement'
-description: ''
+title: 'GameDevlog 8: Initial Edge Movement'
+description: 'Add hex-based movement options to travel to the closest edge from anywhere in the current hex, and once on an edge, travel to the clockwise or counter-clockwise vertex'
 pubDate: ''
 thumbnail: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png'
 endResultGif: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
 author: 'Battery'
-tags: ["Blueprints", "Hex Movement", "",]
+tags: ["UE5", "Blueprints", "Hex Movement"]
 category: "gamedev"
 featured: 'false'
 ---
@@ -89,7 +89,7 @@ I then started getting the number of the edge we were on, figuring we would then
 
 I ended up with a function `GetVertexWorldLocation` that takes in a `Starting Hex Feature` which is an enum determining whether we are starting on a vertex (in which case it will get the relative vertex based on the one you are currently on), starting on an edge (in which case it will get the CW or CCW vertex relative to the edge you are currently on), or if you are anywhere else on the hex (the center, or anywhere else on the plane) it will just take you to the absolute vertex you selected. 
 
-Working with this more general function is slightly more tedious, but should be much much more maintainable. I'm not going to walk through every node in the refactor, bit thos screenshot shows how much overlap there is between the different 'branches' of the enum. 
+Working with this more general function is slightly more tedious, but should be much much more maintainable. I'm not going to walk through every node in the refactor, but this screenshot shows how much overlap there is between the different 'branches' of the enum. 
 
 ![RefactoredGetVertexWorldLocation](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctionsGetVertexWorldLocation.png)
 

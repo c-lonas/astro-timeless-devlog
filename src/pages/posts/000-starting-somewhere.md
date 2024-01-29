@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 0
-title: 'Starting Somewhere'
-description: 'Discuss Inspiration and Context'
+title: 'GameDevlog 0: Starting Somewhere'
+description: 'Background and context on the game development side project, including inspiration, some core game design choices, and decision to use Unreal Engine 5'
 pubDate: '01/07/2024'
 thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
 endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
-tags: ["UE5",]
+tags: ["UE5"]
 category: "gamedev"
 featured: 'false'
 ---

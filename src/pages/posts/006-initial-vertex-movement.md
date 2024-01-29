@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 6
-title: 'Initial Vertex Movement'
-description: ''
+title: 'GameDevlog 6: Initial Vertex Movement'
+description: 'Add hex-based movement options to travel to a given vertex from anywhere in the current hex'
 pubDate: ''
 thumbnail: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult.gif'
 author: 'Battery'
-tags: ["Hex Movement", "Blueprints", "",]
+tags: ["UE5", "Hex Movement", "Blueprints"]
 category: "gamedev"
 featured: 'false'
 ---

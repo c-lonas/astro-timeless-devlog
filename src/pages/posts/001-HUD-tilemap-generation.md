@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 1
-title: 'Tilemap Generation'
-description: 'This is a brief description'
+title: 'GameDevlog 1: Tilemap Generation'
+description: 'Implementation of a HUD to use in "Editor Mode", connected to tile map generation logic to spawn new tiles, selecting both generation shape and tile type from the UI'
 pubDate: '01/07/2024'
 thumbnail: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif'
 author: 'Battery'
-tags: ["HUD", "Level Building", "UI", "Tilemap", "Blueprints"]
+tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: "gamedev"
 featured: 'false'
 ---

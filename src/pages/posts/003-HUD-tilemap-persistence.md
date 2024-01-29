@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 3
-title: 'Tilemap Persistence'
-description: ''
+title: 'GameDevlog 3: Tilemap Persistence'
+description: 'Implement basic Save/Load functionality to persist the Tilemaps that are spawned from the HUD in "Editor Mode"'
 pubDate: ''
 thumbnail: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
 author: 'Battery'
-tags: ["Blueprints", "Tilemap", "",]
+tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: "gamedev"
 featured: 'false'
 ---

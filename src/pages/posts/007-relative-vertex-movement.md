@@ -2,13 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 
 entryIndex: 7
-title: 'Relative Vertex Movement'
-description: ''
+title: 'GameDevlog 7: Relative Vertex Movement'
+description: 'Expand upon the vertex movement implemented in the previous entry to allow movement to other vertices relative to the current vertex on which the player is standing'
 pubDate: ''
 thumbnail: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult_Thumbnail.png'
 endResultGif: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif'
 author: 'Battery'
-tags: ["Blueprints", "Hex Movement", "",]
+tags: ["UE5", "Blueprints", "Hex Movement"]
 category: "gamedev"
 featured: 'true'
 ---
