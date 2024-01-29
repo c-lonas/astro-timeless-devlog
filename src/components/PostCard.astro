@@ -21,12 +21,12 @@ const { tags } = Astro.props;
         <div>
             <h3 class="text-neutral-200 text-xl text-center mb-4"> {title} </h3>
         </div>
-        <div class=" flex justify-around items-center gap-x-8">
-            <div class=" w-1/2 ml-4">
-                <p class="text-neutral-400"> {description} </p>
+        <div class=" flex justify-around items-center gap-x-8 mb-4">
+            <div class=" w-full xl:w-1/2 ml-4 ">
+                <p class="text-neutral-300"> {description} </p>
                 
             </div>
-            <div class=" mr-4 rounded-md "
+            <div class=" hidden xl:block mr-4 rounded-md "
                 id="imageDiv"
                 data-thumbnail={thumbnail}
                 data-endresultgif={endResultGif} 
@@ -41,13 +41,10 @@ const { tags } = Astro.props;
             >
             </div>
         </div>
-        <div>
-            
-            <div>
-                <p class="text-neutral-500 text-sm"> Tags: {tags.join(', ')} </p>
+        <div class=" flex justify-between">  
+                <p class="text-neutral-400 text-sm px-2"> Tags: {tags.join(', ')} </p>
+                <p class="text-neutral-500 text-sm px-2"> #{entryIndex} </p>
 
-                <p class="text-neutral-500 text-sm text-right px-2"> #{entryIndex} </p>
-            </div>
         </div>
     </a>
 </div>
