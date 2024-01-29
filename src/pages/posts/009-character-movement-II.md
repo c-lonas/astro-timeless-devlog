@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/S
 endResultGif: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif'
 author: 'Battery'
 tags: ["C++", "Core Movement", "",]
+category: "gamedev"
 featured: 'true'
 ---
 

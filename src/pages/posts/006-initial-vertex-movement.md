@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static
 endResultGif: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult.gif'
 author: 'Battery'
 tags: ["Hex Movement", "Blueprints", "",]
+category: "gamedev"
 featured: 'false'
 ---
 ## Overview 

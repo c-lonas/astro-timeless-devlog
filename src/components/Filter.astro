@@ -1,0 +1,42 @@
+
+<div class="mx-auto px-4 mt-4 w-full flex flex-row justify-end items-center ">
+    <img class="w-8 cursor-pointer" src="/src/assets/images/common/symbols/filter-symbol-cyan-600.png" id="filter-icon">
+    <select class="w-full bg-neutral-800 border border-cyan-600 text-neutral-100 py-2 px-4 rounded-full leading-tight focus:outline-none focus:bg-neutral-700 focus:border-cyan-700 transform scale-0 origin-left" id="category-select">
+        <option value="" disabled selected>Select Category</option>
+        <option value="all">All</option>
+        <option value="gamedev">Game Dev</option>
+        <option value="linux">Linux</option>
+    </select>
+</div>
+
+<script type="module">
+    const filterIcon = document.getElementById('filter-icon');
+    const selectElement = document.getElementById('category-select');
+
+    function toggleSelectElement() {
+        if (selectElement.classList.contains('show')) {
+            // Start slide-out animation
+            selectElement.classList.add('hide');
+        } else {
+            // Start slide-in animation
+            selectElement.classList.remove('hide');
+            selectElement.classList.add('show');
+        }
+    }
+
+    function handleAnimationEnd() {
+        if (selectElement.classList.contains('hide')) {
+            selectElement.classList.remove('show', 'hide');
+        }
+    }
+
+    filterIcon.addEventListener('click', toggleSelectElement);
+
+    selectElement.addEventListener('change', (event) => {
+        const selectedCategory = event.target.value;
+        document.dispatchEvent(new CustomEvent('categoryChange', { detail: selectedCategory }));
+        toggleSelectElement();
+    });
+
+    selectElement.addEventListener('animationend', handleAnimationEnd);
+</script>

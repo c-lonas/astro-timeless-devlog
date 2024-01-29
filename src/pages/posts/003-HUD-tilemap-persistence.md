@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence
 endResultGif: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
 author: 'Battery'
 tags: ["Blueprints", "Tilemap", "",]
+category: "gamedev"
 featured: 'false'
 ---
 

@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-
 endResultGif: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif'
 author: 'Battery'
 tags: ["HUD", "Level Building", "UI", "Tilemap", "Blueprints"]
+category: "gamedev"
 featured: 'false'
 ---
 

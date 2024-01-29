@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/4-basic-character-movement-stati
 endResultGif: '/src/assets/images/gamedev/timeless/4-basic-character-movement-static/BasicCharacterMovement_EndResult.gif'
 author: 'Battery'
 tags: ["Core Movement", "Blueprints", "",]
+category: "gamedev"
 featured: 'false'
 ---
 

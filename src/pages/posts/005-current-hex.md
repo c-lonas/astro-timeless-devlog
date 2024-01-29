@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_
 endResultGif: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif'
 author: 'Battery'
 tags: ["Blueprints", "Hex Movement", "",]
+category: "gamedev"
 featured: 'true'
 ---
 

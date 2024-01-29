@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulat
 endResultGif: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
 author: 'Battery'
 tags: ["Blueprints", "Tilemap", "",]
+category: "gamedev"
 featured: 'false'
 ---
 

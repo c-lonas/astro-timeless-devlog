@@ -8,7 +8,8 @@ pubDate: '01/07/2024'
 thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
 endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
-tags: ["context",]
+tags: ["UE5",]
+category: "gamedev"
 featured: 'false'
 ---
 

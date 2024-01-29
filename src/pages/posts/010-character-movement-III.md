@@ -9,6 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/10-character-movement-III-static
 endResultGif: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif'
 author: 'Battery'
 tags: ["C++", "Core Movement", "",]
+category: "gamedev"
 featured: 'false'
 ---
 

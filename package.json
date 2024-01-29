@@ -1,5 +1,5 @@
 {
-  "name": "astro-timeless-devlog",
+  "name": "tech.battery.nexus",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "tw-build": "tailwindcss build -i src/assets/styles/tailwind.css -o public/styles.css"
+    "tw-build": "tailwindcss build -i src/assets/styles/tailwind.css -o public/styles.css",
+    "tw-watch": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
