@@ -6,12 +6,15 @@ export default {
 		'./src/**/*.{astro,html,js,md,ts}'
 	],
 	theme: {
-		extend: {
-			backgroundImage: {
-				'hero': "url('/src/assets/images/common/backgrounds/3.png')"
-			},
-			
+		colors: {
+			transparent: 'transparent',
+      		current: 'currentColor',
+			cyan: colors.cyan,
+			neutral: colors.neutral,
+			'light-gold': '#fcde9d',
+			'dark-gold': '#9f5b22',
 		},
+		
 	},
 	plugins: [
 		require('@tailwindcss/typography'),

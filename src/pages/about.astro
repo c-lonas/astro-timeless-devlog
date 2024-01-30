@@ -1,10 +1,12 @@
 ---
 
+import SideNav from "../components/SideNav.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About";
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
+    <SideNav />
     <h1 class=" text-5xl"> {pageTitle} </h1>
     <h1> My About Page </h1>
     <br>
