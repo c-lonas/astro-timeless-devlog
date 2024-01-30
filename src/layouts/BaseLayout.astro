@@ -7,7 +7,7 @@ import { ViewTransitions } from "astro:transitions";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" >
+<html lang="en" class="scrollbar scrollbar-thumb-neutral-800 scrollbar-track-neutral-900">
 
 	<head>
 		<ViewTransitions />
@@ -21,10 +21,11 @@ const { pageTitle } = Astro.props;
 		
 	</head>
 	
-	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 ">
+	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 scrollbar">
 		
 		<div>
 			<Header />
+			<div class=" h-20 "></div>
 			<SideNav />
 			<div class=" mx-auto w-4/5 md:w-3/5 h-1/2 ">
 				<slot />

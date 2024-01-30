@@ -5,7 +5,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 ---
 
-<div class="hidden xl:block fixed left-0 h-screen w-72 border-r border-neutral-600">
+<div class="hidden xl:block fixed left-0 h-screen w-72 border-r border-neutral-600 scrollbar-thin overflow-y-scroll">
     <Filter />
     <ul id="posts-list" class="p-4" data-posts={JSON.stringify(allPosts.reverse().map(post => ({
         url: post.url,
@@ -14,6 +14,9 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
     })))}>
 
     </ul>
+    <div class=" h-24 ">
+
+    </div>
 </div>
 
 <script type="module">

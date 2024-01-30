@@ -28,14 +28,15 @@
       }
 
     @keyframes slideIn {
-        from { transform: scale(0); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
+        from { transform: scaleX(0) scaleY(1) translateX(-15px); opacity: .5; }
+        to { transform: scaleX(1) scaleY(1); opacity: 1; }
     }
 
     @keyframes slideOut {
-        from { transform: scale(1); opacity: 1; }
-        to { transform: scale(0); opacity: 0; }
+        from { transform: scaleX(1) scaleY(1); opacity: 1; }
+        to { transform: scaleX(0) scaleY(1) translateX(-15px); opacity: .5; }
     }
+
 
 
     @keyframes fadeIn {
