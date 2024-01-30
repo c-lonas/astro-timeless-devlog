@@ -21,11 +21,11 @@ const { pageTitle } = Astro.props;
 		
 	</head>
 	
-	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 scrollbar">
+	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300">
 		
 		<div>
 			<Header />
-			<div class=" h-20 "></div>
+			<div class=" h-16 "></div> <!-- Spacer for Header -->
 			<SideNav />
 			<div class=" mx-auto w-4/5 md:w-3/5 h-1/2 ">
 				<slot />
