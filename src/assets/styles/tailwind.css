@@ -30,8 +30,8 @@
     
 }
 
-[data-is-top='true'] #header {
-  opacity: 1; 
+[data-is-top='false'] #header {
+  opacity: .7; 
 }
 
 
