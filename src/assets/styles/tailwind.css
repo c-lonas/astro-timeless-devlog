@@ -26,13 +26,19 @@
 }
 
 .nav-accent-link {
-    @apply inline-block text-cyan-600 bg-gradient-to-t from-dark-gold via-light-gold to-transparent bg-clip-text transition ease-in-out duration-500;
+    @apply inline-block text-cyan-600 text-glow-blue-sm bg-gradient-to-t from-dark-gold via-light-gold to-transparent bg-clip-text transition ease-in-out duration-500;
     
 }
+
+[data-is-top='true'] #header {
+  opacity: 1; 
+}
+
 
 .nav-accent-link:hover {
     color: transparent;
     background-clip: text;
+    text-shadow:  none;
     from: dark-gold;
     to: light-gold;
 }

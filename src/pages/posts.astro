@@ -11,8 +11,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 <BaseLayout pageTitle={pageTitle}>
     <SideNav />
-
-    <h1 class=" text-center text-5xl my-8"> {pageTitle} </h1>
+    <h1 class=" text-center text-5xl mb-8"> {pageTitle} </h1>
 
     <div class=" flex flex-col gap-9">
         {allPosts.reverse().map((post) => 
