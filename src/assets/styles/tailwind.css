@@ -54,14 +54,22 @@
 @layer components {
 
     #category-select.show {
-        animation: slideIn 0.3s forwards;
+        animation: slideLeft 0.3s forwards;
     }
 
     #category-select.hide {
         animation: slideOut 0.3s forwards;
       }
 
-    @keyframes slideIn {
+    #hamburger-menu.show {
+        animation: slideDown 0.3s forwards;
+    }
+
+    #hamburger-menu.hide {
+        animation: slideUp 0.3s forwards;
+    }
+
+    @keyframes slideLeft {
         from { transform: scaleX(0) scaleY(1) translateX(15px); opacity: .5; }
         to { transform: scaleX(1) scaleY(1); opacity: 1; }
     }
@@ -69,6 +77,16 @@
     @keyframes slideOut {
         from { transform: scaleX(1) scaleY(1); opacity: 1; }
         to { transform: scaleX(0) scaleY(1) translateX(15px); opacity: .5; }
+    }
+
+    @keyframes slideDown {
+        from { transform: scaleX(.2) scaleY(0) translateY(-10px); opacity: .5; }
+        to { transform: scaleX(1) scaleY(1) translateY(0); opacity: .9; }
+    }
+
+    @keyframes slideUp {
+        from { transform: scaleX(1) scaleY(1) translateY(0); opacity: .9; }
+        to { transform: scaleX(.2) scaleY(0) translateY(-10px); opacity: .5; }
     }
 
 
@@ -81,4 +99,12 @@
     .fade-in {
       animation: fadeIn 0.5s ease-out;
     }
+
+
+
+
+    
+
+   
+
   }

@@ -11,7 +11,7 @@ const { pageTitle } = Astro.props;
 <html lang="en" class="scrollbar scrollbar-thumb-neutral-800 scrollbar-track-neutral-900">
 
 	<head>
-		<ViewTransitions />
+		<!-- <ViewTransitions /> -->
 		<ScrollObserver />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -25,10 +25,11 @@ const { pageTitle } = Astro.props;
 	
 	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 overflow-y-scroll">
 		
-		<div>
+		<div class=" relative ">
 			<Header />
 			<div class=" h-16 "></div> <!--Spacer for Header -->
-			<div class=" mx-auto w-4/5 md:w-3/5 h-1/2 ">
+			<div class=" mx-auto w-3/5 lg:w-2/5">
+				
 				<slot />
 			</div>
 		</div>
