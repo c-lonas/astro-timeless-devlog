@@ -1621,6 +1621,10 @@ video {
   max-width: none;
 }
 
+.origin-left {
+  transform-origin: left;
+}
+
 .origin-right {
   transform-origin: right;
 }
@@ -1962,10 +1966,6 @@ video {
 
 .opacity-25 {
   opacity: 0.25;
-}
-
-.opacity-70 {
-  opacity: 0.7;
 }
 
 .shadow-2xl {
