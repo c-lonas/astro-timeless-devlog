@@ -1,13 +1,13 @@
-<div class="mx-auto h-8 px-4 mt-4 w-full flex flex-row flex-row-reverse items-center" x-data="{ isOpen: true }" >
-    <img class="w-6 cursor-pointer" src="/src/assets/images/common/symbols/filter-symbol-cyan-600.png" @click="isOpen = !isOpen">
+<div class="mx-auto h-8 px-4 mt-4 w-full flex flex-row flex-row-reverse items-center" x-data="{ filterIsOpen: true }" >
+    <img class="w-6 cursor-pointer" src="/src/assets/images/common/symbols/filter-symbol-cyan-600.png" @click="filterIsOpen = !filterIsOpen">
     <select 
         class="w-full bg-neutral-800 border border-cyan-600 text-neutral-100 py px-4 rounded-full leading-tight focus:outline-none focus:bg-neutral-700 focus:border-cyan-700 transform origin-right" 
         id="category-select" 
-        x-show="isOpen"
-        x-transition:enter="transition ease-out duration-300"
+        x-show="filterIsOpen"
+        x-transition:enter=" transition ease-out duration-300"
         x-transition:enter-start=" scale-x-0 opacity-25 "
-        x-transition:enter-end="  scale-x-100 opacity-100 "
-        x-transition:leave="transition ease-in duration-300"
+        x-transition:enter-end=" scale-x-100 opacity-100 "
+        x-transition:leave=" transition ease-in duration-300 "
         x-transition:leave-start=" scale-x-100 opacity-100 "
         x-transition:leave-end=" scale-x-0 opacity-25 "
         x-model="selectedCategory"
@@ -19,6 +19,7 @@
         <option value="linux">Linux</option>
     </select>
 </div>
+
 
 <script type="module">
     const selectElement = document.getElementById('category-select');

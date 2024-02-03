@@ -3,17 +3,48 @@ import Filter from "./Filter.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
-<div class="hidden lg:block fixed left-0 h-screen lg:w-64 xl:w-72 border-r border-neutral-600 scrollbar-thin overflow-y-scroll">
-    <Filter />
-    <ul id="posts-list" class="p-4" data-posts={JSON.stringify(allPosts.reverse().map(post => ({
-        url: post.url,
-        title: post.frontmatter.title,
-        category: post.frontmatter.category
-    })))}>
+<!--Parent Div -->
+<div x-data="{ isCollapsed: false }" class=" relative">
+    <!-- Sidebar -->
+    <div
+        :class="isCollapsed ? 'w-4' : 'w-64 xl:w-72'"
+        class="fixed left-0 top-0 h-screen border-r border-neutral-600 scrollbar-thin overflow-y-scroll transition-all duration-300 transform"
+    >
+        <div class="h-16"></div>
+        <!-- Content Here -->
+        <div x-show="!isCollapsed">
+          <Filter />
+  
+        </div>
+        <ul
+            x-show="!isCollapsed"
+            id="posts-list"
+            class="p-4"
+            data-posts={JSON.stringify(allPosts.reverse().map(post => ({
+                url: post.url,
+                title: post.frontmatter.title,
+                category: post.frontmatter.category
+            })))}
+        >
 
-    </ul>
-    <div class=" h-24 "></div>
+        </ul>
+        <div class="h-24"></div>
+    </div>
+
+    <!-- Collapse Button -->
+    <button
+        @click="isCollapsed = !isCollapsed"
+        :class="{ '-rotate-180': isCollapsed,'left-4': isCollapsed, 'left-72': !isCollapsed }"
+        class="fixed top-64 w-8 h-8 transition-transform duration-300 bg-neutral-700 hover:bg-neutral-600 rounded-full text-white p-2 cursor-pointer z-10"
+        
+    >
+        <img src="/src/assets/images/common/symbols/plus-sign.png">
+    </button>
 </div>
+
+
+
+
 
 <script type="module">
     function renderPosts(posts) {
@@ -55,6 +86,10 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
       });
       
       // Initial filter for 'All' selected
-      // document.dispatchEvent(new CustomEvent('categoryChange', { detail: '' }));
+      document.dispatchEvent(new CustomEvent('categoryChange', { detail: '' }));
     });
 </script>
+
+
+<!-- Alpine Collapse Plugin -->
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
