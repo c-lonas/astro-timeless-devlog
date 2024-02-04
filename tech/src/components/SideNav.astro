@@ -5,12 +5,12 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 <!--Parent Div -->
 
-<div x-data="{ isCollapsed: false }" class=" relative">
+<div x-data="{ isCollapsed: false, hoverEffect: false }" class=" relative">
 
     <!--Transition Color Drag Effect -->
     <div
-        class=" fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold blur hover:blur-md transition-all z-30"
-        :class=" isCollapsed ? 'w-6 bg-transparent duration-600 opacity-40 hover:opacity-50' : 'w-64 xl:w-72 duration-500 opacity-20 hover:opacity-30' "
+        class=" fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold transition-all z-30"
+        :class="[ isCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur-md opacity-50' : 'blur opacity-30'] "
         @click="isCollapsed = !isCollapsed" 
         
     ></div>
@@ -20,12 +20,14 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
         class=" fixed top-16 h-screen w-14 cursor-pointer z-50"
         :class=" isCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
         @click="isCollapsed = !isCollapsed" 
+        @mouseenter="hoverEffect = true"
+        @mouseleave="hoverEffect = false"
     ></div>
 
         <!-- Sidebar -->
         <div
             :class="isCollapsed ? 'w-6 bg-neutral-800 opacity-85 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
-            class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-neutral-600 scrollbar-thin overflow-y-scroll transition-all z-40"
+            class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-transparent scrollbar-thin overflow-y-scroll transition-all z-40"
         >
         
             <!-- Content Here -->
@@ -46,7 +48,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
             </ul>
 
-            <!-- <div class="h-24"></div> -->
+            <div class="h-48"></div>
         </div>
     
 
@@ -60,8 +62,6 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
         <img src="/src/assets/images/common/symbols/caret-down-cyan-600.png">
     </button> -->
 </div>
-
-
 
 
 
@@ -92,6 +92,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
       renderPosts(postsData);
 
+      // Listen for category from Filter component
       document.addEventListener('categoryChanged', (event) => {
         const selectedCategory = event.detail;
         const postsData = JSON.parse(document.getElementById('posts-list').dataset.posts);
@@ -109,6 +110,3 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
     });
 </script>
 
-
-<!-- Alpine Collapse Plugin -->
-<!-- <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script> -->
