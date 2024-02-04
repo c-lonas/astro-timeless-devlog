@@ -1529,10 +1529,6 @@ video {
   height: 4rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .h-4 {
   height: 1rem;
 }
@@ -2235,7 +2231,7 @@ video {
 /* required for astro-scroll-observer */
 
 [data-is-top="false"] #header {
-  opacity: .5;
+  opacity: .7;
 }
 
 .cyan-accent-link {
