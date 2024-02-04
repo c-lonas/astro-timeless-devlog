@@ -3,6 +3,22 @@
 @tailwind utilities;
 
 
+/* required for astro-scroll-observer */
+[data-is-top="false"] #header {
+    opacity: .5; 
+}
+  
+  
+.cyan-accent-link {
+    @apply text-cyan-600 text-glow-blue-sm hover:text-cyan-700 hover:text-glow-blue-md transition ease-in-out duration-300;
+}
+  
+.nav-accent-link {
+    @apply inline-block text-cyan-600 text-glow-blue-sm bg-gradient-to-t from-dark-gold via-light-gold to-transparent bg-clip-text transition ease-in-out duration-500;
+      
+}
+
+
 @layer utilities {
     .text-glow-blue-sm {
         text-shadow: 0 0 2px rgba(0, 115, 200, 0.9);
@@ -18,23 +34,8 @@
         text-shadow: 0 0 4px rgba(228, 195, 88, 0.9);
     } 
 
-
 }
 
-/* required for astro-scroll-observer */
-[data-is-top='false'] #header {
-  opacity: .7; 
-}
-
-
-.cyan-accent-link {
-    @apply text-cyan-600 text-glow-blue-sm hover:text-cyan-700 hover:text-glow-blue-md transition ease-in-out duration-300;
-}
-
-.nav-accent-link {
-    @apply inline-block text-cyan-600 text-glow-blue-sm bg-gradient-to-t from-dark-gold via-light-gold to-transparent bg-clip-text transition ease-in-out duration-500;
-    
-}
 
 
 .nav-accent-link:hover {
@@ -53,37 +54,6 @@
 
 @layer components {
 
-    #hamburger-menu.show {
-        animation: slideDown 0.3s forwards;
-    }
-
-    #hamburger-menu.hide {
-        animation: slideUp 0.3s forwards;
-    }
-
-
-    @keyframes slideLeft {
-        from { transform: scaleX(0) scaleY(1) translateX(15px); opacity: .5; }
-        to { transform: scaleX(1) scaleY(1); opacity: 1; }
-    }
-
-    @keyframes slideOut {
-        from { transform: scaleX(1) scaleY(1); opacity: 1; }
-        to { transform: scaleX(0) scaleY(1) translateX(15px); opacity: .5; }
-    }
-
-    @keyframes slideDown {
-        from { transform: scaleX(.2) scaleY(0) translateY(-10px); opacity: .5; }
-        to { transform: scaleX(1) scaleY(1) translateY(0); opacity: .9; }
-    }
-
-    @keyframes slideUp {
-        from { transform: scaleX(1) scaleY(1) translateY(0); opacity: .9; }
-        to { transform: scaleX(.2) scaleY(0) translateY(-10px); opacity: .5; }
-    }
-
-
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -91,16 +61,8 @@
   
     .fade-in {
       animation: fadeIn 0.5s ease-out;
-    }
-
-
-    /* .enter-active, .leave-active {
-    transition: opacity 0.3s ease-in-out;
-    }
-    .enter-from, .leave-to {
-        opacity: 0;
-    } */
+    } 
 
    
 
-  }
+}

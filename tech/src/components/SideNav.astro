@@ -3,40 +3,39 @@ import Filter from "./Filter.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
-<!--Parent Div -->
-
-<div x-data="{ isCollapsed: false, hoverEffect: false }" class=" relative">
+<!--Parent Div --> <!-- This conditional check results in a blip when it briefly shows the sidebar before collapsing -->
+<div x-data="{ isSideNavCollapsed: window.innerWidth < 1280, hoverEffect: false }" class=" relative">
 
     <!--Transition Color Drag Effect -->
     <div
         class=" fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold transition-all z-30"
-        :class="[ isCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur-md opacity-50' : 'blur opacity-30'] "
-        @click="isCollapsed = !isCollapsed" 
+        :class="[ isSideNavCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur lg:blur-md opacity-50' : 'blur-sm lg:blur opacity-30'] "
+        @click="isSideNavCollapsed = !isSideNavCollapsed" 
         
     ></div>
     
     <!-- Click helper for draft effect -->
     <div
         class=" fixed top-16 h-screen w-14 cursor-pointer z-50"
-        :class=" isCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
-        @click="isCollapsed = !isCollapsed" 
+        :class=" isSideNavCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
+        @click="isSideNavCollapsed = !isSideNavCollapsed" 
         @mouseenter="hoverEffect = true"
         @mouseleave="hoverEffect = false"
     ></div>
 
         <!-- Sidebar -->
         <div
-            :class="isCollapsed ? 'w-6 bg-neutral-800 opacity-85 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
+            :class="isSideNavCollapsed ? 'w-6 bg-neutral-800 opacity-95 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
             class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-transparent scrollbar-thin overflow-y-scroll transition-all z-40"
         >
         
             <!-- Content Here -->
-            <div x-show="!isCollapsed">
+            <div x-show="!isSideNavCollapsed">
             <Filter />
     
             </div>
             <ul
-                x-show="!isCollapsed"
+                x-show="!isSideNavCollapsed"
                 id="posts-list"
                 class="p-4"
                 data-posts={JSON.stringify(allPosts.reverse().map(post => ({
@@ -54,8 +53,8 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
     <!-- Collapse Button -->
     <!-- <button
-        @click="isCollapsed = !isCollapsed"
-        :class="{ 'left-4 -rotate-90': isCollapsed, 'left-64 xl:left-72 rotate-90': !isCollapsed }"
+        @click="isSideNavCollapsed = !isSideNavCollapsed"
+        :class="{ 'left-4 -rotate-90': isSideNavCollapsed, 'left-64 xl:left-72 rotate-90': !isSideNavCollapsed }"
         class="fixed w-6 h-6 top-96 shadow-sm transition-all duration-500 rounded-full text-white cursor-pointer z-10 "
         
     >
