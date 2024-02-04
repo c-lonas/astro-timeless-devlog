@@ -6,6 +6,14 @@ export default {
 		'./src/**/*.{astro,html,js,md,ts}'
 	],
 	theme: {
+		extend: {
+			transitionDuration: {
+				'600': '600ms'
+			},
+			spacing: {
+				'68': '17rem'
+			}
+		},
 		colors: {
 			transparent: 'transparent',
       		current: 'currentColor',
