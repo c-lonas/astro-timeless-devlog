@@ -9,7 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/Time
 endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
 tags: ["UE5"]
-category: "gamedev"
+category: ["gamedev"]
 featured: 'false'
 ---
 

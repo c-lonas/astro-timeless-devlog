@@ -9,7 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/I
 endResultGif: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "Hex Movement"]
-category: "gamedev"
+category: ["gamedev"]
 featured: 'false'
 ---
 

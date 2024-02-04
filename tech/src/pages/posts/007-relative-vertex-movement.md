@@ -9,7 +9,7 @@ thumbnail: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-stati
 endResultGif: '/src/assets/images/gamedev/timeless/7-relative-vertex-movement-static/RelativeVertexMovement_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "Hex Movement"]
-category: "gamedev"
+category: ["gamedev"]
 featured: 'true'
 ---
 
