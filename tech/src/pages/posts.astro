@@ -1,10 +1,9 @@
-posts.astro:
 ---
+import BaseLayout from "shared/src/layouts/BaseLayout.astro";
+import SideNav from "shared/src/components/SideNav.astro";
 
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PostCard from "../components/PostCard.astro";
-import Filter from "../components/Filter.astro";
-import SideNav from "../components/SideNav.astro";
+import PostCard from "shared/src/components/PostCard.astro";
+import Filter from "shared/src/components/Filter.astro";
 
 const pageTitle = "Posts";
 const allPosts = await Astro.glob('../pages/posts/*.md');
