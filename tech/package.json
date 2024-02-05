@@ -8,8 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "tw-build": "tailwindcss build -i src/assets/styles/tailwind.css -o public/styles.css",
-    "tw-watch": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
+    "twb": "tailwindcss build -i src/assets/styles/tailwind.css -o public/styles.css",
+    "tww": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
