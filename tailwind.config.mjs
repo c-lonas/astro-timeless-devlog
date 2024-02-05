@@ -3,8 +3,10 @@ const colors = require('tailwindcss/colors')
 
 export default {
 	content: [
-		'./src/**/*.{astro,html,js,md,ts}'
-	],
+		'./shared/src/**/*.{astro,html,js,md,ts}',
+		'./tech/src/**/*.{astro,html,js,md,ts}',
+		// Add other packages as needed
+	  ],
 	theme: {
 		extend: {
 			transitionDuration: {

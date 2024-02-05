@@ -3,7 +3,7 @@ import Filter from "./Filter.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
-<!--Parent Div --> <!-- This conditional check results in a blip when it briefly shows the sidebar before collapsing -->
+<!--Parent Div --> <!-- This conditional check results in a bug showing a blip when it briefly shows the sidebar before collapsing -->
 <div x-data="{ isSideNavCollapsed: window.innerWidth < 1280, hoverEffect: false }" class=" relative">
 
     <!--Transition Color Drag Effect -->

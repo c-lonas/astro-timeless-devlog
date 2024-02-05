@@ -1,18 +1,18 @@
 {
-  "name": "tech.battery.nexus",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "twb": "tailwindcss build -i src/assets/styles/tailwind.css -o public/styles.css",
-    "tww": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
+    "build": "astro build",
+    "build:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/styles.css",
+    "watch:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
   },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "shared": "^1.0.0",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.3.4",
     "@astrojs/tailwind": "^5.1.0",
