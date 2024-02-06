@@ -1,0 +1,51 @@
+---
+import Filter from './Filter.astro'
+---
+
+<!--Parent Div --> <!-- This conditional check results in a bug showing a blip when it briefly shows the sidebar before collapsing -->
+<div x-data="{ isSideNavCollapsed: window.innerWidth < 1280, hoverEffect: false }" class=" relative">
+
+    <!--Transition Color Drag Effect -->
+    <div
+        class=" fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold transition-all z-30"
+        :class="[ isSideNavCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur lg:blur-md opacity-50' : 'blur-sm lg:blur opacity-30'] "
+        @click="isSideNavCollapsed = !isSideNavCollapsed" 
+        
+    ></div>
+    
+    <!-- Click helper for draft effect -->
+    <div
+        class=" fixed top-16 h-screen w-14 cursor-pointer z-50"
+        :class=" isSideNavCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
+        @click="isSideNavCollapsed = !isSideNavCollapsed" 
+        @mouseenter="hoverEffect = true"
+        @mouseleave="hoverEffect = false"
+    ></div>
+
+        <!-- Sidebar -->
+        <div
+            :class="isSideNavCollapsed ? 'w-6 bg-neutral-800 opacity-95 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
+            class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-transparent scrollbar-thin overflow-y-scroll transition-all z-40"
+        >
+        
+            <!-- Content Here -->
+            <div x-show="!isSideNavCollapsed">
+                <Filter />
+            </div>
+                <slot />
+            <div class="h-48"></div>
+        </div>
+    
+    <!-- Collapse Button -->
+    <!-- <button
+        @click="isSideNavCollapsed = !isSideNavCollapsed"
+        :class="{ 'left-4 -rotate-90': isSideNavCollapsed, 'left-64 xl:left-72 rotate-90': !isSideNavCollapsed }"
+        class="fixed w-6 h-6 top-96 shadow-sm transition-all duration-500 rounded-full text-white cursor-pointer z-10 "
+        
+    >
+        <img src="/src/assets/images/common/symbols/caret-down-cyan-600.png">
+    </button> -->
+</div>
+
+
+<!-- <script type="module" src="/src/utils/SideNavPostFilter.js"></script> -->

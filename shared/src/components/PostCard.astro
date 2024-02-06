@@ -1,0 +1,52 @@
+---
+
+const { url } = Astro.props;
+const { title } = Astro.props;
+const { thumbnail } = Astro.props;
+const { endResultGif } = Astro.props;
+const { description } = Astro.props;
+const { pubDate } = Astro.props;
+const { entryIndex } = Astro.props;
+const { tags } = Astro.props;
+
+---
+
+<div class=" relative group ">
+    
+    <div
+        class="absolute mx-auto w-2/3 xl:w-full -inset-1 bg-gradient-to-t from-cyan-600 via-light-gold to-transparent rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300 group-hover:duration-300">
+    </div>
+    
+    <a href={url} class="relative block mx-auto w-2/3 xl:w-full bg-neutral-900 border border-neutral-500 rounded-2xl p-2 transition duration-300 ease-out hover:ease-in ">
+        <div>
+            <h3 class="text-neutral-200 text-base md:text-xl text-center mb-4"> {title} </h3>
+        </div>
+        <div class=" flex justify-around items-center gap-x-8 mb-4">
+            <div class=" w-full ml-4 ">
+                <p class="hidden md:inline-block text-sm xl:text-base  text-neutral-300"> {description} </p>
+                
+            </div>
+            <div class=" hidden xl:block mr-4 rounded-md "
+                id="imageDiv"
+                data-thumbnail={thumbnail}
+                data-endresultgif={endResultGif} 
+                style={{
+                    backgroundImage: `url("${thumbnail}")`,
+                    backgroundSize: 'cover',
+                    width: '300px',
+                    height: '192px',
+                    minWidth: '300px',
+    
+                }}
+                onmouseover="this.style.backgroundImage = `url('${this.getAttribute('data-endresultgif')}')`"
+                onmouseout="this.style.backgroundImage = `url('${this.getAttribute('data-thumbnail')}')`"
+            >
+            </div>
+        </div>
+        <div class=" flex justify-between">  
+                <p class="text-neutral-400 text-sm px-2"> Tags: {tags.join(', ')} </p>
+                <p class="text-neutral-500 text-sm px-2"> #{entryIndex} </p>
+
+        </div>
+    </a>
+</div>
