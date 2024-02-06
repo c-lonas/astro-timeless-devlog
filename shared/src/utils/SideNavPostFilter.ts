@@ -1,6 +1,15 @@
+interface Post {
+    url: string;
+    title: string;
+    category: string[]; 
+}
 
-function renderPosts(posts) {
+
+function renderPosts(posts: Post[]) {
     const postsList = document.getElementById('posts-list');
+
+    if (!postsList) return;
+
     postsList.innerHTML = '';
     posts.forEach(post => {
         const anchor = document.createElement('a');
@@ -20,26 +29,34 @@ function renderPosts(posts) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
     const postsList = document.getElementById('posts-list');
-    const postsData = JSON.parse(postsList.dataset.posts);
+    if (!postsList) return;
+
+    const postsData: Post[] = JSON.parse(postsList.dataset.posts || '[]');
 
     renderPosts(postsData);
 
     // Listen for category from Filter component
     document.addEventListener('categoryChanged', (event) => {
-    const selectedCategory = event.detail;
-    const postsData = JSON.parse(document.getElementById('posts-list').dataset.posts);
-    const postsList = document.getElementById('posts-list');
 
-    const filteredPosts = selectedCategory === 'all'
-        ? postsData
-        : postsData.filter(post => post.category.includes(selectedCategory.toLowerCase()));
+        // Wonky workaround
+        const customEvent = event as CustomEvent<any>;
+        const selectedCategory = customEvent.detail;
+        
+        const postsList = document.getElementById('posts-list');
+        if (!postsList) return; // Guard for null
+        const postsData: Post[] = JSON.parse(postsList.dataset.posts || '[]');
 
-    renderPosts(filteredPosts);
+        const filteredPosts = selectedCategory === 'all'
+            ? postsData
+            : postsData.filter(post => post.category.includes(selectedCategory.toLowerCase()));
+
+        renderPosts(filteredPosts);
     });
-    
+
     // Initial filter for 'All' selected
-    document.dispatchEvent(new CustomEvent('categoryChange', { detail: '' }));
+    document.dispatchEvent(new CustomEvent('categoryChanged', { detail: 'all' }));
 });
 
 
