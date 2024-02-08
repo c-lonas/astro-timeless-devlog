@@ -1,38 +1,13 @@
 ---
-import BaseLayout from "shared/src/layouts/BaseLayout.astro";
-import Header from "shared/src/components/Header.astro";
+import TechPageLayout from "../layouts/TechPageLayout.astro"
 
 const pageTitle = "Home"
 ---
 
-
-
-<BaseLayout pageTitle={pageTitle}>
-    <Fragment slot="ExpandedNavLinksSlot">
-        <a class="group nav-accent-link" href="/about/"> 
-            About 
-            <span class="animate-underline"></span>
-        </a>
-        <a class="group nav-accent-link" href="/posts/"> 
-            Posts 
-            <span class="animate-underline"></span>
-        </a>
-        <a class="group nav-accent-link" href="/kanban/"> 
-            Kanban 
-            <span class="animate-underline"></span>
-        </a>
-        <a class="group nav-accent-link" href="/123/"> 
-            404 
-            <span class="animate-underline"></span>
-        </a>
-    </Fragment>
-    <Fragment slot="CollapsedNavLinksSlot">
-        <a class="block my-2 nav-accent-link" href="/about/">About</a>
-        <a class="block my-2 nav-accent-link" href="/posts/">Posts</a>
-        <a class="block my-2 nav-accent-link" href="/kanban/">Kanban</a>
-        <a class="block my-2 nav-accent-link" href="/123/">404</a>
-    
-    </Fragment>
-    
-
-</BaseLayout>
+<TechPageLayout pageTitle={pageTitle}>
+    <div slot="PageContent" >
+        <h1 class="text-2xl"> some bigger words</h1>
+        <br>
+        <p> more words on this page</p>
+    </div>
+</TechPageLayout>
