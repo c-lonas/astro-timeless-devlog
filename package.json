@@ -5,6 +5,7 @@
   "main": "index.js",
   
   "scripts": {
+    "clear": "rm -rf node_modules tech/node_modules shared/node_modules && npm cache clean --force && pnpm store prune",
     "tww":  "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch",
     "clean-propogated-assets:tech": "rm -rf ./tech/public/",
     "propogate-assets:tech": "cp -r ./shared/public ./tech/",

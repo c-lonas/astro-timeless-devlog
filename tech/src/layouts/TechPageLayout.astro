@@ -1,10 +1,14 @@
 ---
+import SideNav from "shared/src/components/SideNav.astro";
 import BaseLayout from "shared/src/layouts/BaseLayout.astro";
+
 
 const {pageTitle, children} = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+
+    <!-- Inject Header Content -->
     <Fragment slot="ExpandedNavLinksSlot">
         <a class="group nav-accent-link" href="/about/"> 
             About 
@@ -23,14 +27,19 @@ const {pageTitle, children} = Astro.props;
             <span class="animate-underline"></span>
         </a>
     </Fragment>
+
     <Fragment slot="CollapsedNavLinksSlot">
         <a class="block my-2 nav-accent-link" href="/about/">About</a>
         <a class="block my-2 nav-accent-link" href="/posts/">Posts</a>
         <a class="block my-2 nav-accent-link" href="/kanban/">Kanban</a>
         <a class="block my-2 nav-accent-link" href="/123/">404</a>
-    
     </Fragment>
 
+    
+    <slot name="SideNavSlot" slot="SideNavSlot"/>
+    
+
+    <!-- Inject Main Page Content -->
     <slot name="PageContent" slot="PageContent"/>
 
 </BaseLayout>

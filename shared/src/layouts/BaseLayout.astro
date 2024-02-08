@@ -7,7 +7,6 @@ const { pageTitle } = Astro.props;
 <html lang="en" class="scrollbar scrollbar-thumb-neutral-800 scrollbar-track-neutral-900">
 
 	<head>
-
 		<ScrollObserver />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/x-icon" href="/icons/battery-favicon-full.png" />
@@ -19,14 +18,21 @@ const { pageTitle } = Astro.props;
 	
 	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 overflow-y-scroll">
 		<div class=" relative ">
+
 			<Header>
 				<slot name="ExpandedNavLinksSlot" slot="ExpandedNavLinksSlot" />
       			<slot name="CollapsedNavLinksSlot" slot="CollapsedNavLinksSlot" />
 			</Header>
+
 			<div class=" h-16 "></div> <!--Spacer for Header -->
+
+			<slot name="SideNavSlot"/> <!-- Finish passing this through0 -->
+
+			<!-- Main Content Container -->
 			<div class=" mx-auto w-3/5 lg:w-2/5">
 				<slot name="PageContent" slot="PageContent"/>
 			</div>
+
 		</div>
 	</body>
 
