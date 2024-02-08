@@ -2,8 +2,7 @@
 import SideNav from "shared/src/components/SideNav.astro";
 import BaseLayout from "shared/src/layouts/BaseLayout.astro";
 
-
-const {pageTitle, children} = Astro.props;
+const {allPosts, pageTitle, children} = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -36,8 +35,8 @@ const {pageTitle, children} = Astro.props;
     </Fragment>
 
     
-    <slot name="SideNavSlot" slot="SideNavSlot"/>
-    
+    <!-- Inject Side Nav -->
+    <slot name="SideNavSlot" slot="SideNavSlot" allPosts={allPosts}/>
 
     <!-- Inject Main Page Content -->
     <slot name="PageContent" slot="PageContent"/>

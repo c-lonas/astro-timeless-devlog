@@ -1,9 +1,11 @@
 ---
 import Filter from './Filter.astro'
+
+const { allPosts } = Astro.props;
 ---
 
 <!--Parent Div --> <!-- This conditional check results in a bug showing a blip when it briefly shows the sidebar before collapsing -->
-<div x-data="{ isSideNavCollapsed: window.innerWidth < 1280, hoverEffect: false }" class=" relative">
+<div x-cloak x-data="sideNavComponent()" x-init="initSidebar()" data-posts={JSON.stringify(allPosts)} class=" relative">
 
     <!--Transition Color Drag Effect -->
     <div
@@ -13,7 +15,7 @@ import Filter from './Filter.astro'
         
     ></div>
     
-    <!-- Click helper for draft effect -->
+    <!-- Click helper for drag effect -->
     <div
         class=" fixed top-16 h-screen w-14 cursor-pointer z-50"
         :class=" isSideNavCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
@@ -32,75 +34,53 @@ import Filter from './Filter.astro'
             <div x-show="!isSideNavCollapsed">
                 <Filter />
             </div>
-                <slot />
+            <ul x-show="!isSideNavCollapsed" class="p-4">
+                <template x-for="(post, index) in filteredPosts" :key="post.url">
+                    <li class="group pl-4 py-2 fade-in"
+                        :style="`animation-duration: 850ms; animation-delay: ${index * 75}ms;`">
+                        <a :href="post.url" class="block">
+                            <p class="transition-all ease-in-out duration-300 group-hover:translate-x-[-5px] group-hover:text-cyan-600 group-hover:text-glow-blue-sm" x-text="post.frontmatter.title"></p>
+                        </a>
+                    </li>
+                </template>
+            </ul>            
+            
             <div class="h-48"></div>
         </div>
     
-    <!-- Collapse Button -->
-    <!-- <button
-        @click="isSideNavCollapsed = !isSideNavCollapsed"
-        :class="{ 'left-4 -rotate-90': isSideNavCollapsed, 'left-64 xl:left-72 rotate-90': !isSideNavCollapsed }"
-        class="fixed w-6 h-6 top-96 shadow-sm transition-all duration-500 rounded-full text-white cursor-pointer z-10 "
-        
-    >
-        <img src="/src/assets/images/common/symbols/caret-down-cyan-600.png">
-    </button> -->
 </div>
 
-
-<!-- <script type="module" src="../utils/SideNavPostFilter.ts"></script> -->
-
-<script type="module">
-function renderPosts() {
-    const postsList = document.getElementById('posts-list');
-
-    if (!postsList) return;
-
-    postsList.innerHTML = '';
-    posts.forEach(post => {
-        const anchor = document.createElement('a');
-        anchor.href = post.url;
-
-        const listItem = document.createElement('li');
-        listItem.className = 'fade-in group pl-4 pb-4'; 
-
-        const paragraph = document.createElement('p');
-        paragraph.className = "transition-transform ease-in-out duration-300 group-hover:translate-x-[-5px] group-hover:text-cyan-600 group-hover:text-glow-sm";
-        paragraph.textContent = post.title;
-
-        listItem.appendChild(paragraph);
-        anchor.appendChild(listItem);
-        postsList.appendChild(anchor);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const postsList = document.getElementById('posts-list');
-    if (!postsList) return;
-
-    const postsData = JSON.parse(postsList.dataset.posts || '[]');
-
-    renderPosts(postsData);
-
-    // Listen for category from Filter component
-    document.addEventListener('categoryChanged', (event) => {;
-        const selectedCategory = event.detail;
-        
-        const postsList = document.getElementById('posts-list');
-        if (!postsList) return; // Guard for null
-        const postsData = JSON.parse(postsList.dataset.posts || '[]');
-
-        const filteredPosts = selectedCategory === 'all'
-            ? postsData
-            : postsData.filter(post => post.category.includes(selectedCategory.toLowerCase()));
-
-        renderPosts(filteredPosts);
-    });
-
-    // Initial filter for 'All' selected
-    document.dispatchEvent(new CustomEvent('categoryChanged', { detail: 'all' }));
-});
-
-
-</script>
+<script is:inline>
+    function sideNavComponent() {
+        return {
+            isSideNavCollapsed: true,
+            hoverEffect: false,
+            posts: JSON.parse(document.querySelector('[x-data="sideNavComponent()"]').getAttribute('data-posts') || '[]'),
+            selectedCategory: 'all',
+    
+            init() {
+                // Delay only the sidebar state adjustment
+                setTimeout(() => {
+                    if (window.innerWidth >= 1280) {
+                        this.isSideNavCollapsed = false;
+                    }
+                }, 500);
+            },
+    
+            get filteredPosts() {
+                return this.posts.filter((post) =>
+                    this.selectedCategory === 'all' || post.frontmatter.category.includes(this.selectedCategory.toLowerCase())
+                );
+            },
+    
+            toggleSidebar() {
+                this.isSideNavCollapsed = !this.isSideNavCollapsed;
+            },
+    
+            filterPosts(category) {
+                this.selectedCategory = category;
+            },
+        };
+    }
+    </script>
+    

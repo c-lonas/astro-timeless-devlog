@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+[x-cloak] {
+    display: none !important;
+}
+
+
 /* required for astro-scroll-observer */
 [data-is-top="false"] #header {
     opacity: .7; 
@@ -53,12 +58,29 @@
 @layer components {
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+            font-style: italic;
+        }
+        80% {
+            transform: translateX(10px); 
+            font-style: italic;
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+            font-style: normal; 
+        }
     }
-  
+    
     .fade-in {
-      animation: fadeIn 0.5s ease-out;
-    } 
-
+        animation-name: fadeIn;
+        animation-fill-mode: both;
+        /* animation-timing-function: cubic-bezier(.3,1.77,.52,-0.41); */
+        animation-timing-function: cubic-bezier(.3, 1.77, .35, -0.25);
+        animation-duration: 3s; 
+    }
+    
+    
 }
