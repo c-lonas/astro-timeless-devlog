@@ -1,8 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-
+import Header from '../components/Header.astro';
 import { ScrollObserver } from 'astro-scroll-observer';
-
 const { pageTitle } = Astro.props;
 ---
 
@@ -12,24 +10,20 @@ const { pageTitle } = Astro.props;
 
 		<ScrollObserver />
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/x-icon" href="src/assets/images/common/icons/battery-favicon-full.png" />
-        <link rel="stylesheet" href="/styles.css">
+		<link rel="icon" type="image/x-icon" href="/icons/battery-favicon-full.png" />
+        <link rel="stylesheet" href="/tw_styles.css">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title> {pageTitle} </title>
-
-		
 	</head>
 	
 	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 overflow-y-scroll">
-		
 		<div class=" relative ">
-			<Header />
-			<div class=" h-16 "></div> 
+			<Header>
 			<div class=" mx-auto w-3/5 lg:w-2/5">
-				
 				<slot />
 			</div>
 		</div>
 	</body>
+
 </html>

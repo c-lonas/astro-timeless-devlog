@@ -1,6 +1,7 @@
 # build output
 dist/
-public/
+tw_styles.css
+tech/public
 
 # generated types
 .astro/

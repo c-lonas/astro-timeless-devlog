@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "astro build",
-    "build:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/styles.css",
-    "watch:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/styles.css --watch"
+    "build:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/tw_styles.css",
+    "watch:tailwind": "tailwindcss -c ../../tailwind.config.mjs -i ./src/assets/styles/tailwind.css -o ./public/tw_styles.css --watch"
   },
   
   "keywords": [],

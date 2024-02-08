@@ -2,11 +2,7 @@
 const colors = require('tailwindcss/colors')
 
 export default {
-	content: [
-
-		'./src/**/*.{astro,html,js,md,ts}',
-		
-	],
+	
 	theme: {
 		extend: {
 			transitionDuration: {
@@ -26,8 +22,4 @@ export default {
 		},
 		
 	},
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('tailwind-scrollbar'),
-	],
 }
