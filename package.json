@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
-    "dev:tech": "pnpm --filter shared run build:tailwind && pnpm --filter tech.battery.nexus run dev",
-    "build:shared": "pnpm --filter shared run build:tailwind"
+    "propogate-assets": "cp -r ./shared/public ./tech/",
+    "dev:tech": "pnpm run propogate-assets && pnpm --filter tech.battery.nexus run astro dev",
+    "build:shared": "pnpm --filter shared run build:tailwind",
+    "tww":  "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch"
   },
   
   "keywords": [],
