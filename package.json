@@ -5,10 +5,10 @@
   "main": "index.js",
   
   "scripts": {
-    "propogate-assets": "cp -r ./shared/public ./tech/",
-    "dev:tech": "pnpm run propogate-assets && pnpm --filter tech.battery.nexus run astro dev",
-    "build:shared": "pnpm --filter shared run build:tailwind",
-    "tww":  "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch"
+    "tww":  "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch",
+    "clean-propogated-assets:tech": "rm -rf ./tech/public/",
+    "propogate-assets:tech": "cp -r ./shared/public ./tech/",
+    "dev:tech": "pnpm run clean-propogated-assets:tech && pnpm run propogate-assets:tech && pnpm --filter tech.battery.nexus run astro dev"    
   },
   
   "keywords": [],

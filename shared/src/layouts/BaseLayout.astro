@@ -20,6 +20,9 @@ const { pageTitle } = Astro.props;
 	<body class=" h-screen w-full dark:bg-neutral-900 bg-fixed font-mono text-neutral-300 overflow-y-scroll">
 		<div class=" relative ">
 			<Header>
+				<slot name="ExpandedNavLinksSlot" slot="ExpandedNavLinksSlot" />
+      			<slot name="CollapsedNavLinksSlot" slot="CollapsedNavLinksSlot" />
+			</Header>
 			<div class=" mx-auto w-3/5 lg:w-2/5">
 				<slot />
 			</div>
