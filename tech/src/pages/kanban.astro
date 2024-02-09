@@ -1,0 +1,16 @@
+---
+import SideNav from "../components/SideNav.astro"
+import TrelloWidget from "../components/TrelloWidget.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const pageTitle = "Kanban"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <!-- <SideNav /> -->
+
+    <TrelloWidget />
+    <p>project tracking boards here?</p>
+    <p>maybe filter or select what project to see board for? or just scroll through boards?</p>
+
+</BaseLayout>

@@ -67,6 +67,10 @@
             transform: translateX(10px); 
             font-style: italic;
         }
+        95% {
+            transform: translateX(-5px);
+            font-style:  normal;
+        }
         100% {
             opacity: 1;
             transform: translateX(0);
@@ -78,8 +82,8 @@
         animation-name: fadeIn;
         animation-fill-mode: both;
         /* animation-timing-function: cubic-bezier(.3,1.77,.52,-0.41); */
-        animation-timing-function: cubic-bezier(.3, 1.77, .35, -0.25);
-        animation-duration: 3s; 
+        animation-timing-function: cubic-bezier(.5, 1.5, .5, 1);
+        animation-duration: 2.5s; 
     }
     
     

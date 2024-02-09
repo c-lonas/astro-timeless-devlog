@@ -4,7 +4,7 @@ import Filter from './Filter.astro'
 const { allPosts } = Astro.props;
 ---
 
-<!--Parent Div --> <!-- This conditional check results in a bug showing a blip when it briefly shows the sidebar before collapsing -->
+<!--Parent Div --> 
 <div x-cloak x-data="sideNavComponent()" x-init="initSidebar()" data-posts={JSON.stringify(allPosts)} class=" relative">
 
     <!--Transition Color Drag Effect -->
@@ -70,7 +70,7 @@ const { allPosts } = Astro.props;
             get filteredPosts() {
                 return this.posts.filter((post) =>
                     this.selectedCategory === 'all' || post.frontmatter.category.includes(this.selectedCategory.toLowerCase())
-                );
+                ).reverse();
             },
     
             toggleSidebar() {
