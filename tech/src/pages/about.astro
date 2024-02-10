@@ -1,20 +1,20 @@
 ---
 
-import SideNav from "../components/SideNav.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SideNav from "shared/src/components/SideNav.astro";
+import TechPageLayout from "../layouts/TechPageLayout.astro";
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "About";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <!-- <SideNav /> -->
-    <h1 class=" text-5xl"> {pageTitle} </h1>
-    <h1> My About Page </h1>
-    <br>
-    <p> Could literally just be deleted</p>
-    <br>
-    <p>Could be an 'About Me'</p>
-    <br>
-    <p> Could be replaced with the Game Design Doc</p>
-    <br>
-    
-</BaseLayout>
+
+<TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
+    <div slot="SideNavSlot">
+        <SideNav allPosts={allPosts}/>
+    </div>
+    <div slot="PageContent" >
+        <h1 class="text-2xl"> Maybe some content for this page</h1>
+        <br>
+        <p> or maybe not</p>
+    </div>
+</TechPageLayout>

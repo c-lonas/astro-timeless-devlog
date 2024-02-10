@@ -1,16 +1,17 @@
 ---
-import SideNav from "../components/SideNav.astro"
-import TrelloWidget from "../components/TrelloWidget.astro"
-import BaseLayout from "../layouts/BaseLayout.astro"
-
-const pageTitle = "Kanban"
+import SideNav from "shared/src/components/SideNav.astro";
+import TechPageLayout from "../layouts/TechPageLayout.astro";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "Home";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <!-- <SideNav /> -->
-
-    <TrelloWidget />
-    <p>project tracking boards here?</p>
-    <p>maybe filter or select what project to see board for? or just scroll through boards?</p>
-
-</BaseLayout>
+<TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
+    <div slot="SideNavSlot">
+        <SideNav allPosts={allPosts}/>
+    </div>
+    <div slot="PageContent" >
+        <h1 class="text-2xl"> Kanban stuff potentially </h1>
+        <br>
+        <p> not positive if this is worth doing right now </p>
+    </div>
+</TechPageLayout>
