@@ -10,7 +10,7 @@ const pageTitle = "About";
 
 <TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
     <div slot="SideNavSlot">
-        <SideNav allPosts={allPosts}/>
+        <SideNav allPosts={allPosts} transition:persist />
     </div>
     <div slot="PageContent" >
         <h1 class="text-2xl"> Maybe some content for this page</h1>

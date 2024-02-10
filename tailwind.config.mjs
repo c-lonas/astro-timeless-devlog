@@ -21,6 +21,7 @@ export default {
       		current: 'currentColor',
 			cyan: colors.cyan,
 			neutral: colors.neutral,
+			rose: colors.rose,
 			'light-gold': '#fcde9d',
 			'dark-gold': '#9f5b22',
 		},

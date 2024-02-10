@@ -1,0 +1,101 @@
+<div 
+    x-data="initTerminal()" 
+    x-init="init()" 
+    @click="$event.target.querySelector('input')?.focus()" 
+    class="bg-neutral-900 border-2 rounded-md border-cyan-800 p-4 text-cyan-600 font-mono min-h-screen"
+>
+    <template x-for="(item, index) in history" :key="index">
+        <div>
+            <p x-html="item"></p>
+        </div>
+    </template>
+    <div class="flex items-center">
+        <span x-text="promptPrefix"></span>
+        <input 
+            x-ref="input"
+            x-model="input" 
+            @keydown.enter="executeCommand()" 
+            class="bg-neutral-900 text-cyan-600 focus:outline-none inline-block" 
+        />
+    </div>
+</div>
+
+<script is:inline>
+function initTerminal() {
+    return {
+        input: '',
+        history: [],
+        user: 'guest',
+        promptPrefix: '✓ root@guest$ ',
+        init() {
+            if (this.history.length === 0) {
+                this.history.push('Welcome to BatteryShell⚡<br>Type "help" to see available commands.<br>');
+            }
+
+            this.$nextTick(() => {
+                this.$refs.input.focus();
+            });
+        },
+        executeCommand() {
+            let output = '';
+            const command = this.input.split(' ')[0];
+            const argument1 = this.input.split(' ')[1] || '';
+            const argument2 = this.input.split(' ')[2] || '';
+
+            // Define command logic
+            switch (command) {
+                case 'cat':
+                    if (argument1 === 'about') {
+                        output = 'About page content...';
+                    } else {
+                        output = `Unrecognized argument: ${this.argument1}`;
+                    }
+
+                    break;
+                case 'cd':
+                    if (argument1 === 'about') {
+                        window.location.href = '/about';
+                    } else {
+                        output = `Unrecognized argument: ${this.argument1}`;
+                    }
+                    break;
+                case 'su':
+                    if ( (argument1 === '-') && (argument2) ) {
+                        const newUser = argument2;
+                        this.user = newUser.trim() !== '' ? newUser : this.user;
+                        this.promptPrefix = `<span class="text-rose-600">✓</span> root@${this.user} $ `;
+                        output = `Switched user to ${this.user}`;
+                    }
+                    break;
+                case 'gh':
+                case 'github':
+                    output = `<a href="https://github.com/c-lonas" target="_blank" class="text-light-gold">🚀 github.com/c-lonas</a>`
+                    break;
+                case 'help':
+                case 'usage':
+                    output = `Available commands: <br>
+                                cat <br>
+                                cd <br>
+                                su - <br>
+                                github <br>
+                                help <br>
+                            `;
+                    break;
+                default:
+                    output = `Command not found: ${this.input}; use "help" for a list of available commands`;
+                    this.promptPrefix = `<span class="text-rose-600">✗</span> root@${this.user}$ `;
+                    break;
+            }
+            
+            if(output) {
+                this.history.push(`${this.promptPrefix} ${this.input}<br>${output}<br>`);
+                this.promptPrefix = `✓ root@${this.user}$ `;
+            } else {
+                this.history.push(`${this.promptPrefix} ${this.input}`);
+                this.promptPrefix = `✓ root@${this.user}$ `;
+            }
+            this.input = '';
+        },
+    };
+}
+</script>

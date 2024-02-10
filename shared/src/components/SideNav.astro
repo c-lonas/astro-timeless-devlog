@@ -58,8 +58,7 @@ const { allPosts } = Astro.props;
             posts: JSON.parse(document.querySelector('[x-data="sideNavComponent()"]').getAttribute('data-posts') || '[]'),
             selectedCategory: 'all',
     
-            init() {
-                // Delay only the sidebar state adjustment
+            initSidebar() {
                 setTimeout(() => {
                     if (window.innerWidth >= 1280) {
                         this.isSideNavCollapsed = false;
@@ -83,4 +82,3 @@ const { allPosts } = Astro.props;
         };
     }
     </script>
-    
