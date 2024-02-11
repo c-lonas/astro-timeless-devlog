@@ -37,11 +37,12 @@ function initTerminal() {
             <span class="text-cyan-600">guest</span><span class="text-neutral-500">@</span><span class="text-light-gold">tech.battery.nexus</span>⚡`,
         init() {
             if (this.history.length === 0) {
-                this.history.push('🔋 Welcome to <span class="nav-accent-link text-gradient-gold">BatteryShell</span> 🐚<br>Type <span class="text-emerald-600">help</span> to see available commands.<br>');
+                this.history.push('Welcome to <span class="nav-accent-link text-gradient-gold">BatteryShell</span><br>Type <span class="text-emerald-600">help</span> to see available commands.<br>');
             }
 
             this.$nextTick(() => {
                 this.$refs.input.focus();
+                this.scrollToBottom();
             });
         },
         executeCommand() {
@@ -50,34 +51,32 @@ function initTerminal() {
             const argument1 = this.input.split(' ')[1] || '';
             const argument2 = this.input.split(' ')[2] || '';
 
-            // Define command logic
             switch (command) {
                 case '':
                     output = '';
                     break;
+                case 'about':
+                    output = 'Welcome to the tech blog! Used to document technical projects related to coding, linux, game dev, and anything else that sounds like fun!'
+                    break;
                 case 'banger':
                     output = `<a href="https://bit.ly/3BlS71b" target="_blank" class="text-fuchsia-600">📻 Random Certified Banger</a>`
-                    break;
-                case 'cat':
-                    if (argument1 === 'about') {
-                        output = 'About page content...';
-                    } else {
-                        output = `Unrecognized argument: ${this.argument1}`;
-                    }
-
                     break;
                 case 'cd':
                     if (argument1 === 'posts') {
                         window.location.href = `/posts`;
-                    } else if (argument1 === 'kanban') {
-                        window.location.href = `/kanban`;
-                    }
-                    else {
+                    } else {
                         output = 'cd requires an argument (try `cd posts`)';
                     }
                     break;
                 case 'clear':
                     this.history = [];
+                    break;
+                case 'discord':
+                    if (this.user === 'root') {
+                        output = "🔓 Ok you called my bluff- I don't actually have a discord server set up yet. Coming soon maybe.";
+                    } else {
+                        output = "🔒 We're not that friendly ";
+                    }
                     break;
                 case 'su':
                     if ( (argument1 === '-') && (argument2) ) {
@@ -98,15 +97,18 @@ function initTerminal() {
                 case 'help':
                 case 'usage':
                     output = `Available commands: <br>
-                                <span class="text-emerald-600">cat</span>: something something something <br>
-                                <span class="text-emerald-600">cd</span>: change directory  <br>
-                                <span class="text-emerald-600">clear</span>: brief description <br>
-                                <span class="text-emerald-600">su -</span>: brief description <br>
-                                <span class="text-emerald-600">github</span>: brief description <br>
-                                <span class="text-emerald-600">help</span>: brief description <br>
+                                <span class="text-emerald-600">about</span>: Display a description of the website <br>
+                                <span class="text-emerald-600">cd posts</span>: Navigate to the posts page <br>
+                                <span class="text-emerald-600">clear</span>: Clear the terminal <br>
+                                <span class="text-emerald-600">discord</span>: Link to discord <br>
+                                <span class="text-emerald-600">kofi</span>: Link to my ko-fi to send me money <br>
+                                <span class="text-emerald-600">github</span>: Link to my github, where you can see the code for this site <br>
+                                <span class="text-emerald-600">su -</span>: Switch user; su - yourname <br>
+                                <span class="text-emerald-600">help</span>: Display available commands <br>
                             `;
                     break;
                 case 'kofi':
+                case 'donate':
                 case 'support':
                     output = `<a href="https://ko-fi.com/battery1" target="_blank" class="text-fuchsia-600">💙 ko-fi</a>`
                     break;
@@ -126,7 +128,14 @@ function initTerminal() {
                 this.promptPrefix = `<span class="text-emerald-600">✓</span> 
                                     <span class="text-cyan-600">${this.user}</span><span class="text-neutral-500">@</span><span class="text-light-gold">tech.battery.nexus</span>⚡`;
             }
-            this.input = '';
+            this.input = '';            
+            this.$nextTick(() => {
+                this.scrollToBottom();
+            });
+        },
+        scrollToBottom() {
+            const container = this.$refs.input;
+            container.scrollTop = container.scrollHeight;
         },
     };
 }
