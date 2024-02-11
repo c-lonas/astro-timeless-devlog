@@ -50,6 +50,14 @@
     to: light-gold;
 }
 
+.text-gradient-gold {
+    color: transparent;
+    background-clip: text;
+    text-shadow:  none;
+    from: dark-gold;
+    to: light-gold;
+}
+
 
 .animate-underline {
     @apply block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-cyan-600

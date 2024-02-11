@@ -1,8 +1,9 @@
 <div 
+    x-cloak
     x-data="initTerminal()" 
     x-init="init()" 
     @click="$event.target.querySelector('input')?.focus()" 
-    class="bg-neutral-900 border-2 rounded-md border-cyan-800 p-4 text-cyan-600 font-mono min-h-screen"
+    class="bg-neutral-900 border-2 rounded-xl border-cyan-800 p-4 text-neutral-300 font-mono min-h-96 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-neutral-900"
 >
     <template x-for="(item, index) in history" :key="index">
         <div>
@@ -10,12 +11,12 @@
         </div>
     </template>
     <div class="flex items-center">
-        <span x-text="promptPrefix"></span>
+        <span x-html="promptPrefix"></span>
         <input 
             x-ref="input"
             x-model="input" 
             @keydown.enter="executeCommand()" 
-            class="bg-neutral-900 text-cyan-600 focus:outline-none inline-block" 
+            class="bg-neutral-900 text-neutral-300 focus:outline-none inline-block" 
         />
     </div>
 </div>
@@ -26,10 +27,16 @@ function initTerminal() {
         input: '',
         history: [],
         user: 'guest',
-        promptPrefix: '✓ root@guest$ ',
+        promptPrefix: `
+            <span class="text-emerald-600">✓</span> 
+            <span class="text-light-gold">root</span>
+            <span class="text-cyan-600">@</span>
+            <span class="text-dark-gold">${this.user}</span>
+            ⚡ 
+            `,
         init() {
             if (this.history.length === 0) {
-                this.history.push('Welcome to BatteryShell⚡<br>Type "help" to see available commands.<br>');
+                this.history.push('🔋 Welcome to <span class="nav-accent-link text-gradient-gold">BatteryShell</span> 🐚<br>Type "help" to see available commands.<br>');
             }
 
             this.$nextTick(() => {
@@ -44,6 +51,9 @@ function initTerminal() {
 
             // Define command logic
             switch (command) {
+                case 'banger':
+                    output = `<a href="https://bit.ly/3BlS71b" target="_blank" class="text-purple-600">📻 Random Certified Banger</a>`
+                    break;
                 case 'cat':
                     if (argument1 === 'about') {
                         output = 'About page content...';
@@ -59,23 +69,27 @@ function initTerminal() {
                         output = `Unrecognized argument: ${this.argument1}`;
                     }
                     break;
+                case 'clear':
+                    this.history = [];
+                    break;
                 case 'su':
                     if ( (argument1 === '-') && (argument2) ) {
                         const newUser = argument2;
                         this.user = newUser.trim() !== '' ? newUser : this.user;
-                        this.promptPrefix = `<span class="text-rose-600">✓</span> root@${this.user} $ `;
+                        this.promptPrefix = `<span class="text-emerald-600">✓</span> root@${this.user}⚡ `;
                         output = `Switched user to ${this.user}`;
                     }
                     break;
                 case 'gh':
                 case 'github':
-                    output = `<a href="https://github.com/c-lonas" target="_blank" class="text-light-gold">🚀 github.com/c-lonas</a>`
+                    output = `<a href="https://github.com/c-lonas" target="_blank" class="text-purple-600">🚀 github.com/c-lonas</a>`
                     break;
                 case 'help':
                 case 'usage':
                     output = `Available commands: <br>
-                                cat <br>
-                                cd <br>
+                                <span class="text-teal-600">cat</span>: something something something <br>
+                                <span class="text-emerald-600">cd</span>: change directory  <br>
+                                clear <br>
                                 su - <br>
                                 github <br>
                                 help <br>
@@ -83,16 +97,16 @@ function initTerminal() {
                     break;
                 default:
                     output = `Command not found: ${this.input}; use "help" for a list of available commands`;
-                    this.promptPrefix = `<span class="text-rose-600">✗</span> root@${this.user}$ `;
+                    this.promptPrefix = `<span class="text-rose-600">✗</span> root@${this.user}⚡ `;
                     break;
             }
             
             if(output) {
                 this.history.push(`${this.promptPrefix} ${this.input}<br>${output}<br>`);
-                this.promptPrefix = `✓ root@${this.user}$ `;
+                this.promptPrefix = `<span class="text-emerald-600">✓</span> root@${this.user}⚡ `;
             } else {
                 this.history.push(`${this.promptPrefix} ${this.input}`);
-                this.promptPrefix = `✓ root@${this.user}$ `;
+                this.promptPrefix = `<span class="text-emerald-600">✓</span> root@${this.user}⚡ `;
             }
             this.input = '';
         },
