@@ -22,7 +22,7 @@ export default {
 			cyan: colors.cyan,
 			neutral: colors.neutral,
 			emerald: colors.emerald,
-			purple: colors.purple,
+			fuchsia: colors.fuchsia,
 			rose: colors.rose,
 			teal: colors.teal,
 			'light-gold': '#fcde9d',
