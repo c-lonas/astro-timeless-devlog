@@ -1,16 +1,16 @@
 ---
-import SideNav from "shared/src/components/SideNav.astro";
 import TechPageLayout from "../layouts/TechPageLayout.astro";
-const allPosts = await Astro.glob('../pages/posts/*.md');
-const pageTitle = "Home";
-
-
+import SideNav from "shared/src/components/SideNav.astro";
 import Terminal from "../components/Terminal.astro";
+import { getCollection } from "astro:content";
+
+const pageTitle = "Home";
+const allPosts = await getCollection("posts");
 ---
 
 <TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
     <div slot="SideNavSlot">
-        <SideNav allPosts={allPosts} transition:persist />
+        <SideNav allPosts={allPosts}  />
     </div>
     <div slot="PageContent" class="mt-24">
         <Terminal />

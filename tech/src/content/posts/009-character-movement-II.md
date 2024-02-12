@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 9
 title: 'GameDevlog 9: Movement II | C++ Setup and Sprinting'
+pubDate: 2024-01-18
 description: 'Set up a new C++ project in Unreal to extend the Character Movement Component, tested with a simple sprinting implementation'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult_Thumbnail.png',
+    alt: 'Implemented Sprint through extending Character Movement Component'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/9-character-movement-II-static/SchmooveCMCSprint_EndResult.gif',
+    alt: 'End Result gif showing implementation of sprinting through extending character movement component'
+}
 tags: ["UE5", "C++", "Core Movement"]
 category: ["gamedev"]
-featured: 'true'
+featured: true
 ---
 
 ## Overview 

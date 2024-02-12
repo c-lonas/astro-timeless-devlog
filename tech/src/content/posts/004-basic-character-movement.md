@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 4
 title: 'GameDevlog 4: Movement I'
+pubDate: 2024-01-11
 description: 'Simple Blueprint-only implementation of a movement system using the default Unreal Engine Character Movement Component'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/4-basic-character-movement-static/BasicCharacterMovement_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/4-basic-character-movement-static/BasicCharacterMovement_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/4-basic-character-movement-static/BasicCharacterMovement_EndResult_Thumbnail.png',
+    alt: 'Basic Movement implementation'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/4-basic-character-movement-static/BasicCharacterMovement_EndResult.gif',
+    alt: 'End Result gif demonstration basic movement implementation'
+}
 tags: ["UE5", "Core Movement", "Blueprints"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 ## Overview 

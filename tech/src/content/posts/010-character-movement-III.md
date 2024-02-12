@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 10
 title: 'GameDevlog 10: Movement III | Crouching and Camera'
+pubDate: 2024-01-19
 description: 'Expand upon the Custom Character Movement Component implemented in the previous entry to add a Crouching state, and transition the camera smoothly between the two target heights'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult_Thumbnail.png',
+    alt: 'Crouch implementation and camera lerp'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif',
+    alt: 'End Result gif showing crouch implementation and camera lerp'
+}
 tags: ["UE5", "C++", "Core Movement"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 ## Overview 

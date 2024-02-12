@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 1
 title: 'GameDevlog 1: Tilemap Generation'
+pubDate: 2024-01-07
 description: 'Implementation of a HUD to use in "Editor Mode", connected to tile map generation logic to spawn new tiles, selecting both generation shape and tile type from the UI'
-pubDate: '01/07/2024'
-thumbnail: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult_Thumbnail.png',
+    alt: 'HUD Editor Tilemap Generation'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/1-editor-hud-tilemap-generation-static/HUDTilemapGeneration_EndResult.gif',
+    alt: 'End Result gif showing HUD Tilemap generation'
+}
 tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 ## Overview 
@@ -18,8 +21,6 @@ featured: 'false'
 In this step I create an Editor Mode HUD in order to create tile maps while adjusting input parameters from the UI. Prior to this step, generating tile maps required going into the blueprints, manually making changes, recompiling, and then running to see the result.
 
 *I'm not going to walk through every step and every node, I'm going to try to paint a more general picture of the process and decisions being made. If you're working on a similar project and are stuck on something I didn't explain (whether I skipped it, I didn't explain it in detail, or I just explained it poorly) feel free to reach out on Discord and I'll help out if I can.*
-
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
 
 ### HUD Requirements - TileMap Generation
 

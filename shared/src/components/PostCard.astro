@@ -17,7 +17,7 @@ const { tags } = Astro.props;
         class="absolute mx-auto w-2/3 xl:w-full -inset-1 bg-gradient-to-t from-cyan-600 via-light-gold to-transparent rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300 group-hover:duration-300">
     </div>
     
-    <a href={url} class="relative block mx-auto w-2/3 xl:w-full bg-neutral-900 border border-neutral-500 rounded-2xl p-2 transition duration-300 ease-out hover:ease-in ">
+    <a href={`/posts/${url}`} class="relative block mx-auto w-2/3 xl:w-full bg-neutral-900 border border-neutral-500 rounded-2xl p-2 transition duration-300 ease-out hover:ease-in ">
         <div>
             <h3 class="text-neutral-200 text-base md:text-xl text-center mb-4"> {title} </h3>
         </div>

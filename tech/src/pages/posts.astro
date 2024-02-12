@@ -1,38 +1,32 @@
 ---
 import TechPageLayout from "../layouts/TechPageLayout.astro";
-
-
 import SideNav from "shared/src/components/SideNav.astro";
-
 import PostCard from "shared/src/components/PostCard.astro";
+import { getCollection } from "astro:content";
 
 const pageTitle = "Posts";
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await getCollection("posts");
+
 ---
 <TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
     <div slot="SideNavSlot">
-        <SideNav allPosts={allPosts} transition:persist />
+        <SideNav allPosts={allPosts}4 />
     </div>
 
-
     <div class=" h-16 "></div> 
-    <!-- <div class=" mx-auto w-1/3 mb-8 flex items-center border border-cyan-600 hover:bg-cyan-900 rounded-full py px-2 transition ease-in-out duration 300"> 
 
-            <img class="h-8 w-8 mr-2" src="/src/assets/images/common/symbols/search-symbol-cyan-600.png"/> 
-            <p> Search Posts </p> 
-    </div> -->
     <div slot="PageContent" >
         <div class=" flex flex-col gap-9 mt-24">
             {allPosts.reverse().map((post) => 
                 <PostCard
-                    url={post.url} 
-                    title={post.frontmatter.title} 
-                    thumbnail={post.frontmatter.thumbnail}
-                    endResultGif={post.frontmatter.endResultGif}
-                    description={post.frontmatter.description}
-                    pubDate={post.frontmatter.pubDate}
-                    entryIndex={post.frontmatter.entryIndex}
-                    tags={post.frontmatter.tags}
+                    url={post.slug}
+                    title={post.data.title} 
+                    thumbnail={post.data.thumbnail.url}
+                    endResultGif={post.data.endResultGif.url}
+                    description={post.data.description}
+                    pubDate={post.data.pubDate}
+                    entryIndex={post.data.entryIndex}
+                    tags={post.data.tags}
                 />
             )}
         </div>

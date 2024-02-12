@@ -1,17 +1,21 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 6
 title: 'GameDevlog 6: Initial Vertex Movement'
+pubDate: 2024-01-13
 description: 'Add hex-based movement options to travel to a given vertex from anywhere in the current hex'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult_Thumbnail.png',
+    alt: 'initial implementation of vertex based movement'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/6-initial-vertex-movement-static/InitialVertexBasedMovement_EndResult.gif',
+    alt: 'End Result gif showing the initial implementation of vertex based movement'
+}
 tags: ["UE5", "Hex Movement", "Blueprints"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
+
 ## Overview 
 
 We want to start laying the foundation for movement options based around the hexagonal geometries of the tile map. It's going to take some experimentation to decided on the exact movement abilities and limitations we want to have available. That being said, regardless of many of the specifics, a key building block here will be the ability to quickly get to a given vertex on a the player's current hex, which will be the focus of today's entry.

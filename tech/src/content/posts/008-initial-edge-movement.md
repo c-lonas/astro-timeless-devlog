@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 8
 title: 'GameDevlog 8: Initial Edge Movement'
+pubDate: 2024-01-16
 description: 'Add hex-based movement options to travel to the closest edge from anywhere in the current hex, and once on an edge, travel to the clockwise or counter-clockwise vertex'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png'
-endResultGif: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png',
+    alt: 'Initial edge movement implementation'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif',
+    alt: 'End Result gif showing initial edge movement implementation'
+}
 tags: ["UE5", "Blueprints", "Hex Movement"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 ## Overview 

@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 5
 title: 'GameDevlog 5: Current Hex'
+pubDate: 2024-01-12
 description: 'Use raycasting to find the hextile on which the player is currently standing, and spawn a decal to highlight the hex to make it visually apparent'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png',
+    alt: 'Raycast to find current hex'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif',
+    alt: 'End Result gif showing raycasting to find current hex'
+}
 tags: ["UE5", "Blueprints", "Hex Movement"]
 category: ["gamedev"]
-featured: 'true'
+featured: true
 ---
 
 ## Overview 

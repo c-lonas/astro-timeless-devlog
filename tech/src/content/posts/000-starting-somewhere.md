@@ -1,22 +1,22 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
 entryIndex: 0
 title: 'GameDevlog 0: Starting Somewhere'
+pubDate: 2024-01-07
 description: 'Background and context on the game development side project, including inspiration, some core game design choices, and decision to use Unreal Engine 5'
-pubDate: '01/07/2024'
-thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
-endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
-author: 'Battery'
-tags: ["UE5"]
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png',
+    alt: 'placeholder thumbnail'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif',
+    alt: 'placeholder End Result gif'
+}
 category: ["gamedev"]
-featured: 'false'
+tags: ["UE5"]
+featured: false
 ---
 
-
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
-
 ## Overview
-
 
 The game draws inspiration from a few disparate sources
 

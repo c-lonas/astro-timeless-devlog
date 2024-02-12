@@ -68,12 +68,8 @@ const { allPosts } = Astro.props;
     
             get filteredPosts() {
                 return this.posts.filter((post) =>
-                    this.selectedCategory === 'all' || post.frontmatter.category.includes(this.selectedCategory.toLowerCase())
-                ).reverse();
-            },
-    
-            toggleSidebar() {
-                this.isSideNavCollapsed = !this.isSideNavCollapsed;
+                    this.selectedCategory === 'all' || post.data.category.includes(this.selectedCategory.toLowerCase())
+                ); // previously I needed to use .reverse() to get the posts in reverse chronological order, not sure what changed
             },
     
             filterPosts(category) {

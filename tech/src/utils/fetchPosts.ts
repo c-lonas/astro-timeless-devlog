@@ -1,5 +1,6 @@
+import { getCollection } from "astro:content";
+
 export async function fetchPosts() {
-    const allPosts = await Astro.glob('../pages/posts/*.md');
-    // Process posts if necessary
+    const allPosts = await getCollection("posts");
     return allPosts;
 }

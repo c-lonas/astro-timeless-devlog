@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 3
 title: 'GameDevlog 3: Tilemap Persistence'
+pubDate: 2024-01-09
 description: 'Implement basic Save/Load functionality to persist the Tilemaps that are spawned from the HUD in "Editor Mode"'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png',
+    alt: 'Tilemap Persistence'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif',
+    alt: 'placeholder End Result gif'
+}
 tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 
@@ -20,8 +23,6 @@ featured: 'false'
 In this step we add persistence to the Tile Map (Saving and Loading). Since the tiles are all currently generated at runtime, the data is lost when you exit Play mode, and you need to start over every time.
 
 *I'm not going to walk through every step and every node, I'm going to try to paint a more general picture of the process and decisions being made. If you're working on a similar project and are stuck on something I didn't explain (whether I skipped it, I didn't explain it in detail, or I just explained it poorly) feel free to reach out on Discord and I'll help out if I can.*
-
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
 
 ### Persistence Requirements
 

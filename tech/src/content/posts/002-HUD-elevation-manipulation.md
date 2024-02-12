@@ -1,16 +1,19 @@
 ---
-layout: ../../layouts/markdownPassLayout.astro
-
 entryIndex: 2
 title: 'GameDevlog 2: Elevation Manipulation'
+pubDate: 2024-01-08
 description: 'Extend the "Editor Mode" HUD created in the previous entry to include controls for manipulating the height of the tiles from the UI for prototyping features that require topographical variation'
-pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
-author: 'Battery'
+thumbnail: {
+    url: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult_Thumbnail.png',
+    alt: 'HUD Editor Elevation Manipulation'
+}
+endResultGif: {
+    url: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif',
+    alt: 'End Result gif showing elevation manipulation via the HUD editor'
+}
 tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: ["gamedev"]
-featured: 'false'
+featured: false
 ---
 
 ## Overview 
