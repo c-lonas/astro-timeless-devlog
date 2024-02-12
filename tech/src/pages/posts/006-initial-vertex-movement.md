@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 6
 title: 'GameDevlog 6: Initial Vertex Movement'

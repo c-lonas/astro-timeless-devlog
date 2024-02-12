@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 10
 title: 'GameDevlog 10: Movement III | Crouching and Camera'

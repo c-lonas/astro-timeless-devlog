@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 5
 title: 'GameDevlog 5: Current Hex'

@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 4
 title: 'GameDevlog 4: Movement I'

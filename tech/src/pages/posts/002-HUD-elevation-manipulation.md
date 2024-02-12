@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 2
 title: 'GameDevlog 2: Elevation Manipulation'

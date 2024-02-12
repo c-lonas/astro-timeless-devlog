@@ -1,6 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
-
+layout: ../../layouts/markdownPassLayout.astro
 entryIndex: 0
 title: 'GameDevlog 0: Starting Somewhere'
 description: 'Background and context on the game development side project, including inspiration, some core game design choices, and decision to use Unreal Engine 5'

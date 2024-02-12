@@ -1,0 +1,26 @@
+---
+import SideNav from "shared/src/components/SideNav.astro";
+import TechPageLayout from "./TechPageLayout.astro";
+import Prose from "shared/src/components/Prose.astro"
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const { frontmatter } = Astro.props;
+
+---
+
+<TechPageLayout pageTitle={frontmatter.title} allPosts={allPosts}>
+    
+    <div slot="SideNavSlot">
+        <SideNav allPosts={allPosts} />
+    </div>
+    
+    <div slot="PageContent" class="mt-24">
+        <h1 class=" text-6xl text-center"> {frontmatter.title} </h1>
+        <br>
+        <Prose>
+            <slot  />
+        </Prose>
+    </div>
+    
+
+</TechPageLayout>

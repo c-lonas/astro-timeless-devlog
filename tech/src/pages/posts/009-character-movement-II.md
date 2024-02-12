@@ -1,5 +1,5 @@
 ---
-layout: shared/src/layouts/MarkdownPostLayout.astro
+layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 9
 title: 'GameDevlog 9: Movement II | C++ Setup and Sprinting'
