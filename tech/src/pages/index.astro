@@ -10,7 +10,7 @@ import Terminal from "../components/Terminal.astro";
 
 <TechPageLayout pageTitle={pageTitle} allPosts={allPosts}>
     <div slot="SideNavSlot">
-        <SideNav allPosts={allPosts} transition:persist />
+        <SideNav allPosts={allPosts} />
     </div>
     <div slot="PageContent" class="mt-24">
         <Terminal />
