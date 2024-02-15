@@ -3,12 +3,12 @@ layout: ../../layouts/markdownPassLayout.astro
 
 entryIndex: 11
 title: 'T2A2 Stack'
-description: 
-pubDate: ''
-thumbnail: 
-endResultGif: 
-tags: ["UE5", "C++", "Core Movement"]
-category: ["coding"]
+description: "A brief discussion of the Typescript, Astro, Tailwind, Alpine stack, and a step-by-step tutorial on how to use it to build a simple web app"
+pubDate: '2/15/2024'
+thumbnail: "/src/assets/images/coding/t2a2-stack/t2a2-example-thumbnail.png"
+endResultGif: "/src/assets/images/coding/t2a2-stack/AstroTailwindAlpine.gif"
+tags: ["t2a2", "astro", "tailwind", "alpine", "typescript", "framework"]
+category: ["coding", "webdev"]
 featured: 'false'
 ---
 
