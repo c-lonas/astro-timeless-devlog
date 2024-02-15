@@ -8,7 +8,7 @@
         x-data="initTerminal()" 
         x-init="init()" 
         @click="$event.target.querySelector('input')?.focus()" 
-        class="bg-neutral-900 absolute block border-2 border-neutral-600 opacity-90 rounded-xl p-4 text-neutral-300 font-mono text-xs sm:text-sm md:text-base h-96 max-h-96 w-full overflow-y-auto scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-neutral-900 z-10"
+        class="bg-neutral-900 absolute block border-2 border-neutral-600 opacity-90 rounded-xl p-4 text-neutral-300 font-mono text-xs sm:text-sm xl:text-base h-96 max-h-96 w-full overflow-y-auto scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-neutral-900 z-10"
     >
         <template x-for="(item, index) in history" :key="index">
             <div>

@@ -36,17 +36,17 @@
 
 @layer utilities {
     .text-glow-blue-sm {
-        text-shadow: 0 0 2px rgba(0, 115, 200, 0.9);
+        text-shadow: 0 0 1px rgba(0, 115, 200, 0.9);
     }    
     .text-glow-blue-md {
-        text-shadow: 0 0 4px rgba(0, 115, 200, 0.9);
+        text-shadow: 0 0 2px rgba(0, 115, 200, 0.9);
     }    
 
     .text-glow-gold-sm {
-        text-shadow: 0 0 2px rgba(228, 195, 88, 0.9);
+        text-shadow: 0 0 1px rgba(228, 195, 88, 0.9);
     }    
     .text-glow-gold-md {
-        text-shadow: 0 0 4px rgba(228, 195, 88, 0.9);
+        text-shadow: 0 0 2px rgba(228, 195, 88, 0.9);
     } 
 
 }
