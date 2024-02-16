@@ -75,36 +75,6 @@
 
 @layer components {
 
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateX(-20px);
-            font-style: italic;
-        }
-        80% {
-            transform: translateX(10px); 
-            font-style: italic;
-        }
-        95% {
-            transform: translateX(-5px);
-            font-style:  normal;
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-            font-style: normal; 
-        }
-    }
-    
-    .fade-in {
-        animation-name: fadeIn;
-        animation-fill-mode: both;
-        animation-timing-function: cubic-bezier(.5, 1.5, .5, 1);
-        animation-duration: 2.5s; 
-    }
-
-
-
     .aurora-border {
         position: relative;
         border-radius: 1rem;

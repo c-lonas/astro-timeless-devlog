@@ -37,3 +37,15 @@ const { pageTitle } = Astro.props;
 	</body>
 
 </html>
+
+<script is:inline>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('sideNav', {
+            isSideNavCollapsed: localStorage.getItem('isSideNavCollapsed') ? localStorage.getItem('isSideNavCollapsed') === 'true' : true,
+            toggleSidebar() {
+                this.isSideNavCollapsed = !this.isSideNavCollapsed;
+                localStorage.setItem('isSideNavCollapsed', this.isSideNavCollapsed);
+            }
+        });
+    });
+</script>

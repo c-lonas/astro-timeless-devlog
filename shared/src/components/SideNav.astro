@@ -1,85 +1,58 @@
 ---
 import Filter from './Filter.astro';
-
 const { allPosts } = Astro.props;
 ---
 
-<!--Parent Div --> 
-<div x-cloak x-data="sideNavComponent()" x-init="initSidebar()" data-posts={JSON.stringify(allPosts)} class=" relative">
+<div x-cloak x-data="sideNavComponent()" data-posts={JSON.stringify(allPosts)} class="relative">
+    <!-- Transition Color Drag Effect -->
+    <div class="fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold transition-all z-30"
+         :class="[$store.sideNav.isSideNavCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur lg:blur-md opacity-50' : 'blur-sm lg:blur opacity-30']"
+         @click="$store.sideNav.toggleSidebar()"></div>
 
-    <!--Transition Color Drag Effect -->
-    <div
-        class=" fixed left-2 top-16 h-screen cursor-pointer bg-gradient-to-t from-dark-gold to-light-gold transition-all z-30"
-        :class="[ isSideNavCollapsed ? 'w-6 bg-transparent duration-600' : 'w-64 xl:w-72 duration-500', hoverEffect ? 'blur lg:blur-md opacity-50' : 'blur-sm lg:blur opacity-30'] "
-        @click="isSideNavCollapsed = !isSideNavCollapsed" 
-        
-    ></div>
-    
     <!-- Click helper for drag effect -->
-    <div
-        class=" fixed top-16 h-screen w-14 cursor-pointer z-50"
-        :class=" isSideNavCollapsed ? 'left-0' : 'left-60 xl:left-68 ' "
-        @click="isSideNavCollapsed = !isSideNavCollapsed" 
-        @mouseenter="hoverEffect = true"
-        @mouseleave="hoverEffect = false"
-    ></div>
+    <div class="fixed top-16 h-screen w-14 cursor-pointer z-50"
+         :class="$store.sideNav.isSideNavCollapsed ? 'left-0' : 'left-60 xl:left-68'"
+         @click="$store.sideNav.toggleSidebar()"
+         @mouseenter="hoverEffect = true"
+         @mouseleave="hoverEffect = false"></div>
 
-        <!-- Sidebar -->
-        <div
-            :class="isSideNavCollapsed ? 'w-6 bg-neutral-800 opacity-95 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
-            class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-transparent scrollbar-thin overflow-y-scroll transition-all z-40"
-        >
-        
-            <!-- Content Here -->
-            <div x-show="!isSideNavCollapsed">
-                <Filter />
-            </div>
-            <ul x-show="!isSideNavCollapsed" class="p-4">
-                <template x-for="(post, index) in filteredPosts" :key="post.url">
-                    <li class="group pl-4 py-2 fade-in"
-                        :style="`animation-duration: 850ms; animation-delay: ${index * 75}ms;`">
+    <!-- Sidebar -->
+    <div :class="$store.sideNav.isSideNavCollapsed ? 'w-6 bg-neutral-800 opacity-95 rounded-r-xl duration-500 scrollbar-none pointer-events-none' : 'w-64 xl:w-72 duration-600'"
+         class="fixed left-0 top-16 h-screen border-r bg-neutral-900 border-transparent scrollbar-thin overflow-y-scroll transition-all z-40">
+        <div x-show="!$store.sideNav.isSideNavCollapsed">
+            <Filter :filterPosts="filterPosts" />
+            <ul class="p-4">
+                <template x-for="(post, index) in filteredPosts" :key="index">
+                    <li class="group pl-4 py-2 ">
                         <a :href="post.url" class="block">
-                            <p class="transition-all ease-in-out duration-300 group-hover:translate-x-[-5px] group-hover:text-cyan-600 group-hover:text-glow-blue-sm" x-text="post.frontmatter.title"></p>
+                            <p class="transition-all ease-in-out duration-300 group-hover:translate-x-2 group-hover:text-cyan-600" x-text="post.frontmatter.title"></p>
                         </a>
                     </li>
                 </template>
-            </ul>            
-            
-            <div class="h-48"></div>
+            </ul>
         </div>
-    
+        <div class="h-48"></div>
+    </div>
 </div>
 
 <script is:inline>
     function sideNavComponent() {
-    
         return {
-            isSideNavCollapsed: true,
             hoverEffect: false,
-            posts: JSON.parse(document.querySelector('[x-data="sideNavComponent()"]').getAttribute('data-posts') || '[]'),
             selectedCategory: 'all',
-    
-            initSidebar() {
-                setTimeout(() => {
-                    if (window.innerWidth >= 1280) {
-                        this.isSideNavCollapsed = false;
-                    }
-                }, 500);
+            posts: [],
+            init() {
+                this.posts = JSON.parse(this.$el.getAttribute('data-posts'));
+                this.filterPosts(this.selectedCategory);
             },
-    
             get filteredPosts() {
                 return this.posts.filter((post) =>
                     this.selectedCategory === 'all' || post.frontmatter.category.includes(this.selectedCategory.toLowerCase())
-                ).reverse();
+                );
             },
-    
-            toggleSidebar() {
-                this.isSideNavCollapsed = !this.isSideNavCollapsed;
-            },
-    
             filterPosts(category) {
                 this.selectedCategory = category;
             },
         };
     }
-    </script>
+</script>
