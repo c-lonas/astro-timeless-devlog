@@ -1,5 +1,5 @@
 ---
-import Filter from './Filter.astro'
+import Filter from './Filter.astro';
 
 const { allPosts } = Astro.props;
 ---
@@ -52,6 +52,7 @@ const { allPosts } = Astro.props;
 
 <script is:inline>
     function sideNavComponent() {
+    
         return {
             isSideNavCollapsed: true,
             hoverEffect: false,
