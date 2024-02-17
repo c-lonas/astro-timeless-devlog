@@ -1,3 +1,3 @@
 [build]
-  command = "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css && rm -rf ./landing/public/* && cp -r ./shared/public/* ./landing/public/ && pnpm --filter landing.battery.nexus run build"
+  command = "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css && mkdir -p ./landing/public/ && rm -rf ./landing/public/* && cp -r ./shared/public/* ./landing/public/ && pnpm --filter landing.battery.nexus run build"
   publish = "landing/dist/"
