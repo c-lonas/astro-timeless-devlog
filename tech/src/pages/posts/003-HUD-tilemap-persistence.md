@@ -5,8 +5,8 @@ entryIndex: 3
 title: 'GameDevlog 3: Tilemap Persistence'
 description: 'Implement basic Save/Load functionality to persist the Tilemaps that are spawned from the HUD in "Editor Mode"'
 pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
+thumbnail: '/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult_Thumbnail.png'
+endResultGif: '/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: ["gamedev"]
@@ -38,7 +38,7 @@ Here are the main features and functionalities we implement in this step
 
 This is a demo showcasing Tile Map persistence functionality (saving and loading).
 
-![EndResultDemoGif](/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif)
+![EndResultDemoGif](/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/TileMapPersistence_EndResult.gif)
 
 <br>
 
@@ -52,7 +52,7 @@ I gave the page on <a href="https://docs.unrealengine.com/5.3/en-US/saving-and-l
 
 The thought process behind the original attempt was fairly straightforward. Unreal Engine has the `Save Game Object`, so I figured we create a `SaveGame_TileMap` blueprint class, in which we create a variable that mirrors the structure of the TileMap. In this case, I created a variable called `SG_TileMap` a map of `Int Point` keys to `E_TileType` values
 
-![SG_TileMapVariable](/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/SG_TileMapVariable.png)
+![SG_TileMapVariable](/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/SG_TileMapVariable.png)
 
 <br>
 
@@ -60,7 +60,7 @@ Then I tried to basically copy the TileMap over to the SG_TileMap.
 
 <span style="color: magenta"> This attempt did NOT work, do NOT use this approach <span>
 
-![IncorrectSavingApproach](/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/IncorrectSavingApproach.png)
+![IncorrectSavingApproach](/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/IncorrectSavingApproach.png)
 
 <br>
 
@@ -70,7 +70,7 @@ After barking up the wrong tree for awhile, I reached out to @Erades on the Hex 
 
 The key error I was making was attempting to save the tiles as instantiated actors, which is, apparently, not possible. Instead the correct approach was to loop through the TileMap, and grab just the relevant data (the coordinates and the tile type) to save.
 
-![CorrectSavingAndLoadingApproach](/src/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/CorrectSavingAndLoadingApproach.png)
+![CorrectSavingAndLoadingApproach](/assets/images/gamedev/timeless/3-editor-hud-tilemap-persistence-static/CorrectSavingAndLoadingApproach.png)
 
 <br>
 

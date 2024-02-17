@@ -8,7 +8,7 @@
     "tww": "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch",
     "clean-propogated-assets:tech": "rm -rf ./tech/public/",
     "clean-propogated-assets:landing": "rm -rf ./landing/public/",
-    "propogate-assets:tech": "cp -r ./shared/public ./tech/",
+    "propogate-assets:tech": "cp -r ./shared/public ./tech/ && cp -r ./tech/src/assets ./tech/public/assets/",
     "propogate-assets:landing": "cp -r ./shared/public ./landing/",
     "dev:tech": "pnpm run clean-propogated-assets:tech && pnpm run propogate-assets:tech && pnpm --filter tech.battery.nexus run astro dev",
     "dev:landing": "pnpm run clean-propogated-assets:landing && pnpm run propogate-assets:landing && pnpm --filter landing.battery.nexus run astro dev"

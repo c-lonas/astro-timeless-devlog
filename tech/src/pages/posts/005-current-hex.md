@@ -5,8 +5,8 @@ entryIndex: 5
 title: 'GameDevlog 5: Current Hex'
 description: 'Use raycasting to find the hextile on which the player is currently standing, and spawn a decal to highlight the hex to make it visually apparent'
 pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif'
+thumbnail: '/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult_Thumbnail.png'
+endResultGif: '/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "Hex Movement"]
 category: ["gamedev"]
@@ -31,7 +31,7 @@ We're getting much closer to being able to test out some of the core movement me
 
 ## End Result
 
-![CurrentHexEndResultGif](/src/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif)
+![CurrentHexEndResultGif](/assets/images/gamedev/timeless/5-current-hex-static/CurrentHex_EndResult.gif)
 
 ## Starting Off
 
@@ -69,12 +69,12 @@ Therefore we're going to go with the Decal Highlight Effect!
 
 We'll make a new function called `RaycastDownForHexTile` with two parameters, a `boolean` called `HitGroundLevel` and an `int`, `DistanceDown`.
 
-![NewRaycastDownForHexTileFunction](/src/assets/images/gamedev/timeless/5-current-hex-static/NewRaycastDownFunction.png)
+![NewRaycastDownForHexTileFunction](/assets/images/gamedev/timeless/5-current-hex-static/NewRaycastDownFunction.png)
 
 
 Then we'll create two new local `float` variables, one called `GroundLevel` and one called `EndZVector`. Also, set the default Value of `GroundLevel` to `-1.0`.
 
-![CreateEndZVectorAndGroundLevelVariables](/src/assets/images/gamedev/timeless/5-current-hex-static/EndZVectorAndGroundLevel.png)
+![CreateEndZVectorAndGroundLevelVariables](/assets/images/gamedev/timeless/5-current-hex-static/EndZVectorAndGroundLevel.png)
 
 <br>
 
@@ -84,36 +84,36 @@ We want to feed this value into our raycast node, `LineTraceByChannel` so it kno
 
 By the way, for the time being we're going to leave the debug draw on for the raycast, which you can see in the 'End Result' gif at the top of the post. That's what all the blue lines are. In the gif, the `DrawDebugType` was set to `For Duration`, so the raycast debug lines despawn after the length specified on the `Draw Time` input. 
 
-![InitialLookAtRaycastNode](/src/assets/images/gamedev/timeless/5-current-hex-static/InitialLookAtRaycastNode.png)
+![InitialLookAtRaycastNode](/assets/images/gamedev/timeless/5-current-hex-static/InitialLookAtRaycastNode.png)
 
 
 We also need to feed it the start location, which in this case is the location of the character. Since this event graph is on the PlayerCharacter asset, we can just feed the `GetActorLocation` return value directly into the `Start` input pin.
 
 The player's X and Y coordinates should also be the same for the `End X` and `End Y` input pins to give us a straight vertical line down for the raycast. To get these we can use the same `GetActorLocation` node and pull out another copy of the return value, this time feeding it into a `BreakVector` node to grab the X and Y values to pass them into the associated input pins on `LineTraceByChannel`
 
-![SimpleRaycastDownPart1](/src/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart1.png)
+![SimpleRaycastDownPart1](/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart1.png)
 
 
 Now we need to do something with the raycast. I created another local variable, of type `Actor` called `HitHex`, so we can set it to the `Hit Actor` element of the hit result. We'll also pass the hit result out directly in case I want to do other stuff with that later.
 
-![SimpleRaycastDownPart2](/src/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart2.png)
+![SimpleRaycastDownPart2](/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart2.png)
 
 
 This technically will work, but is so naive that it won't be very helpful once we have anything besides hex tiles in the environment, so let's fix that first by making sure that we only set the `HitHex` variable to the `Hit Actor` result if `Hit Actor` is indeed a hex tile.
 
 First I added a `HexTile` tag to the `BP_Tile` asset.
 
-![AddHexTileTag](/src/assets/images/gamedev/timeless/5-current-hex-static/AddHexTileTag.png)
+![AddHexTileTag](/assets/images/gamedev/timeless/5-current-hex-static/AddHexTileTag.png)
 
 With that tag on each of the tiles, we can do a check to make sure the `Hit Actor` has the `HexTile` tag, and only set `HitHex` to the new `Hit Actor` if it does.
 
-![SimpleRaycastDownPart2_AlmostThere](/src/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart2-almostthere.png)
+![SimpleRaycastDownPart2_AlmostThere](/assets/images/gamedev/timeless/5-current-hex-static/SimpleRaycastDownPart2-almostthere.png)
 
 This is really close, but throws lots of warnings and errors when the raycast doesn't find what it wants, ie, when crossing between hexes and the raycast shoots down in between them and doesn't return a valid object.
 
 You could do a check on the `Return Value` bool of the raycast, but I instead did an `Is Valid` check on the `Hit Actor` specifically, which makes the final product of the second half of the function look something like this:
 
-![RaycastDownPart2Finished](/src/assets/images/gamedev/timeless/5-current-hex-static/RaycastDownPart2Finished.png)
+![RaycastDownPart2Finished](/assets/images/gamedev/timeless/5-current-hex-static/RaycastDownPart2Finished.png)
 
 Now that I think about it, having the local `Hit Hex` variable at all at this point is superfluous, it exists mostly because of a different approach I started doing earlier and then pivoted away from. I'll go back and delete that and just pass out the `Hit Actor` result directly upon passing the conditional checks, but I'm not going to go back and retake the screenshots or anything.
 
@@ -126,13 +126,13 @@ In order to be able to play around with these choices later, we'll go back to th
 
 As a reminder, the first half of the function should currently look like this
 
-![RecapFirstHalf](/src/assets/images/gamedev/timeless/5-current-hex-static/RecapSimpleRaycastDownPart1.png)
+![RecapFirstHalf](/assets/images/gamedev/timeless/5-current-hex-static/RecapSimpleRaycastDownPart1.png)
 
 If `AlwaysHitGroundLevel` is set to `false`, we'll need to set `EndZVector` to a different value, which we'll grab from the `DistanceDown` input argument. We'll take that, multiply it by a negative factor (-10, arbitrarily, in this case) and add that negative number to the Z value of the character's current location. 
 
 Now that the `EndZVector` can be set from different branches, it's cleaner to `get` that value separately to plug into the `LineTraceByChannel` node rather than directly off the `set` nodes.
 
-![RaycastDownPart1Finished](/src/assets/images/gamedev/timeless/5-current-hex-static/RaycastDownPart1Finished.png)
+![RaycastDownPart1Finished](/assets/images/gamedev/timeless/5-current-hex-static/RaycastDownPart1Finished.png)
 
 <br>
 
@@ -140,14 +140,14 @@ And everything should be working! Now we just need to call this function from th
 
 I pass the `Hit Hex Tile` output from the `RaycastDownForHexTile` function into an additional function, `SetActiveHexAndPreviousHex`, which we'll look at next.
 
-![CallRaycastDownFunction](/src/assets/images/gamedev/timeless/5-current-hex-static/CallRaycastDownFunction.png)
+![CallRaycastDownFunction](/assets/images/gamedev/timeless/5-current-hex-static/CallRaycastDownFunction.png)
 
 
 `SetActiveHexAndPreviousHex` is straight forward. If the `Hit Hex Tile` returned from the `RaycastDownForHexTile` function is the same object as the current `ActiveHex`, then we don't need to do anything.
 
 If it's different, we know the character has moved, so we set `PreviousHex` to whatever reference `ActiveHex` is currently holding, and then `ActiveHex` equal to the new `HitHex`. Last but not least, whenever the `ActiveHex` changes, we're going to want to change where we are spawning the highlight decal, so we'll call that event here.
 
-![SetActiveHexAndPreviousHexFunction](/src/assets/images/gamedev/timeless/5-current-hex-static/SetActiveHexAndPreviousHexFunction.png)
+![SetActiveHexAndPreviousHexFunction](/assets/images/gamedev/timeless/5-current-hex-static/SetActiveHexAndPreviousHexFunction.png)
 
 <br>
 
@@ -170,11 +170,11 @@ A few steps here:
 
 The Material Graph should look something like this:
 
-![DecalMaterialGraph](/src/assets/images/gamedev/timeless/5-current-hex-static/DecalMaterialGraph.png)
+![DecalMaterialGraph](/assets/images/gamedev/timeless/5-current-hex-static/DecalMaterialGraph.png)
 
 and don't forget to have these material settings:
 
-![DecalMaterialSettings](/src/assets/images/gamedev/timeless/5-current-hex-static/DecalMaterialSettings.png)
+![DecalMaterialSettings](/assets/images/gamedev/timeless/5-current-hex-static/DecalMaterialSettings.png)
 
 Now we're ready to spawn it!
 
@@ -190,7 +190,7 @@ Two steps now to execute whenever a new Active Hex is set.
 
 First, if `LastSpawnedHexDecal` exists, destroy it. Note that to access the `LastSpawnedHexDecal` component, now that it is a component of the `BP_Tile`, we need to cast to that. I'm not entirely sure why this is the case, but we do seem to need to pass in the `PreviousHex` reference here as the object input for the cast, not the `ActiveHex`, or it won't work.
 
-![DestroyDecalIfExists](/src/assets/images/gamedev/timeless/5-current-hex-static/DestroyDecalIfExists.png)
+![DestroyDecalIfExists](/assets/images/gamedev/timeless/5-current-hex-static/DestroyDecalIfExists.png)
 
 
 Second, we again cast to `BP_Tile`, pass in the `SM_Tile` static mesh to the `Attach To Component` input on the `Spawn Decal Attached Node`, and then `set` the `LastSpawnedHexDecal` equal to the newly spawned decal, so it will be ready to be destroyed when the player moves again.
@@ -198,7 +198,7 @@ Second, we again cast to `BP_Tile`, pass in the `SM_Tile` static mesh to the `At
 <br>
 
 Together it looks like this
-![SpawnAndDespawnDecalFinal](/src/assets/images/gamedev/timeless/5-current-hex-static/SpawnAndDespawnDecalFinal.png)
+![SpawnAndDespawnDecalFinal](/assets/images/gamedev/timeless/5-current-hex-static/SpawnAndDespawnDecalFinal.png)
 
 There you have it! This brings us to the state of the [End Result](#end-result) gif at the top of the post.
 

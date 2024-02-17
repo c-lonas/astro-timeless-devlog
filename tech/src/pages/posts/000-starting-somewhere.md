@@ -4,8 +4,8 @@ entryIndex: 0
 title: 'GameDevlog 0: Starting Somewhere'
 description: 'Background and context on the game development side project, including inspiration, some core game design choices, and decision to use Unreal Engine 5'
 pubDate: '01/07/2024'
-thumbnail: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
-endResultGif: '/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
+thumbnail: '/assets/images/gamedev/timeless/0-starting-somewhere-static/TimelessLogo.png'
+endResultGif: '/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif'
 author: 'Battery'
 tags: ["UE5"]
 category: ["gamedev"]
@@ -26,7 +26,7 @@ The game draws inspiration from a few disparate sources
         À la BoTW, or Minecraft
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif" alt="BreathOfTheWild-OpenAdventureGif"> 
+        <img src="/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif" alt="BreathOfTheWild-OpenAdventureGif"> 
     </div>
 </div>
 
@@ -36,7 +36,7 @@ The game draws inspiration from a few disparate sources
     <div>
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/firsttree.webp" alt="TheFirstTree"> 
+        <img src="/assets/images/gamedev/timeless/0-starting-somewhere-static/firsttree.webp" alt="TheFirstTree"> 
     </div>
 </div>
 <!-- - Survival stuff -->
@@ -48,7 +48,7 @@ The game draws inspiration from a few disparate sources
         The concept of using time as not only a resource but as a currency of sorts is directly inspired from the 2011 sci-film film <a href="https://en.wikipedia.org/wiki/In_Time" target="_blank"> In Time </a>
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/intime-arm-timer.gif" alt="InTimeArmTimer"> 
+        <img src="/assets/images/gamedev/timeless/0-starting-somewhere-static/intime-arm-timer.gif" alt="InTimeArmTimer"> 
     </div>
 </div>
 
@@ -60,7 +60,7 @@ The game draws inspiration from a few disparate sources
         Fun and intuitive to use as a beginner and/or a casual player, but a nearly limitless skill ceiling that enables fast and rewarding movement and gameplay options.
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/melee-fox-oscar.gif" alt="MeleeMovement"> 
+        <img src="/assets/images/gamedev/timeless/0-starting-somewhere-static/melee-fox-oscar.gif" alt="MeleeMovement"> 
     </div>
 </div>
 
@@ -71,7 +71,7 @@ The game draws inspiration from a few disparate sources
         Games like slither.io, where dying and starting over (at least partially) is a built-in part of the gameplay loop
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/slither-io.gif" alt="ResetGame" /> 
+        <img src="/assets/images/gamedev/timeless/0-starting-somewhere-static/slither-io.gif" alt="ResetGame" /> 
     </div>
 </div>
 

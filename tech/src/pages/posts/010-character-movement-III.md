@@ -5,8 +5,8 @@ entryIndex: 10
 title: 'GameDevlog 10: Movement III | Crouching and Camera'
 description: 'Expand upon the Custom Character Movement Component implemented in the previous entry to add a Crouching state, and transition the camera smoothly between the two target heights'
 pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif'
+thumbnail: '/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult_Thumbnail.png'
+endResultGif: '/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "C++", "Core Movement"]
 category: ["gamedev"]
@@ -24,7 +24,7 @@ The objective in this entry is to implement crouching, and also improve the came
 
 This End Result gid shows the implementation of crouching, and the camera lerping between the two target heights for a smooth transition. Obviously there is no crouching animation, so I have the collision capsule component visible here to make the crouch itself visible, and to see to what target the camera is lerping.
 
-![CrouchCameraLerpEndResult.gif](/src/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif)
+![CrouchCameraLerpEndResult.gif](/assets/images/gamedev/timeless/10-character-movement-III-static/SchmooveCrouchCameraLerp_EndResult.gif)
 
 <br>
 
@@ -67,7 +67,7 @@ Compile, and then we can test this from blueprints.
 
 Simple enough
 
-![CallCrouchFromBlueprints](/src/assets/images/gamedev/timeless/10-character-movement-III-static/CallCrouchFromBlueprints.png)
+![CallCrouchFromBlueprints](/assets/images/gamedev/timeless/10-character-movement-III-static/CallCrouchFromBlueprints.png)
 
 
 

@@ -5,8 +5,8 @@ entryIndex: 2
 title: 'GameDevlog 2: Elevation Manipulation'
 description: 'Extend the "Editor Mode" HUD created in the previous entry to include controls for manipulating the height of the tiles from the UI for prototyping features that require topographical variation'
 pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult_Thumbnail.png'
-endResultGif: '/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
+thumbnail: '/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult_Thumbnail.png'
+endResultGif: '/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "UI/HUD", "Tilemap"]
 category: ["gamedev"]
@@ -43,7 +43,7 @@ This demo gif showcases the progress that was made with this entry. I demonstrat
 
 Similar to the <a href="001-HUD-tilemap-generation" target="_blank">previous entry</a>, after completing the steps below, I hooked it all up to a `Key Event`, where it takes in the input parameters as determined by the HUD elements and uses those in applying the transforms to the Tile Map. Note that these transforms are applied to a given shape, as determined by the same shape generation controls created previously.
 
-![EndResultDemoGif](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif)
+![EndResultDemoGif](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif)
 _I'm experimenting with larger tile sizes here, which is why the values on the elevation controls are set so high, to make the changes visible while being zoomed out pretty far_
 
 <br>
@@ -60,20 +60,20 @@ Adding the Elevation Manipulation controls to the UI followed very similar logic
 
 First, we go to the Canvas Panel that we added to the WB_UI (Widget Blueprint) in the Designer viewport. Again, we create the desired UI structure through a combination of basic `TextBlock` elements, `ComboBox` elements for the drop down menus, and `SpinBox` elements to select integer values. They are then grouped together with `Overlays`. We put the whole thing beneath the shape and generation controls.
 
-![ElevationManipulationUIControls](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationControlsCanvasUI.png)
+![ElevationManipulationUIControls](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationControlsCanvasUI.png)
 
 <br>
 
 Many of these elements are overlapping, so we toggle off the visibility in the Hierarchy panel as needed to keep a clean look (you can just click on that little eye symbol to toggle their visibility in the Designer viewport)
 
-![ElevationManipulationUIControls](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationControlsVariables.png)
+![ElevationManipulationUIControls](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationControlsVariables.png)
 
 
 <br>
 
 To make sure that only the correct parameters display at runtime, we'll first need to make sure these elements are promoted to variables by checking the `Is Variable` box in the Details panel, visible when you select a given UI element
 
-![PromoteToVariable](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/PromoteToVariable.png)
+![PromoteToVariable](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/PromoteToVariable.png)
 
 <br>
 
@@ -81,26 +81,26 @@ To make sure that only the correct parameters display at runtime, we'll first ne
 
 Since we want the Elevation Control parameters to toggle their visibility depending on what type of Elevation Manipulation was selected, we need an `On Selection Changed` event associated with the corresponding `ComboBox`. This is easiest to set up by scrolling to the bottom of the details panel while selecting the appropriate `ComboBox` or other UI element, and then just adding the desired event type
 
-![OnSelectionChangedEvent](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/OnSelectionChangedEvent.png)
+![OnSelectionChangedEvent](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/OnSelectionChangedEvent.png)
 
 
 
 From there, we'll set the variable of `ActiveElevationManipType` after a `Switch on String` node again, for later use by the Tile Manager. 
 
-![SetActiveElevationManipType](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetActiveElevationManip.png)
+![SetActiveElevationManipType](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetActiveElevationManip.png)
 
 <br>
 
 Branching off from the appropriate `Set ActiveElevationManipType`, I did a series of `Set Visibility` nodes, setting the relevant controls to either `Collapsed` or `Visible`. 
 
-![ToggleElevationControlsVisibility](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ToggleElevationControlsVisibility.png)
+![ToggleElevationControlsVisibility](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ToggleElevationControlsVisibility.png)
 
 I'm reasonably confident this was NOT the best way to accomplish this, and it looks pretty gross altogether. Not the finest display of visual scripting, but finished is better than perfect.
-![BadCode](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/gross.png)
+![BadCode](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/gross.png)
 
 While we're here we also want to make sure we use `On Value Committed` for the SpinBox elements to set the appropriate variables to be used by the Tile Manager. We want `On Value Committed`, not `On Value Changed` for performance reasons.
 
-![SetSpinBoxValues](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetSpinBoxValues.png)
+![SetSpinBoxValues](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetSpinBoxValues.png)
 
 <br>
 
@@ -114,14 +114,14 @@ Since we have a few different types of Elevation Manipulation we want to apply, 
 
 This function is the most simple. The function takes a `LevelEditorUIRef` parameter, from which we'll pull the `ActiveDisplayShape`, as well as `DisplayX` and `DisplayY` from the previous entry on shape generation, in order to get the tiles on which the transform should be applied. The heavy lifting here is done by the `GetShape` function, which came with the HexGridToolkt we're building on, and returns an array of coordinates forming the shape.
 
-![SetZeroFunctionStart](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetZeroFunction1.png)
+![SetZeroFunctionStart](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetZeroFunction1.png)
 
 
 Next, we loop through that array. On each element, we first need to `Find` it in the TileMap to get a reference to the Tile object. Assuming we find a valid tile at that coordinate, we use the `Set Actor Transform` node to set the `Z` vector (height) to 0. 
 
 However, we need the `X` and `Y` vectors to stay the same, so first we use the `Get Actor Transform`, `Break Transform`, pull the `X` and `Y` into the new vector via the `Make Vector` node, setting `Z` to 0. Then we `Make Transform` from that vector, and use that as the `New Transform` for `Set Actor Transform`. 
 
-![SetZeroFunctionFinish](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetZeroFunction2.png)
+![SetZeroFunctionFinish](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/SetZeroFunction2.png)
 
 <br>
 
@@ -129,12 +129,12 @@ However, we need the `X` and `Y` vectors to stay the same, so first we use the `
 
 Most of this function looks the same, although we also need to pull the `ElevationHeight` from the Elevation Controls section of the HUD to know how much height to add.
 
-![ElevationPlateauStart](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationPlateauFunctionStart.png)
+![ElevationPlateauStart](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationPlateauFunctionStart.png)
 
 
 The second part is very similar to the Set Zero function but with two differences. First, instead of setting the `Z` vector to 0, instead we supply the `ElevationHeight` variable we pulled in from the HUD. Second, we want this effect to be additive, so we use the `Add Actor World Transform` instead of `Set Actor Transform`.
 
-![ElevationPlateauFinish](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationPlateauFunctionFinish.png)
+![ElevationPlateauFinish](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/ElevationPlateauFunctionFinish.png)
 
 <br>
 
@@ -142,12 +142,12 @@ The second part is very similar to the Set Zero function but with two difference
 
 Finally we'll add the Randomizer function. It again starts out very similar to the previous two functions, and we grab both `Random Min Value` and `Random Max Value`.
 
-![ElevationRandomizerFunctionStart](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/RandomizerFunctionStart.png)
+![ElevationRandomizerFunctionStart](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/RandomizerFunctionStart.png)
 
 
 We want this manipulation to be additive too, so we again use the `Add Actor World Transform` node, but with one additional step, adding a `Random Integer in Range` node, supplying the `Random Min Value` and `Random Max Value` arguments as inputs. This gives us the final `Z` value, and we're done!
 
-![ElevationRandomizerFunctionFinish](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/RandomizerFunctionFinish.png)
+![ElevationRandomizerFunctionFinish](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/RandomizerFunctionFinish.png)
 
 <br>
 
@@ -157,7 +157,7 @@ Time to bring it all together.
 
 In the Event Graph for the Tile Manager, we use our handy dandy `GetLevelEditorHUDRef` function, grab the `ActiveElevationManipType` and feed that into a `Switch` node (here we need a corresponding enum again). From then, we simply route to the appropriate function, and remember to pass in the `LevelEditorUIRef` too. 
 
-![CallElevationManipulationFunctions](/src/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/CallElevationManipulationFunctions.png)
+![CallElevationManipulationFunctions](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/CallElevationManipulationFunctions.png)
 
 I again hook it up to a `Key Event`, and [voila](#end-result)!
 

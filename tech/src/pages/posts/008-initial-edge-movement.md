@@ -5,8 +5,8 @@ entryIndex: 8
 title: 'GameDevlog 8: Initial Edge Movement'
 description: 'Add hex-based movement options to travel to the closest edge from anywhere in the current hex, and once on an edge, travel to the clockwise or counter-clockwise vertex'
 pubDate: ''
-thumbnail: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png'
-endResultGif: '/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
+thumbnail: '/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.png'
+endResultGif: '/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif'
 author: 'Battery'
 tags: ["UE5", "Blueprints", "Hex Movement"]
 category: ["gamedev"]
@@ -28,7 +28,7 @@ I'm not sure exactly which movement options will be regularly available movement
 
 This gif demos using `R` as the keybind the lerp to the nearest edge from anywhere on the active hex, and then using either `E` or `Shift + E` to lerp to either CW or CCW vertex respectively. It also demos combining this basic edge movement mechanics with the relative vertex movement mechanics implemented previously.
 
-![InitialEdgeMovement_EndResultGif](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif)
+![InitialEdgeMovement_EndResultGif](/assets/images/gamedev/timeless/8-initial-edge-movement-static/InitialEdgeMovement_EndResult.gif)
 
 <br>
 
@@ -37,10 +37,10 @@ This gif demos using `R` as the keybind the lerp to the nearest edge from anywhe
 Pretty straightforward here, we'll add six `Box Colliders` components to `BP_Tile,` following basically the exact same approach we used when adding sphere colliders for the vertices in <a href="" target="_blank">a previous post</a>.
 
 Here's a top view
-![BoxColliderTopView](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/BoxCollidersTop.png)
+![BoxColliderTopView](/assets/images/gamedev/timeless/8-initial-edge-movement-static/BoxCollidersTop.png)
 
 and here's a side view
-![BoxColliderSideView](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/BoxCollidersSide.png)
+![BoxColliderSideView](/assets/images/gamedev/timeless/8-initial-edge-movement-static/BoxCollidersSide.png)
 
 <br>
 
@@ -51,10 +51,10 @@ and here's a side view
 Before the character can move from an edge to a vertex, we first need to know if the character is on an edge, and if so, which edge. 
 Setting this up is basically the exact same as finding out if/which vertex the character is on, covered <a href="" target="_blank">previously</a>, so I'll duplicate that logic, swap out which overlap events are being checked, and replace `Current Vertex` and `Previous Vertex` with `Current Edge` and `Previous Edge`.
 
-![PreSwap](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/ReplaceVertexEventsWEdgeEvents1.png)
+![PreSwap](/assets/images/gamedev/timeless/8-initial-edge-movement-static/ReplaceVertexEventsWEdgeEvents1.png)
 
 and after the swap:
-![PostSwap](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/ReplaceVertexEventsWEdgeEvents2.png)
+![PostSwap](/assets/images/gamedev/timeless/8-initial-edge-movement-static/ReplaceVertexEventsWEdgeEvents2.png)
 
 And then just repeat this logic for the corresponding overlap events for each edge on the hex.
 This is of course not DRY at all, I'll refactor this down- I'm just not sure yet if we want one function, two, or four. I'll think about this for a minute and then come back. 
@@ -64,16 +64,16 @@ This is of course not DRY at all, I'll refactor this down- I'm just not sure yet
 Ok I'm back now. After giving it some thought, I decided refactoring down into two functions makes the most sense, and will be the cleanest approach while visual scripting.
 
 `SetActiveVertexOrEdge` looks like this.
-![SetActiveVertexOrEdge](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/SetActiveVertexOrEdge.png)
+![SetActiveVertexOrEdge](/assets/images/gamedev/timeless/8-initial-edge-movement-static/SetActiveVertexOrEdge.png)
 
 and `SetPreviousVertexOrEdge` looks like this.
-![SetPreviousVertexOrEdge](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/SetPreviousVertexOrEdge.png)
+![SetPreviousVertexOrEdge](/assets/images/gamedev/timeless/8-initial-edge-movement-static/SetPreviousVertexOrEdge.png)
 
 So now we can just send the event to the appropriate function. Two functions instead of one means we don't need to add additional repetitive logic for each collision event to determine whether the arguments for the functions should be for setting the active or previous variables.
 
 I applied the refactored code to both the edge colliders as shown here, and also for the vertex colliders from the <a href="006-initial-vertex-movement" target="_blank">the initial vertex movement post</a>.
 
-![RefactoredFunctionCalls](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctions.png)
+![RefactoredFunctionCalls](/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctions.png)
 
 I'm not confident this is being handled optimally or anything, but this should be much more maintainable, and the approach would scale easily if we want to add other colliders to a hex, like a center collider or something.
 
@@ -81,7 +81,7 @@ I'm not confident this is being handled optimally or anything, but this should b
 
 Back in the player character to graph, we'll use a modifier to determine if we should move clockwise or counterclockwise
 
-![CCWModifier](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/CCWModifier.png)
+![CCWModifier](/assets/images/gamedev/timeless/8-initial-edge-movement-static/CCWModifier.png)
 
 I then started getting the number of the edge we were on, figuring we would then either increment or decrement the value based on whether we were going CW or CCW, and I realized that this code is like 90% similar with the `GetRelativeVertexWorldLocation` graph from that entry. Which in turn is essentially a slightly modified version of the `GetAbsoluetVertexWorldLocation`. The approach within all these graphs is already somewhat messy by itself, and having three slightly different versions of it floating around seems bad, so it's actually time for more refactoring first.
 
@@ -91,13 +91,13 @@ I ended up with a function `GetVertexWorldLocation` that takes in a `Starting He
 
 Working with this more general function is slightly more tedious, but should be much much more maintainable. I'm not going to walk through every node in the refactor, but this screenshot shows how much overlap there is between the different 'branches' of the enum. 
 
-![RefactoredGetVertexWorldLocation](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctionsGetVertexWorldLocation.png)
+![RefactoredGetVertexWorldLocation](/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctionsGetVertexWorldLocation.png)
 
 I could get it slightly DRYer, but it would add unnecessary complexity, and I think this rework has achieved its primary objective.
 
 Note that the refactored `GetVertexWorldLocation` above also now includes a helper function `GetNumberFromCurrentHexFeature`, generalized such that it can be used for both the collider components representing the vertices or the collider components representing the edges.
 
-![GetNumberFromCurrentHexFeature](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetNumberFromCurrentHexFeature.PNG)
+![GetNumberFromCurrentHexFeature](/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetNumberFromCurrentHexFeature.PNG)
 
 ### Back to moving to CW or CCW vertex from edge
 
@@ -113,7 +113,7 @@ The other is when it sometimes sends me back to the same vertex multiple times e
 
 To better understand which of these are occuring and track down what changes need to be made, I added some debugging print statements to identify which edge collider the game thinks the character is on, and I also set the edge and vertex colliders to be visible.
 
-![DebugColliders](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/DebugColliders.png)
+![DebugColliders](/assets/images/gamedev/timeless/8-initial-edge-movement-static/DebugColliders.png)
 
 
 After some experimentation, I implemented the following changes
@@ -125,12 +125,12 @@ I was surprised by how much better the functionality worked after swapping out t
 
 Here's what the tile looks like in the viewport with `Capsule Colliders` instead of `Box Colliders`.
 
-![CapsuleColliders](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/CapsuleCollidersReplacesBoxes.png)
+![CapsuleColliders](/assets/images/gamedev/timeless/8-initial-edge-movement-static/CapsuleCollidersReplacesBoxes.png)
 
 
 Also somewhere around this time I discovered that the extra component colliders sometimes interfere with the raytrace setting the active hex. After an embarrassing amount of trial and error, I eventually discovered the fix is simply toggling this `Trace Complex` boolean on the `Line Trace By Channel` function. I'd seen this bug previously (around the vertices mostly), but it got much worse after adding the edge colliders, which was the clue.
 
-![ToggleTraceComplexBool](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/TraceComplexBool.png)
+![ToggleTraceComplexBool](/assets/images/gamedev/timeless/8-initial-edge-movement-static/TraceComplexBool.png)
 
 ## Moving From With Hex To Nearest Edge
 
@@ -138,7 +138,7 @@ Also somewhere around this time I discovered that the extra component colliders 
 
 I made a simple function, `GetAllActiveHexEdgeLocations` using essentially the same nodes as its cousin `GetAllActiveHexVertexLocations`, simply casting to BP_Tile to access 
 
-![GetAllActiveHexEdgeLocations](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetAllActiveHexEdgeLocations.png)
+![GetAllActiveHexEdgeLocations](/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetAllActiveHexEdgeLocations.png)
 
 
 I made a new array of vectors comprised of those locations, and looped through it, checking the distance of from the character's location to each edge. If the distance was the smallest so far (represented by a float called `Min`, initialized with a value higher than the greatest possible distance to an edge while in the hex), the index of that element becomes `Closest`. When the loop completes, we simply sweep the character to the vector location of the array element at the index of `Closest`, using the exact same sweeping nodes we used <a href="007-relative-vertex-movement" target="_blank">previously</a>.
@@ -146,22 +146,22 @@ I made a new array of vectors comprised of those locations, and looped through i
 
 The logic here is day one algorithm stuff, but for awhile it wasn't working correctly and I was confused why. It would seem to work well once or twice, but on repeated uses it (quickly) got progressively buggier. If you have way too much time on your hands, feel free to try to find the error here. 
 
-![FindTheBugInGetNearestEdge](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/FindNearestEdge_Bug.png)
+![FindTheBugInGetNearestEdge](/assets/images/gamedev/timeless/8-initial-edge-movement-static/FindNearestEdge_Bug.png)
 
 <br>
 
 Turns out I had forgotten to reset the `Min` variable upon completing the loop. Adding that in, everything worked smoothly.
 
-![FixedGetNearestEdge](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/FindNearestEdge_Fixed.png)
+![FixedGetNearestEdge](/assets/images/gamedev/timeless/8-initial-edge-movement-static/FindNearestEdge_Fixed.png)
 
 
 ## Wrapping Up
 
 I collapsed these nodes down, and instead of routing the control flow directly to the `SweepCharacterToEdgeLocation` graph directly, I instead created a new custom event to handle that. This is to avoid more bugs in the future like the ones we saw above in the event that I need to expand on this code and add different ways of getting to the edge.
 
-![GetNearestEdgeCollapsed](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetNearestEdgeCollapsed.png)
+![GetNearestEdgeCollapsed](/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetNearestEdgeCollapsed.png)
 
-![InsideGetNearestEdgeCollapsed](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/InsideGetNearestEdgeCollapsed.png)
+![InsideGetNearestEdgeCollapsed](/assets/images/gamedev/timeless/8-initial-edge-movement-static/InsideGetNearestEdgeCollapsed.png)
 
 This brings us to the state of the [End Result Gif](#end-result) above!
 
