@@ -1,0 +1,3 @@
+[build]
+  command = "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css && mkdir -p ./tech/public/ && rm -rf ./tech/public/* && cp -r ./shared/public/* ./tech/public/ && pnpm --filter tech.battery.nexus run build"
+  publish = "tech/dist/"
