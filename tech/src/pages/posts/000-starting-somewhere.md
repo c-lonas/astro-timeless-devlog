@@ -93,7 +93,7 @@ Yes, I realize there is inherent tension between some of these sources- my hope 
 The single best resource on hexagons and hexagonal grids is the blog from Red Blob Games, aka [The Hexagon Bible](https://www.redblobgames.com/grids/hexagons/)
 
 ### Hex Grid Toolkit 
-Since the underlying formulas for working with hexagonal grids are consistent and solved (see above) there isn't a lot of room for creativity or problem solving here, so I went with a pre-built asset to give me something to work with. After testing out two assets, I went with the [Hex Grid Toolkit](https://docs.google.com/document/d/1vsdGHcBz8xxV_BukaKuX3oRfeKAMaYkkOwvTUjwyikM/edit), which is a fairly un-opionated library of hex-related functions. 
+Since the underlying formulas for working with hexagonal grids are consistent and solved (see above) there isn't a lot of room for creativity or problem solving here, so I went with a pre-built asset to give me something to work with. After testing out two assets, I went with the [Hex Grid Toolkit](https://docs.google.com/document/d/1vsdGHcBz8xxV_BukaKuX3oRfeKAMaYkkOwvTUjwyikM/edit), which is a fairly un-opinionated library of hex-related functions. 
 
 This made it easier to jump into learning the Unreal Engine environment by having something with which to play around.
 
