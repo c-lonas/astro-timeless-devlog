@@ -16,7 +16,7 @@ featured: 'true'
 ## Overview 
 
 
-In <a href="004-basic-character-movement" target="_blank"> a previous post </a> I did an initial implementation of a basic movement system, but it was very basic and limited. To get the specific movement mechanics I'm looking for, we're going to need to extend Unreal Engine's Character Movement Component.
+In <a href="tech.battery.nexus/posts/004-basic-character-movement" target="_blank"> a previous post </a> I did an initial implementation of a basic movement system, but it was very basic and limited. To get the specific movement mechanics I'm looking for, we're going to need to extend Unreal Engine's Character Movement Component.
 
 While figuring out the setup here I'm going to be working in a fresh Unreal project, starting with Unreal's Third Person template. This is to avoid wonky interactions with the current placeholder movement system while I'm experimenting and working out the kinks. Once I have the bones of a better Character Movement Componenet in place, or at least I've learned what I need to learn, I don't anticipate that migrating it over to the main project will be very difficult.
 

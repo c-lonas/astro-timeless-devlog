@@ -5,8 +5,8 @@ entryIndex: 11
 title: 'T2A2 Stack'
 description: "A brief discussion of the Typescript, Astro, Tailwind, Alpine stack, and a step-by-step tutorial on how to use it to build a simple web app"
 pubDate: '2/15/2024'
-thumbnail: "/src/assets/images/coding/t2a2-stack/t2a2-example-thumbnail.png"
-endResultGif: "/src/assets/images/coding/t2a2-stack/AstroTailwindAlpine.gif"
+thumbnail: "/assets/images/coding/t2a2-stack/t2a2-example-thumbnail.png"
+endResultGif: "/assets/images/coding/t2a2-stack/AstroTailwindAlpine.gif"
 tags: ["t2a2", "astro", "tailwind", "alpine", "typescript", "framework"]
 category: ["coding", "webdev"]
 featured: 'false'
@@ -89,12 +89,12 @@ npm create astro@latest
 
 I selected an empty project, TypeScript, Strict, Install Dependencies, and Initialize a git repository.
 
-![astroCreateSettings](/src/assets/images/coding/t2a2-stack/astro-create-settings.png)
+![astroCreateSettings](/assets/images/coding/t2a2-stack/astro-create-settings.png)
 
 
 This gives us a directory structure that looks like this
 
-![initialAstroDirectoryTree](/src/assets/images/coding/t2a2-stack/astro-create-tree.png)
+![initialAstroDirectoryTree](/assets/images/coding/t2a2-stack/astro-create-tree.png)
 *<a href="https://github.com/night-cruise/rptree" target="_blank">rptree</a> is a nifty command line tool written in rust 🦀*
 
 <br>
@@ -138,12 +138,12 @@ I'll add a couple elements to the body so we have something to play with in the 
 ```
 
 which should look like this:
-![unstyledAstroPage](/src/assets/images/coding/t2a2-stack/unstyled-index.png)
+![unstyledAstroPage](/assets/images/coding/t2a2-stack/unstyled-index.png)
 
 Good progress- however, this white background is hurting my eyes and we need to do something about that soon.
 
 <div>
-    <img style="width: 550px" src="/src/assets/images/coding/t2a2-stack/the-benchwarmers-howie.gif" alt="Benchwarmers Sun Is Scary Gif" />
+    <img style="width: 550px" src="/assets/images/coding/t2a2-stack/the-benchwarmers-howie.gif" alt="Benchwarmers Sun Is Scary Gif" />
 </div>
 
 But before we do, we'll quickly add an astro `layout`. Many html pages need to reuse code which isn't very DRY. 
@@ -285,7 +285,7 @@ Note that if you included the `--watch` flag like I did, you'll want to run this
 I'll add some additional Tailwind classes to the `index.astro` file next- to see it in full context check it out in the <a href="https://github.com/c-lonas/t2a2" target="_blank">repo</a>, but here's what it looks like as I move on to the next step.
 
 <div>
-<img style="width: 600px" src="/src/assets/images/coding/t2a2-stack/AstroAndTailwind.gif" alt="Tailwind styles applied to Astro page"/>
+<img style="width: 600px" src="/assets/images/coding/t2a2-stack/AstroAndTailwind.gif" alt="Tailwind styles applied to Astro page"/>
 </div>
 
 One last note on Tailwind before we move on- when you re-use the same group of utility classes many times, particularly if it's a group of many classes, tailwind lets you combine the utility classes into a semantic class, like traditional css. Sometimes this is the play, but I'm not going to do it in this tutorial.
@@ -364,7 +364,7 @@ Alpine gives you some default transitions and animations you can use out of the 
 Which give us this as the final result
 
 <div>
-<img style="width: 700px" src="/src/assets/images/coding/t2a2-stack/AstroTailwindAlpine.gif" alt="Alpine Functionality Added"/>
+<img style="width: 700px" src="/assets/images/coding/t2a2-stack/AstroTailwindAlpine.gif" alt="Alpine Functionality Added"/>
 </div>
 
 <br>

@@ -41,7 +41,7 @@ Here are the main features and functionalities I wanted to add to the HUD in thi
 
 This demo gif showcases the progress that was made with this entry. I demonstrate using the Elevation Manipulation ComboBox to select different types of elevation manipulation and using those to modify the TileMap. I demo the Randomizer setting, the Plateau setting (which is additive, not idempotent) and the Set Zero setting. Although I created a Parabolic setting entry in the enum, it requires more logic than the other settings, so I'm waiting to implement that until I verify if it's a needed feature or not, as indicated in the Overview section.
 
-Similar to the <a href="001-HUD-tilemap-generation" target="_blank">previous entry</a>, after completing the steps below, I hooked it all up to a `Key Event`, where it takes in the input parameters as determined by the HUD elements and uses those in applying the transforms to the Tile Map. Note that these transforms are applied to a given shape, as determined by the same shape generation controls created previously.
+Similar to the <a href="tech.battery.nexus/posts/001-HUD-tilemap-generation" target="_blank">previous entry</a>, after completing the steps below, I hooked it all up to a `Key Event`, where it takes in the input parameters as determined by the HUD elements and uses those in applying the transforms to the Tile Map. Note that these transforms are applied to a given shape, as determined by the same shape generation controls created previously.
 
 ![EndResultDemoGif](/assets/images/gamedev/timeless/2-editor-hud-elevation-manipulation-static/EditorModeHUD_ElevationManipulation_EndResult.gif)
 _I'm experimenting with larger tile sizes here, which is why the values on the elevation controls are set so high, to make the changes visible while being zoomed out pretty far_
@@ -50,7 +50,7 @@ _I'm experimenting with larger tile sizes here, which is why the values on the e
 
 ## Starting Off
 
-The work in this entry builds heavily off of the <a href="001-HUD-tilemap-generation" target="_blank">previous entry</a>. The cutoff point between the previous entry and this one was created somewhat arbitrarily, but we're going to continue working with many of the same elements.
+The work in this entry builds heavily off of the <a href="tech.battery.nexus/posts/001-HUD-tilemap-generation" target="_blank">previous entry</a>. The cutoff point between the previous entry and this one was created somewhat arbitrarily, but we're going to continue working with many of the same elements.
 
 <br>
 

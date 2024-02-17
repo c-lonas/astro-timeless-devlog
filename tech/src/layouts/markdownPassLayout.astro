@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 
 ---
 
-<TechPageLayout pageTitle={frontmatter.title} allPosts={allPosts}>
+<TechPageLayout pageTitle={frontmatter.title} allPosts={allPosts.reverse()}>
     
     <div slot="SideNavSlot">
         <SideNav allPosts={allPosts} />

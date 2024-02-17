@@ -36,7 +36,7 @@ This gif demonstrates using relative vertex movement options to navigate within 
 
 ## Starting Off
 
-We're going to build off the progress in the <a href="006-initial-vertex-movement" target="_blank">previous post</a>.
+We're going to build off the progress in the <a href="tech.battery.nexus/posts/006-initial-vertex-movement" target="_blank">previous post</a>.
 
 Starting with the `TriggerSweepToVertex` custom event we set up, we're going to add a condition which for now will just be hardcoded here in the blueprint- later this might be a different set of hotkeys, or a toggle, or something else.
 
@@ -102,7 +102,7 @@ And the rest of this graph looks the same as the graph in the previous entry (ju
 
 ## Wrapping Up
 
-Putting it together looks the same as in the <a href="006-initial-vertex-movement" target="_blank">previous entry</a>, so I'm not going to show the inside of `SweepCharacterToRelativeVertex` again, just bear in mind if you copy and paste a collapsed graph that has a `Timeline`, you need to re-setup the timeline inside, that part won't copy over, so your `Progress` output node (as I labeled it in the previous entry) will look broken until you re-create it.
+Putting it together looks the same as in the <a href="tech.battery.nexus/posts/006-initial-vertex-movement" target="_blank">previous entry</a>, so I'm not going to show the inside of `SweepCharacterToRelativeVertex` again, just bear in mind if you copy and paste a collapsed graph that has a `Timeline`, you need to re-setup the timeline inside, that part won't copy over, so your `Progress` output node (as I labeled it in the previous entry) will look broken until you re-create it.
 
 This entry next to the previous entry looks like this!
 

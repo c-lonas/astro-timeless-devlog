@@ -71,7 +71,7 @@ and `SetPreviousVertexOrEdge` looks like this.
 
 So now we can just send the event to the appropriate function. Two functions instead of one means we don't need to add additional repetitive logic for each collision event to determine whether the arguments for the functions should be for setting the active or previous variables.
 
-I applied the refactored code to both the edge colliders as shown here, and also for the vertex colliders from the <a href="006-initial-vertex-movement" target="_blank">the initial vertex movement post</a>.
+I applied the refactored code to both the edge colliders as shown here, and also for the vertex colliders from the <a href="tech.battery.nexus/posts/006-initial-vertex-movement" target="_blank">the initial vertex movement post</a>.
 
 ![RefactoredFunctionCalls](/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctions.png)
 
@@ -141,7 +141,7 @@ I made a simple function, `GetAllActiveHexEdgeLocations` using essentially the s
 ![GetAllActiveHexEdgeLocations](/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetAllActiveHexEdgeLocations.png)
 
 
-I made a new array of vectors comprised of those locations, and looped through it, checking the distance of from the character's location to each edge. If the distance was the smallest so far (represented by a float called `Min`, initialized with a value higher than the greatest possible distance to an edge while in the hex), the index of that element becomes `Closest`. When the loop completes, we simply sweep the character to the vector location of the array element at the index of `Closest`, using the exact same sweeping nodes we used <a href="007-relative-vertex-movement" target="_blank">previously</a>.
+I made a new array of vectors comprised of those locations, and looped through it, checking the distance of from the character's location to each edge. If the distance was the smallest so far (represented by a float called `Min`, initialized with a value higher than the greatest possible distance to an edge while in the hex), the index of that element becomes `Closest`. When the loop completes, we simply sweep the character to the vector location of the array element at the index of `Closest`, using the exact same sweeping nodes we used <a href="tech.battery.nexus/posts/007-relative-vertex-movement" target="_blank">previously</a>.
 
 
 The logic here is day one algorithm stuff, but for awhile it wasn't working correctly and I was confused why. It would seem to work well once or twice, but on repeated uses it (quickly) got progressively buggier. If you have way too much time on your hands, feel free to try to find the error here. 
