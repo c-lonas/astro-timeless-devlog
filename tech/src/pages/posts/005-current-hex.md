@@ -19,9 +19,6 @@ featured: 'true'
 We're getting much closer to being able to test out some of the core movement mechanic ideas for the game, but in order to have movement options connected to the hex geometries of the Tile Map, we need to know where the character is.
 
 
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
-
-
 ### Requirements
 * Identify the 'Current Hex'
 * Create a visual indication of the 'Current Hex'
@@ -66,8 +63,6 @@ Texture swap could work, except that I want to reserve texture and materials to 
 And I think a UI indicator would be visually clunky.
 
 Therefore we're going to go with the Decal Highlight Effect!
-
-
 
 
 ## Raycasting
@@ -141,7 +136,7 @@ Now that the `EndZVector` can be set from different branches, it's cleaner to `g
 
 <br>
 
-And everything should be working! Now we just need to call this function from the PlayerCharacter event graph. I set up a naive delay of 0.25 for performance, and then call the function. 
+And everything should be working! Now we just need to call this function from the PlayerCharacter event graph. I hardcoded a delay of 0.25 for performance, and then call the function. 
 
 I pass the `Hit Hex Tile` output from the `RaycastDownForHexTile` function into an additional function, `SetActiveHexAndPreviousHex`, which we'll look at next.
 

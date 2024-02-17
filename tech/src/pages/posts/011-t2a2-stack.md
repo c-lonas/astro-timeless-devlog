@@ -24,12 +24,12 @@ Alpine
 
 ## Introduction
 
-Looking for a shiny new tech stack to try out for your next project? This is a fun one. The name is a play on the [T3 stack](https://create.t3.gg/), from which this stack takes some inspiration. Since the T3 stack is modular by nature (as is T<sup>2</sup>A<sup>2</sup>) and both the "T's" in this stack are also in T3, it might be fair to think of it is a T3 variation. But I think Next.js is pretty integral to T3, and swapping out the engine changes the character of the stack significantly.
+Looking for a shiny new tech stack to try out for your next project? This is a fun one. The name is a play on the <a href="https://create.t3.gg" target="_blank">T3 stack</a>, from which this stack takes some inspiration. Since the T3 stack is modular by nature (as is T<sup>2</sup>A<sup>2</sup>) and both the "T's" in this stack are also in T3, it might be fair to think of it is a T3 variation. But I think Next.js is pretty integral to T3, and swapping out the engine changes the character of the stack significantly.
 
 In this post I'll give a brief explanation of the 'why', and then walk through setting up a simple project to cover the 'how'.
 
 If you don't care about the 'why' and just want to follow along with bootstrapping the project, you can skip down to the [Getting Started](#getting-started) section.
-All the code for this project is also available in a [GitHub repository](https://github.com/c-lonas/t2a2).
+All of the code for this project is available in a <a href="https://github.com/c-lonas/t2a2" target="_blank">GitHub repository</a>.
 
 <br>
 
@@ -40,14 +40,14 @@ Lightweight | Efficient | Modular | Elegant | Declarative
 
 ## The Stack
 
-# 🔒 [TypeScript](https://www.typescriptlang.org/)
+# 🔒 <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
 
 Typesafety. Just do it.
 Astro supports TypeScript out of the box, set yourself up for success by using it. Compiler errors are better than runtime errors.
 
 <br>
 
-# 🚀 [Astro](https://astro.build/)
+# 🚀 <a href="https://astro.build/" target="_blank">Astro</a>
 
 Astro, a modern frontend framework, is the engine of the stack. Specializes in static site generation by default, but supports dynamic client-side interaction on an as-needed basis through an 'islands' model, loading javascript where (and only where) it is needed.
 
@@ -55,14 +55,14 @@ All the pieces of the stack have well-documented integration with Astro, facilit
 
 <br>
 
-# 🌀 [Tailwind](https://tailwindcss.com/)
+# 🌀 <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>
 
-[This](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) is the post that finally convinced me to try it, and I have no intention of going  to traditional CSS.
+<a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/" target="_blank">This</a> is the post that finally convinced me to try it, and I have no intention of going back to traditional CSS.
 It's remarkable how many problems Tailwind solves beyond just guiding you towards better styles. Time spent coming up with class names that are rarely re-used was a bigger time sink than I realized. Time spent organizing the stylesheet is something I didn't even realize I was doing until I stopped needing to do it. Tailwind syntax doesn't look pretty, but it makes it easier to create pretty webpages. Tailwind trades aesthetic html files that look tidier at first glance for an elegant, declarative workflow that is as easy to read as it is to write once you get the hang of it. I've come to see the 'clean' html files that I used to write as a type of tech debt that has to get paid in your css files. Tailwind gives you transparency.
 
 <br>
 
-# 🗻 [Alpine](https://alpinejs.dev/)
+# 🗻 <a href="https://alpinejs.dev/" target="_blank">Alpine</a>
 
 Putting aside the fact that the Alpine.js website is blindingly-white and with no dark mode of which I'm aware, a clear sign it's a tool built by sociopaths, I think Alpine is criminally underused. You don't need to import Home Depot every time you need to change a lightbulb- Alpine is the Swiss Army Knife you can carry around to get stuff done. Versatile, lightweight, elegant, it complements the stack perfectly. 👨‍🍳 💋
 
@@ -76,7 +76,7 @@ The whole is more than the sum of the parts. Taken together, this stack encourag
 
 # Step 1 - Create and Configure an Astro Project
 
-This guide will aim to be sufficient, but if you run into difficulties that aren't covered here, the process is [well-documented](https://docs.astro.build/en/install/auto/) on astro's website.
+This guide will aim to be sufficient, but if you run into difficulties that aren't covered here, the process is <a href="https://docs.astro.build/en/install/auto/" target="_blank">well-documented</a> on astro's website.
 
 This guide (and the documentation linked above) assumes you have node.js `v18.14.1` or higher already installed.
 
@@ -95,7 +95,7 @@ I selected an empty project, TypeScript, Strict, Install Dependencies, and Initi
 This gives us a directory structure that looks like this
 
 ![initialAstroDirectoryTree](/src/assets/images/coding/t2a2-stack/astro-create-tree.png)
-*[rptree](https://github.com/night-cruise/rptree) is a nifty command line tool written in rust 🦀*
+*<a href="https://github.com/night-cruise/rptree" target="_blank">rptree</a> is a nifty command line tool written in rust 🦀*
 
 <br>
 
@@ -282,7 +282,7 @@ Note that if you included the `--watch` flag like I did, you'll want to run this
 
 
 
-I'll add some additional Tailwind classes to the `index.astro` file next- to see it in full context check it out in the [repo](https://github.com/c-lonas/t2a2), but here's what it looks like as I move on to the next step.
+I'll add some additional Tailwind classes to the `index.astro` file next- to see it in full context check it out in the <a href="https://github.com/c-lonas/t2a2" target="_blank">repo</a>, but here's what it looks like as I move on to the next step.
 
 <div>
 <img style="width: 600px" src="/src/assets/images/coding/t2a2-stack/AstroAndTailwind.gif" alt="Tailwind styles applied to Astro page"/>
@@ -294,7 +294,7 @@ One last note on Tailwind before we move on- when you re-use the same group of u
 
 # Step 3 - Integrate Alpine 
 
-Astro's documentation on integrating Alpine can be found [here](https://docs.astro.build/en/guides/integrations-guide/alpinejs/).
+Astro's documentation on integrating Alpine can be found <a href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/" target="_blank">here</a>.
 
 You can use Alpine in a project without installing anything by including it in a script tag like so:
 ```html
@@ -311,7 +311,7 @@ npx astro add alpinejs
 
 That's it, now we can start using it!
 
-The alpine docs have concise tutorials on building a [counter](https://alpinejs.dev/start-here#building-a-counter), a [dropdown](https://alpinejs.dev/start-here#building-a-dropdown), and a [search input](https://alpinejs.dev/start-here#building-a-search-input) if you're looking for ideas to get started with it.
+The alpine docs have concise <a href="https://alpinejs.dev/start-here#building-a-counter" target="_blank">tutorials</a> on building a counter, a dropdown, and a search input if you're looking for ideas to get started with it.
 
 Let's use Alpine to check if each of the cards have been toggled on, and if they are, to dynamically display an additional element.
 
@@ -472,7 +472,6 @@ const pageTitle = "Home";
 When using tailwind + alpine together, I tend to break up the tailwind classes and alpine declarations for readability, but even if you combine it all, it's a relatively long file for the amount of html elements on the page!
 
 However, we didn't touch a css file, and we also didn't have to write a single line of JavaScript. This Astro component tells us everything that's going on.
-
 
 I find that this stack strikes a balance between simplicity and power, structure and flexibility. Let me know what you think!
 

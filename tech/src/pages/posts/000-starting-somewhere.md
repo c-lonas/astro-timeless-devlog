@@ -13,8 +13,6 @@ featured: 'false'
 ---
 
 
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
-
 ## Overview
 
 
@@ -25,7 +23,7 @@ The game draws inspiration from a few disparate sources
 
 <div>
     <div>
-        Add Description Here
+        À la BoTW, or Minecraft
     </div>
     <div>
         <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/zelda-breath-of-the-wild.gif" alt="BreathOfTheWild-OpenAdventureGif"> 
@@ -36,7 +34,6 @@ The game draws inspiration from a few disparate sources
 ⬡ Narrative driven progression
 <div class="">
     <div>
-        Add Description Here
     </div>
     <div>
         <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/firsttree.webp" alt="TheFirstTree"> 
@@ -71,11 +68,10 @@ The game draws inspiration from a few disparate sources
 ⬡ Reset Game
 <div class="">
     <div class="">
-        games like slither.io
-        even osrs
+        Games like slither.io, where dying and starting over (at least partially) is a built-in part of the gameplay loop
     </div>
     <div>
-        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/" alt="ResetGame" /> 
+        <img src="/src/assets/images/gamedev/timeless/0-starting-somewhere-static/slither-io.gif" alt="ResetGame" /> 
     </div>
 </div>
 
@@ -108,6 +104,6 @@ This made it easier to jump into learning the Unreal Engine environment by havin
 Reasons for using Unreal
 - Mostly just wanting to try something different than Unity
 - For visual scripting, Blueprints is native to Unreal whereas Bolt is tacked onto Unity
-- For traditional scripting, I've worked a little with C# in the past and I think picking up a little C++ sounds fun
+- For traditional scripting, I've worked a little with C# in the past with Unity and I think picking up a little C++ sounds fun
 
 <br>

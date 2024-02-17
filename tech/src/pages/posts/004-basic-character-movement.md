@@ -17,9 +17,6 @@ featured: 'false'
 
 With basic controls in place to create and manipulate a Tile Map, time to shift gears for a bit and get a character in play to get closer to our short-term goal of being able to prototype core movement mechanic concepts.
 
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
-
-
 ### requirements
 * Implement basic character locomotion
 

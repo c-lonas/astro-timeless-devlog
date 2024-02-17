@@ -34,7 +34,7 @@ This gif demos using `R` as the keybind the lerp to the nearest edge from anywhe
 
 ## Starting Off
 
-Pretty straightforward here, we'll add six `Box Colliders` components to `BP_Tile,` following basically the exact same approach we used when adding sphere colliders for the vertices in [a previous post link- add]()
+Pretty straightforward here, we'll add six `Box Colliders` components to `BP_Tile,` following basically the exact same approach we used when adding sphere colliders for the vertices in <a href="" target="_blank">a previous post</a>.
 
 Here's a top view
 ![BoxColliderTopView](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/BoxCollidersTop.png)
@@ -49,7 +49,7 @@ and here's a side view
 ### Find Current Edge
 
 Before the character can move from an edge to a vertex, we first need to know if the character is on an edge, and if so, which edge. 
-Setting this up is basically the exact same as finding out if/which vertex the character is on, covered in [post link again](), so I'll duplicate that logic, swap out which overlap events are being checked, and replace `Current Vertex` and `Previous Vertex` with `Current Edge` and `Previous Edge`.
+Setting this up is basically the exact same as finding out if/which vertex the character is on, covered <a href="" target="_blank">previously</a>, so I'll duplicate that logic, swap out which overlap events are being checked, and replace `Current Vertex` and `Previous Vertex` with `Current Edge` and `Previous Edge`.
 
 ![PreSwap](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/ReplaceVertexEventsWEdgeEvents1.png)
 
@@ -71,7 +71,7 @@ and `SetPreviousVertexOrEdge` looks like this.
 
 So now we can just send the event to the appropriate function. Two functions instead of one means we don't need to add additional repetitive logic for each collision event to determine whether the arguments for the functions should be for setting the active or previous variables.
 
-I applied the refactored code to both the edge colliders as shown here, and also for the vertex colliders from the [prior post]().
+I applied the refactored code to both the edge colliders as shown here, and also for the vertex colliders from the <a href="006-initial-vertex-movement" target="_blank">the initial vertex movement post</a>.
 
 ![RefactoredFunctionCalls](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/RefactoredFunctions.png)
 
@@ -141,10 +141,10 @@ I made a simple function, `GetAllActiveHexEdgeLocations` using essentially the s
 ![GetAllActiveHexEdgeLocations](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/GetAllActiveHexEdgeLocations.png)
 
 
-I made a new array of vectors comprised of those locations, and looped through it, checking the distance of from the character's location to each edge. If the distance was the smallest so far (represented by a float called `Min`, initialized with a value higher than the greatest possible distance to an edge while in the hex), the index of that element becomes `Closest`. When the loop completes, we simply sweep the character to the vector location of the array element at the index of `Closest`, using the exact same sweeping nodes we used [previously-add this link](add_link).
+I made a new array of vectors comprised of those locations, and looped through it, checking the distance of from the character's location to each edge. If the distance was the smallest so far (represented by a float called `Min`, initialized with a value higher than the greatest possible distance to an edge while in the hex), the index of that element becomes `Closest`. When the loop completes, we simply sweep the character to the vector location of the array element at the index of `Closest`, using the exact same sweeping nodes we used <a href="007-relative-vertex-movement" target="_blank">previously</a>.
 
 
-The logic here is day one algorithm stuff, but for awhile it wasn't working correctly and I was confused why. It would seem to work well once or twice, but on repeated uses it (quickly) got progressively buggier. If you have too much time on your hands, feel free to try to find the error here. 
+The logic here is day one algorithm stuff, but for awhile it wasn't working correctly and I was confused why. It would seem to work well once or twice, but on repeated uses it (quickly) got progressively buggier. If you have way too much time on your hands, feel free to try to find the error here. 
 
 ![FindTheBugInGetNearestEdge](/src/assets/images/gamedev/timeless/8-initial-edge-movement-static/FindNearestEdge_Bug.png)
 

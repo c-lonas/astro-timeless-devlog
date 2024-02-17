@@ -30,7 +30,7 @@ This End Result gid shows the implementation of crouching, and the camera lerpin
 
 ## Starting Out
 
-I declared a new function `CrouchPressed` to go with the functions I added in the <a href="" target="_blank">Previous Post</a>.
+I declared a new function `CrouchPressed` to go with the functions I added in the <a href="https://www.youtube.com/watch?v=vw4sPZ8xhFk&list=PLXJlkahwiwPmeABEhjwIALvxRSZkzoQpk" target="_blank">Previous Post</a>.
 
 ```cpp
 public:
@@ -77,7 +77,7 @@ Testing reveals that crouching works (no animations have been hooked up, but if 
 
 ## PlayerCharacterCameraManager
 
-To reiterate, for full details on this I definitely recommend checking out the <a href="" target="_blank">tutorial</a> I'm using, these entries I'm making where I'm following along are more of 'progress documentation' rather than educational as some of the other posts aim to be, but here's a view of the core logic that lowers the camera target to follow the crouch.
+To reiterate, for full details on this I definitely recommend checking out the <a href="https://www.youtube.com/watch?v=vw4sPZ8xhFk&list=PLXJlkahwiwPmeABEhjwIALvxRSZkzoQpk" target="_blank">tutorial</a> I'm using, these entries I'm making where I'm following along are more of 'progress documentation' rather than educational as some of the other posts aim to be, but here's a view of the core logic that lowers the camera target to follow the crouch.
 
 ```cpp
 void ASchmoovePlayerCameraManager::UpdateViewTarget(FTViewTarget& OutVT, float DeltaTime)

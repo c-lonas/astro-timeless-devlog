@@ -16,9 +16,6 @@ featured: 'false'
 
 We want to start laying the foundation for movement options based around the hexagonal geometries of the tile map. It's going to take some experimentation to decided on the exact movement abilities and limitations we want to have available. That being said, regardless of many of the specifics, a key building block here will be the ability to quickly get to a given vertex on a the player's current hex, which will be the focus of today's entry.
 
-
-<span style="color: cyan"> Note: Due to starting this DevLog a few weeks after actually starting the project, the first few posts were written retroactively </span>
-
 <br>
 
 ## End Result
