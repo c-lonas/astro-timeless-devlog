@@ -1,0 +1,12 @@
+[build]
+  command = "echo 'Specify build commands in project-specific sections or the Netlify UI'"
+  publish = "dist"
+
+[context."tech"]
+  command = "pnpm run clean-propogated-assets:tech && pnpm run propogate-assets:tech && pnpm --filter tech.battery.nexus run build"
+  publish = "packages/tech/public"
+
+# Settings for the 'landing' project
+[context."landing"]
+  command = "pnpm run clean-propogated-assets:landing && pnpm run propogate-assets:landing && pnpm --filter landing.battery.nexus run build"
+  publish = "packages/landing/public"
