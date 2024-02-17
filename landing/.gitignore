@@ -1,7 +1,6 @@
 # build output
 dist/
 tw_styles.css
-tech/public
 landing/public
 
 # generated types

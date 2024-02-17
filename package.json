@@ -3,28 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
-    "clear": "rm -rf node_modules tech/node_modules shared/node_modules && npm cache clean --force && pnpm store prune",
-    "tww":  "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch",
+    "clear": "rm -rf node_modules tech/node_modules shared/node_modules landing/node_modules && npm cache clean --force && pnpm store prune",
+    "tww": "tailwindcss -c ./tailwind.config.mjs -i ./shared/src/styles/tailwind.css -o ./shared/public/tw_styles.css --watch",
     "clean-propogated-assets:tech": "rm -rf ./tech/public/",
+    "clean-propogated-assets:landing": "rm -rf ./landing/public/",
     "propogate-assets:tech": "cp -r ./shared/public ./tech/",
-    "dev:tech": "pnpm run clean-propogated-assets:tech && pnpm run propogate-assets:tech && pnpm --filter tech.battery.nexus run astro dev"    
+    "propogate-assets:landing": "cp -r ./shared/public ./landing/",
+    "dev:tech": "pnpm run clean-propogated-assets:tech && pnpm run propogate-assets:tech && pnpm --filter tech.battery.nexus run astro dev",
+    "dev:landing": "pnpm run clean-propogated-assets:landing && pnpm run propogate-assets:landing && pnpm --filter landing.battery.nexus run astro dev"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "shared": "workspace:*",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.3.4",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vue": "^4.0.8",
     "@types/alpinejs": "^3.13.6",
     "alpinejs": "^3.13.5",
     "astro": "^4.2.6",
     "astro-scroll-observer": "^0.5.3",
+    "shared": "workspace:*",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
