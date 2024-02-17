@@ -1,4 +1,4 @@
 [build]
 
   command = "pnpm run clean-propogated-assets:landing && pnpm run propogate-assets:landing && pnpm --filter landing.battery.nexus run build"
-  publish = "dist/"
+  publish = "packages/landing/dist/"
