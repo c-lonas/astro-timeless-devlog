@@ -20,8 +20,6 @@ Tailwind
 
 Alpine
 
-<br>
-
 ## Introduction
 
 Looking for a shiny new tech stack to try out for your next project? This is a fun one. The name is a play on the <a href="https://create.t3.gg" target="_blank">T3 stack</a>, from which this stack takes some inspiration. Since the T3 stack is modular by nature (as is T<sup>2</sup>A<sup>2</sup>) and both the "T's" in this stack are also in T3, it might be fair to think of it is a T3 variation. But I think Next.js is pretty integral to T3, and swapping out the engine changes the character of the stack significantly.

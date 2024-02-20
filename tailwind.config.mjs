@@ -5,7 +5,6 @@ export default {
 	content: [
 		'./shared/src/**/*.{astro,html,js,md,ts}',
 		'./tech/src/**/*.{astro,html,js,md,ts}',
-		// Add other packages as needed
 	  ],
 	theme: {
 		extend: {
