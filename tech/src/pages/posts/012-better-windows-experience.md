@@ -32,13 +32,15 @@ If you've used Windows your whole life, you might be used to opening up programs
 
 These days on Windows 11, if you click on search it will give you this monstrosity.
 
+
+
+![Windows11RunLauncher](/assets/images/tips/better-windows-experience/windows-11-run-launcher.png)
+
 Apparently I've earned 235 Microsoft brownie points.
 
 Advertisements for games.
 
 Links to fun facts.
-
-![Windows11RunLauncher](/assets/images/tips/better-windows-experience/windows-11-run-launcher.png)
 
 My friend, we do not need to live like this.
 
