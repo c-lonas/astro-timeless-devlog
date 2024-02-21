@@ -8,7 +8,7 @@ pubDate: '2/19/2024'
 thumbnail: "/assets/images/coding/"
 endResultGif: "/assets/images/coding/"
 tags: ["windows", "os", "tips"]
-category: ["", general", "windows"]
+category: [general", "windows"]
 featured: 'false'
 ---
 
@@ -84,7 +84,13 @@ Git Bash is not a perfect replacement, it has a handful of limitations and drawb
 
 ## Package Manager - WinGet
 
-If you have a preference between WinGet, Chocolatey, or Scoop you are probably not the intended audience for the post. I'm going to assume you are familiar with none of these.
+If you've ever used Linux before, you've probably used a package manager(`apt`, `yum`, `pacman`, etc.), or if you've used MacOS there's a good chance you've used Homebrew. But if you've used Windows casually your whole life, there's a non-zero chance you're not familiar with a centralized package manager.
+
+If you already know about and have a preference between WinGet, Chocolatey, or Scoop you are probably not the intended audience for this post, keep using whatever works for you.
+
+If you don't, I recommend trying WinGet. If you're working on leveling up from a casual user to a Power User, being able to easily manage applications from the command line is a noticeable upgrade.
+
+This comes third in our ordered list, because WinGet is not nearly as comprehensive a solution as it's Linux counterparts, and there are many common applications that aren't available via WinGet (yet).
 
 
 <br>
