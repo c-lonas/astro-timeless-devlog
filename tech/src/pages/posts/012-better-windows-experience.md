@@ -121,7 +121,7 @@ If you already know about and have a preference between WinGet, Chocolatey, or S
 
 If you don't, I recommend trying WinGet. If you're working on leveling up from a casual user to a Power User, being able to easily manage applications from the command line is a noticeable upgrade.
 
-If you're on Windows 11, you likely already have WingGet installed.
+If you're on Windows 11, you likely already have WinGet installed.
 
 To check, run the following command
 
