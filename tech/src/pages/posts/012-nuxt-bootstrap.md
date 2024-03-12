@@ -60,3 +60,29 @@ This automatically installs the nuxtjs/tailwindcss module for you. Test this by 
 ```
 
 Run `npm run dev`, and the text should change color.
+
+
+3. Basic theming with Nuxt UI
+
+Create an `app.config.ts` file at the root level, and give it the following contents:
+
+```ts
+export default defineAppConfig({
+    ui: {
+      primary: 'fuchsia',
+      gray: 'cool'
+    }
+  })
+```
+
+Now, go back and modify the `app.vue` file to use the primary variable. Let's also make the text large and centered.
+
+
+```vue
+<template>
+  <div>
+    <h1 class=" text-6xl text-primary grid place-content-center h-screen ">Welcome to the homepage</h1>
+  </div>
+</template>
+
+```
