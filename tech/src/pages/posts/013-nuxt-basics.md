@@ -5,8 +5,8 @@ entryIndex: 13
 title: 'Nuxt Basics'
 description: "Simple Nuxt set up using NuxtUI components and TailwindCSS"
 pubDate: '3/14/2024'
-thumbnail: "/src/assets/images/coding/nuxt-basics/nuxt-basics-end-result.png"
-endResultGif: "/src/assets/images/coding/nuxt-basics/nuxt-basics-end-result.gif"
+thumbnail: "/assets/images/coding/nuxt-basics/nuxt-basics-end-result.png"
+endResultGif: "/assets/images/coding/nuxt-basics/nuxt-basics-end-result.gif"
 tags: ["nuxt", "vue", "framework", "typescript", "tailwind"]
 category: ["coding", "webdev"]
 featured: 'false'
