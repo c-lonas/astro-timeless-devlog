@@ -5,8 +5,8 @@ entryIndex: 13
 title: 'Nuxt Basics'
 description: "Simple Nuxt set up using NuxtUI components and TailwindCSS"
 pubDate: '3/14/2024'
-thumbnail: "/src/assets/images/coding/nuxt-basics/nuxt-basics.png"
-endResultGif: "/src/assets/images/coding/nuxt-basics/nuxt-basics.gif"
+thumbnail: "/src/assets/images/coding/nuxt-basics/nuxt-basics-end-result.png"
+endResultGif: "/src/assets/images/coding/nuxt-basics/nuxt-basics-end-result.gif"
 tags: ["nuxt", "vue", "framework", "typescript", "tailwind"]
 category: ["coding", "webdev"]
 featured: 'false'
@@ -22,9 +22,9 @@ I'd like to do a short series of posts on how to get up and running with Vue/Nux
 
 This is the simple landing page we're going to build:
 
-<div>
-<img style="width: 700px" src="/src/assets/images/coding/nuxt-basics/nuxt-basics.gif" alt="Simple Nuxt Landing Page"/>
-</div>
+
+![SimpleNuxtLandingPage](/assets/images/coding/nuxt-basics/nuxt-basics-end-result.gif)
+
 
 All of the code for this example can be found in this <a href="https://github.com/c-lonas/nuxt-basic-example" target="_blank">GitHub repository</a>.
 
