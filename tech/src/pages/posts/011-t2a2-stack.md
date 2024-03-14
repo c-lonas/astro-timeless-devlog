@@ -24,7 +24,7 @@ Alpine
 
 ## Introduction
 
-Looking for a shiny new tech stack to try out for your next project? This is a fun one. The name is a play on the [T3 stack](https://create.t3.gg/), from which this stack takes some inspiration. Since the T3 stack is modular by nature (as is T<sup>2</sup>A<sup>2</sup>) and both the "T's" in this stack are also in T3, it might be fair to think of it is a T3 variation. But I think Next.js is pretty integral to T3, and swapping out the engine changes the character of the stack significantly.
+Looking for a shiny new tech stack to try out for your next project? This is a fun one. The name is a play on the [T3 stack](https://create.t3.gg/), from which this stack takes some inspiration. Since the T3 stack is modular by nature (as is T<sup>2</sup>A<sup>2</sup>) and both the "T's" in this stack are also in T3, it might look like a variation on T3 if you aren't familiar with it- but at it's core, T3 uses Next.JS which is based on React, and is a much 'fuller' tech stack. T<sup>2</sup>A<sup>2</sup> is a fun, lightweight stack, and is not trying to do the same thing.
 
 In this post I'll give a brief explanation of the 'why', and then walk through setting up a simple project to cover the 'how'.
 
@@ -474,4 +474,6 @@ When using tailwind + alpine together, I tend to break up the tailwind classes a
 However, we didn't touch a css file, and we also didn't have to write a single line of JavaScript. This Astro component tells us everything that's going on.
 
 
-I find that this stack strikes a balance between simplicity and power, structure and flexibility. Let me know what you think!
+I find that this stack strikes a balance between simplicity and power, structure and flexibility in situations where other frameworks might be overkill. Let me know what you think!
+
+<br>
